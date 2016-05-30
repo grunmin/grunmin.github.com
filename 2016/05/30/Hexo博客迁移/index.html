@@ -11,19 +11,16 @@
     
 
     
-    <meta name="description" content="托管我的博客的gitcafe已经不提供服务了，只好将博客迁移到coding上。得益于近期了解一些npm和js相关的技术，对hexo搭建和安装不再一脸懵逼的状况。
-事实上，Hexo封装了一些git命令，hexo d命令的执行会将/public目录上传到远端仓库中（没错，hexo不在博客根目录执行git初始化）。博客的源代码，包括source，theme等都原封不动保存在本地。因此，当需要在其他电脑同">
+    <meta name="description" content="托管我的博客的gitcafe已经不提供服务了，只好将博客迁移到coding上。得益于近期了解一些npm和js相关的技术，对hexo搭建和安装不再一脸懵逼的状况。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hexo博客迁移">
 <meta property="og:url" content="http://blog.grunmin.org/2016/05/30/Hexo博客迁移/index.html">
 <meta property="og:site_name" content="郭润民的博客">
-<meta property="og:description" content="托管我的博客的gitcafe已经不提供服务了，只好将博客迁移到coding上。得益于近期了解一些npm和js相关的技术，对hexo搭建和安装不再一脸懵逼的状况。
-事实上，Hexo封装了一些git命令，hexo d命令的执行会将/public目录上传到远端仓库中（没错，hexo不在博客根目录执行git初始化）。博客的源代码，包括source，theme等都原封不动保存在本地。因此，当需要在其他电脑同">
-<meta property="og:updated_time" content="2016-05-30T12:45:20.926Z">
+<meta property="og:description" content="托管我的博客的gitcafe已经不提供服务了，只好将博客迁移到coding上。得益于近期了解一些npm和js相关的技术，对hexo搭建和安装不再一脸懵逼的状况。">
+<meta property="og:updated_time" content="2016-05-30T12:47:09.795Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo博客迁移">
-<meta name="twitter:description" content="托管我的博客的gitcafe已经不提供服务了，只好将博客迁移到coding上。得益于近期了解一些npm和js相关的技术，对hexo搭建和安装不再一脸懵逼的状况。
-事实上，Hexo封装了一些git命令，hexo d命令的执行会将/public目录上传到远端仓库中（没错，hexo不在博客根目录执行git初始化）。博客的源代码，包括source，theme等都原封不动保存在本地。因此，当需要在其他电脑同">
+<meta name="twitter:description" content="托管我的博客的gitcafe已经不提供服务了，只好将博客迁移到coding上。得益于近期了解一些npm和js相关的技术，对hexo搭建和安装不再一脸懵逼的状况。">
 
     
     <link rel="alternative" href="/atom.xml" title="郭润民的博客" type="application/atom+xml">
@@ -104,6 +101,7 @@
 		</div>
 		
 		<p>托管我的博客的gitcafe已经不提供服务了，只好将博客迁移到coding上。<br>得益于近期了解一些npm和js相关的技术，对hexo搭建和安装不再一脸懵逼的状况。</p>
+<a id="more"></a>
 <p>事实上，Hexo封装了一些git命令，<code>hexo d</code>命令的执行会将<code>/public</code>目录上传到远端仓库中（没错，hexo不在博客根目录执行git初始化）。博客的源代码，包括<code>source</code>，<code>theme</code>等都原封不动保存在本地。因此，当需要在其他电脑同步写博客时，需要额外做一些操作。</p>
 <p>具体来说就是将<code>public</code>之外的目录也纳入版本控制一并推送到远程仓库。可以通过分支的方法做到这一点。在远端仓库<code>master</code>分支存放源代码，<code>pages</code>分支存放博文静态文件。</p>
 <p>当前博客根目录是没有git版本控制的，因此可以直接执行<code>git init</code>初始化，并且分支为<code>master</code>。OK，在hexo配置文件<code>_config.yml</code>存放静态文件的远端仓库的分支如果不是<code>master</code>，只要<code>git remote add origin git@********.git</code>即可连接远端仓库了。hexo初始化时已经生成了<code>.gitngore</code>文件，将<code>public</code>，<code>node_module</code>等目录排除在版本控制之外。在新电脑将master分支拉下来，然后再<code>npm install</code>即可将所需组件装上。</p>

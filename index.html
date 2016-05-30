@@ -95,16 +95,11 @@
     <div class="article-content">
         
         <p>托管我的博客的gitcafe已经不提供服务了，只好将博客迁移到coding上。<br>得益于近期了解一些npm和js相关的技术，对hexo搭建和安装不再一脸懵逼的状况。</p>
-<p>事实上，Hexo封装了一些git命令，<code>hexo d</code>命令的执行会将<code>/public</code>目录上传到远端仓库中（没错，hexo不在博客根目录执行git初始化）。博客的源代码，包括<code>source</code>，<code>theme</code>等都原封不动保存在本地。因此，当需要在其他电脑同步写博客时，需要额外做一些操作。</p>
-<p>具体来说就是将<code>public</code>之外的目录也纳入版本控制一并推送到远程仓库。可以通过分支的方法做到这一点。在远端仓库<code>master</code>分支存放源代码，<code>pages</code>分支存放博文静态文件。</p>
-<p>当前博客根目录是没有git版本控制的，因此可以直接执行<code>git init</code>初始化，并且分支为<code>master</code>。OK，在hexo配置文件<code>_config.yml</code>存放静态文件的远端仓库的分支如果不是<code>master</code>，只要<code>git remote add origin git@********.git</code>即可连接远端仓库了。hexo初始化时已经生成了<code>.gitngore</code>文件，将<code>public</code>，<code>node_module</code>等目录排除在版本控制之外。在新电脑将master分支拉下来，然后再<code>npm install</code>即可将所需组件装上。</p>
-<p>如此一来，<code>hexo</code>系列操作执行博文更新，<code>git</code>系列操作执行代码和配置备份。</p>
-<p><em>另外需要注意的是，theme纳入版本控制，但是如果通过<code>git clone</code>下载了其他主题，而后更改主题配置（或者添加一些静态文件），这个主题的自定义修改是不会被推送到自己的仓库的（只会推到原主题仓库），因此，clone了主题之后可将主题根目录下的<code>.git</code>目录删除</em></p>
-<p><em><code>hexo d</code>有时候很诡异的报<code>Permission denied (publickey)</code>问题，测试<code>ssh -T</code>显示拥有仓库权限，而且仓库也是存在的。没办法只能通过再重新生成添加密钥来解决。</em></p>
-
         
         
         <p class="article-more-link">
+          
+            <a href="/2016/05/30/Hexo博客迁移/#more">Read More</a>
           
        </p>
     </div>
