@@ -50,7 +50,7 @@
 				<h1 class="site-name"><a href="/" title="郭润民的博客">郭润民的博客</a></h1>
 				<h2 class="blog-motto"></h2>
 			</div>
-			<div class="navbar"><a class="navbutton navmobile" href="#" title="Menu">
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜單">
 			</a></div>
 			<nav class="animated">
 				<ul>
@@ -66,7 +66,7 @@
  					
 					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
 						<label>Search</label>
-						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="Search" />
+						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="搜索" />
 						<input type="hidden" name="q" value="site:blog.grunmin.org">
 					</form>
 					
@@ -89,14 +89,14 @@
 		<a href="/about" title="郭润民" target="_blank" itemprop="author">郭润民</a>
 		
   <p class="article-time">
-    <time datetime="2014-03-12T16:43:00.000Z" itemprop="datePublished"> Published 2014-03-13</time>
+    <time datetime="2014-03-12T16:43:00.000Z" itemprop="datePublished"> 發表於 2014-03-13</time>
     
   </p>
 </header>
 	<div class="article-content">
 		
 		<div id="toc" class="toc-article">
-			<strong class="toc-title">Contents</strong>
+			<strong class="toc-title">文章目錄</strong>
 		
 			<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#声音"><span class="toc-number">1.</span> <span class="toc-text">声音</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#显示"><span class="toc-number">2.</span> <span class="toc-text">显示</span></a></li></ol>
 		
@@ -106,14 +106,14 @@
 <a id="more"></a>
 <p>终端运行alsamixer-&gt;按F6键，选中对应硬件，应该会出现这样的画面<img src="https://lh4.googleusercontent.com/-Pj4Qb92Mz3M/UyCOC4GBLFI/AAAAAAAAAJ0/IZSLgP3Xxqs/w614-h346-no/2014-03-13-002941_614x346_scrot.png" alt="">，调高第三条的音量即可实现外放。</p>
 <h3 id="显示"><a href="#显示" class="headerlink" title="显示"></a>显示</h3><p>1、可用命令行<code>xgamma -gamma X</code>暂时调节笔记本的屏幕亮度,X的值在1以下。</p>
-<p>2、如果用英特尔集成显卡，则<code>/sys/class/backlight/intel_backlight/brightness</code>是调节屏幕亮度的，文件中的数字即代表亮度。<br>用vim编辑器改是不可以的，因此用重定向的方法：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># echo 100 &gt; /sys/class/backlight/intel_backlight/brightness</span><br></pre></td></tr></table></figure></p>
+<p>2、如果用英特尔集成显卡，则<code>/sys/class/backlight/intel_backlight/brightness</code>是调节屏幕亮度的，文件中的数字即代表亮度。<br>用vim编辑器改是不可以的，因此用重定向的方法：<br><figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># echo <span class="number">100</span> &gt; <span class="regexp">/sys/</span><span class="keyword">class</span><span class="regexp">/backlight/i</span>ntel_backlight<span class="regexp">/brightness</span></span><br></pre></td></tr></table></figure></p>
 <p>数值大概在100到200之间（我的默认是187,后改为100）。</p>
 <p>如果用NVIDIA显卡，则存在<code>/sys/class/backlight/acpi_video0/brightness</code>这个文件，更改方法如上。</p>
 <p>这两个方法都不能永久性地更改亮度。不过我们可以通过脚本的方式，让计算机启动的时候执行这些命令，以达到开机即调整亮度的需求。  </p>
-<p>在/etc/rc.d/init.d/目录下，新建一脚本，比如命名为brightness，写入以下内容<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">#add for chkconfig</span><br><span class="line">#chkconfig:2345 70 30</span><br><span class="line">#description:modify brightness</span><br><span class="line">#processname:brightness</span><br><span class="line">xgamma -gamma 0.7</span><br><span class="line">echo 50 &gt; /sys/class/backlight/intel_backlight/brightness</span><br><span class="line">echo 50 &gt; /sys/class/backlight/acpi_video0/brightness</span><br></pre></td></tr></table></figure></p>
+<p>在/etc/rc.d/init.d/目录下，新建一脚本，比如命名为brightness，写入以下内容<br><figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#add for chkconfig</span></span><br><span class="line"><span class="comment">#chkconfig:2345 70 30</span></span><br><span class="line"><span class="comment">#description:modify brightness</span></span><br><span class="line"><span class="comment">#processname:brightness</span></span><br><span class="line">xgamma -gamma <span class="number">0.7</span></span><br><span class="line">echo <span class="number">50</span> &gt; /sys/<span class="class"><span class="keyword">class</span>/<span class="title">backlight</span>/<span class="title">intel_backlight</span>/<span class="title">brightness</span></span></span><br><span class="line">echo <span class="number">50</span> &gt; /sys/<span class="class"><span class="keyword">class</span>/<span class="title">backlight</span>/<span class="title">acpi_video0</span>/<span class="title">brightness</span></span></span><br></pre></td></tr></table></figure></p>
 <p>其中2345表示脚本在哪一运行级别生效，70和30表示开机/关机时启动/关闭的顺序，数字越大越靠后。processname即为服务的名称，作标识用。</p>
-<p>给脚本可执行权限<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod +x brightness</span><br></pre></td></tr></table></figure></p>
-<p>将脚本添加入服务控制列表<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chkconfig --add brightness</span><br></pre></td></tr></table></figure></p>
+<p>给脚本可执行权限<br><figure class="highlight cos"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod +<span class="keyword">x</span> brightness</span><br></pre></td></tr></table></figure></p>
+<p>将脚本添加入服务控制列表<br><figure class="highlight processing"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chkconfig --<span class="built_in">add</span> <span class="built_in">brightness</span></span><br></pre></td></tr></table></figure></p>
 <p>此时用<code>chkconfig --list</code>可查看brightness服务在2345运行级别里是默认开启的。</p>
   
 	</div>
@@ -173,22 +173,22 @@
 </section>
 
 </div>  
-      <div class="openaside"><a class="navbutton" href="#" title="Show Sidebar"></a></div>
+      <div class="openaside"><a class="navbutton" href="#" title="顯示側邊欄"></a></div>
 
   <div id="toc" class="toc-aside">
-  <strong class="toc-title">Contents</strong>
+  <strong class="toc-title">文章目錄</strong>
  
  <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#声音"><span class="toc-number">1.</span> <span class="toc-text">声音</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#显示"><span class="toc-number">2.</span> <span class="toc-text">显示</span></a></li></ol>
  
   </div>
 
 <div id="asidepart">
-<div class="closeaside"><a class="closebutton" href="#" title="Hide Sidebar"></a></div>
+<div class="closeaside"><a class="closebutton" href="#" title="隱藏側邊欄"></a></div>
 <aside class="clearfix">
 
   
 <div class="categorieslist">
-	<p class="asidetitle">Categories</p>
+	<p class="asidetitle">分類</p>
 		<ul>
 		
 		  
@@ -216,7 +216,7 @@
 		  
 		
 		  
-			<li><a href="/categories/工具/" title="工具">工具<sup>7</sup></a></li>
+			<li><a href="/categories/工具/" title="工具">工具<sup>8</sup></a></li>
 		  
 		
 		  
@@ -228,11 +228,22 @@
 
 
   
+<div class="tagslist">
+	<p class="asidetitle">標簽</p>
+		<ul class="clearfix">
+		
+			
+				<li><a href="/tags/git/" title="git">git<sup>1</sup></a></li>
+			
+		
+		</ul>
+</div>
+
 
   
   <div class="archiveslist">
-    <p class="asidetitle"><a href="/archives">Archives</a></p>
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">December 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">September 2015</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">August 2015</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04/">April 2014</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/03/">March 2014</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/01/">January 2014</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/12/">December 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/11/">November 2013</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/08/">August 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/07/">July 2013</a><span class="archive-list-count">3</span></li></ul>
+    <p class="asidetitle"><a href="/archives">歸檔</a></p>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">December 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">September 2015</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">August 2015</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04/">April 2014</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/03/">March 2014</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/01/">January 2014</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/12/">December 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/11/">November 2013</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/08/">August 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/07/">July 2013</a><span class="archive-list-count">3</span></li></ul>
   </div>
 
 
@@ -470,7 +481,7 @@ ga('send', 'pageview');
 <!-- Totop Begin -->
 
 	<div id="totop">
-	<a title="Back to Top"><img src="/img/scrollup.png"/></a>
+	<a title="返回頂部"><img src="/img/scrollup.png"/></a>
 	</div>
 	<script src="/js/totop.js"></script>
 

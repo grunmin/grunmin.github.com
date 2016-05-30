@@ -48,7 +48,7 @@
 				<h1 class="site-name"><a href="/" title="郭润民的博客">郭润民的博客</a></h1>
 				<h2 class="blog-motto"></h2>
 			</div>
-			<div class="navbar"><a class="navbutton navmobile" href="#" title="Menu">
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜單">
 			</a></div>
 			<nav class="animated">
 				<ul>
@@ -64,7 +64,7 @@
  					
 					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
 						<label>Search</label>
-						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="Search" />
+						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="搜索" />
 						<input type="hidden" name="q" value="site:blog.grunmin.org">
 					</form>
 					
@@ -87,14 +87,14 @@
 		<a href="/about" title="郭润民" target="_blank" itemprop="author">郭润民</a>
 		
   <p class="article-time">
-    <time datetime="2014-03-12T14:48:00.000Z" itemprop="datePublished"> Published 2014-03-12</time>
+    <time datetime="2014-03-12T14:48:00.000Z" itemprop="datePublished"> 發表於 2014-03-12</time>
     
   </p>
 </header>
 	<div class="article-content">
 		
 		<div id="toc" class="toc-article">
-			<strong class="toc-title">Contents</strong>
+			<strong class="toc-title">文章目錄</strong>
 		
 			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#安装Package-Control"><span class="toc-number">1.</span> <span class="toc-text">安装Package Control</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装markdown-preview"><span class="toc-number">2.</span> <span class="toc-text">安装markdown preview</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用"><span class="toc-number">3.</span> <span class="toc-text">使用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#快捷键"><span class="toc-number">4.</span> <span class="toc-text">快捷键</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#设置语法高亮和mathjax支持"><span class="toc-number">5.</span> <span class="toc-text">设置语法高亮和mathjax支持</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#打印成pdf"><span class="toc-number">6.</span> <span class="toc-text">打印成pdf</span></a></li></ol>
 		
@@ -102,15 +102,15 @@
 		
 		<p>作为Windows/Mac/Linux下强大的文本编辑器，st提供了对Markdown语言的支持。通过设置可实现markdown预览和转换功能。而本文介绍的<code>Markdown Preview</code>支持Mathjax语法和目录自动生成。(Windows下）</p>
 <a id="more"></a>
-<h2 id="安装Package-Control"><a href="#安装Package-Control" class="headerlink" title="安装Package Control"></a>安装Package Control</h2><p>安装包控制扩展可以方便地为st添加拓展。<br>打开st，按下组合键`Control + ``，出现控制台，输入<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">import urllib2,os; pf=&apos;Package Control.sublime-package&apos;; ipp = sublime.installed_packages_path(); os.makedirs( ipp ) if not os.path.exists(ipp) else None; urllib2.install_opener( urllib2.build_opener( urllib2.ProxyHandler( ))); open( os.path.join( ipp, pf), &apos;wb&apos; ).write( urllib2.urlopen( &apos;http://sublime.wbond.net/&apos; +pf.replace( &apos; &apos;,&apos;%20&apos; )).read()); print( &apos;Please restart Sublime Text to finish installation&apos;)</span><br></pre></td></tr></table></figure></p>
+<h2 id="安装Package-Control"><a href="#安装Package-Control" class="headerlink" title="安装Package Control"></a>安装Package Control</h2><p>安装包控制扩展可以方便地为st添加拓展。<br>打开st，按下组合键`Control + ``，出现控制台，输入<br><figure class="highlight moonscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> urllib2,<span class="built_in">os</span>; pf=<span class="string">'Package Control.sublime-package'</span>; ipp = sublime.installed_packages_path(); <span class="built_in">os</span>.makedirs( ipp ) <span class="keyword">if</span> <span class="keyword">not</span> <span class="built_in">os</span>.path.exists(ipp) <span class="keyword">else</span> None; urllib2.install_opener( urllib2.build_opener( urllib2.ProxyHandler( ))); open( <span class="built_in">os</span>.path.join( ipp, pf), <span class="string">'wb'</span> ).write( urllib2.urlopen( <span class="string">'http://sublime.wbond.net/'</span> +pf.replace( <span class="string">' '</span>,<span class="string">'%20'</span> )).read()); <span class="built_in">print</span>( <span class="string">'Please restart Sublime Text to finish installation'</span>)</span><br></pre></td></tr></table></figure></p>
 <p>当看到代码最后一行提示的时候说明安装成功，此时重启st，可在<code>Preferences -&gt; Package Settings</code>看到<code>Package Control</code>。</p>
 <h2 id="安装markdown-preview"><a href="#安装markdown-preview" class="headerlink" title="安装markdown preview"></a>安装markdown preview</h2><p>按下键<code>Ctrl+Shift+p</code>调出命令面板，找到<code>Package Control: install Pakage</code>这一项。搜索markdown preview，点击安装。</p>
 <h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><p>Markdown Preview较常用的功能是<code>preview in browser</code>和<code>Export HTML in Sublime Text</code>，前者可以在浏览器看到预览效果，后者可将markdown保存为html文件。</p>
 <p><code>preview in browser</code>据称是实时的，但是实践上还是需要在st保存，然后浏览器刷新才能看到新的效果，好在markdown写得多的话也不需要每敲一行看一次效果。</p>
-<h2 id="快捷键"><a href="#快捷键" class="headerlink" title="快捷键"></a>快捷键</h2><p>st支持自定义快捷键，<code>markdown preview</code>默认没有快捷键，我们可以自己为<code>preview in browser</code>设置快捷键。方法是在<code>Preferences -&gt; Key Bindings User</code>打开的文件的中括号中添加以下代码(可在Key Bindings Default找到格式)：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123; &quot;keys&quot;: [&quot;alt+m&quot;], &quot;command&quot;: &quot;markdown_preview&quot;, &quot;args&quot;: &#123; &quot;target&quot;: &quot;browser&quot;&#125; &#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="快捷键"><a href="#快捷键" class="headerlink" title="快捷键"></a>快捷键</h2><p>st支持自定义快捷键，<code>markdown preview</code>默认没有快捷键，我们可以自己为<code>preview in browser</code>设置快捷键。方法是在<code>Preferences -&gt; Key Bindings User</code>打开的文件的中括号中添加以下代码(可在Key Bindings Default找到格式)：<br><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123; <span class="attr">"keys"</span>: [<span class="string">"alt+m"</span>], <span class="attr">"command"</span>: <span class="string">"markdown_preview"</span>, <span class="attr">"args"</span>: &#123; <span class="attr">"target"</span>: <span class="string">"browser"</span>&#125; &#125;</span><br></pre></td></tr></table></figure></p>
 <p>“alt+m”可设置为自己喜欢的按键。</p>
-<h2 id="设置语法高亮和mathjax支持"><a href="#设置语法高亮和mathjax支持" class="headerlink" title="设置语法高亮和mathjax支持"></a>设置语法高亮和mathjax支持</h2><p>在<code>Preferences -&gt;Package Settings-&gt;Markdown Preview-&gt;Setting Default</code>中的第31行和36行找到<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line">       Enable or not mathjax support.</span><br><span class="line">    */</span><br><span class="line">    &quot;enable_mathjax&quot;: false,</span><br><span class="line"></span><br><span class="line">    /*</span><br><span class="line">        Enable or not highlight.js support for syntax highlighting.</span><br><span class="line">    */</span><br><span class="line">    &quot;enable_highlight&quot;: false,</span><br></pre></td></tr></table></figure></p>
-<p>将 两个false改为true即可。<br>语法高亮跟编辑器的主题有关，可以在<code>Preferences -&gt;Color Scheme</code>找自己喜欢的主题。<br>关于目录生成，只要文章是按照markdown语法写作的。在需要生成目录的地方写<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[TOC]</span><br></pre></td></tr></table></figure></p>
+<h2 id="设置语法高亮和mathjax支持"><a href="#设置语法高亮和mathjax支持" class="headerlink" title="设置语法高亮和mathjax支持"></a>设置语法高亮和mathjax支持</h2><p>在<code>Preferences -&gt;Package Settings-&gt;Markdown Preview-&gt;Setting Default</code>中的第31行和36行找到<br><figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line">       Enable <span class="keyword">or</span> <span class="keyword">not</span> mathjax support.</span><br><span class="line">    */</span><br><span class="line">    <span class="string">"enable_mathjax"</span>: <span class="literal">false</span>,</span><br><span class="line"></span><br><span class="line">    /*</span><br><span class="line">        Enable <span class="keyword">or</span> <span class="keyword">not</span> highlight.js support <span class="keyword">for</span> syntax highlighting.</span><br><span class="line">    */</span><br><span class="line">    <span class="string">"enable_highlight"</span>: <span class="literal">false</span>,</span><br></pre></td></tr></table></figure></p>
+<p>将 两个false改为true即可。<br>语法高亮跟编辑器的主题有关，可以在<code>Preferences -&gt;Color Scheme</code>找自己喜欢的主题。<br>关于目录生成，只要文章是按照markdown语法写作的。在需要生成目录的地方写<br><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[TOC]</span><br></pre></td></tr></table></figure></p>
 <p>即可。</p>
 <h2 id="打印成pdf"><a href="#打印成pdf" class="headerlink" title="打印成pdf"></a>打印成pdf</h2><p>将markdown转换为pdf应该有很多种方法的。我没有再折腾，直接用谷歌浏览器虚拟打印功能生成。<br>利用<code>Markdown Preview</code>的<code>Preview in Browser</code>功能可以在浏览器上看到htm效果。在页面<code>右键-&gt;打印-&gt;另存为pdf-&gt;调节页边距</code>即可将pdf文件下载下来。</p>
   
@@ -171,22 +171,22 @@
 </section>
 
 </div>  
-      <div class="openaside"><a class="navbutton" href="#" title="Show Sidebar"></a></div>
+      <div class="openaside"><a class="navbutton" href="#" title="顯示側邊欄"></a></div>
 
   <div id="toc" class="toc-aside">
-  <strong class="toc-title">Contents</strong>
+  <strong class="toc-title">文章目錄</strong>
  
  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#安装Package-Control"><span class="toc-number">1.</span> <span class="toc-text">安装Package Control</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装markdown-preview"><span class="toc-number">2.</span> <span class="toc-text">安装markdown preview</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用"><span class="toc-number">3.</span> <span class="toc-text">使用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#快捷键"><span class="toc-number">4.</span> <span class="toc-text">快捷键</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#设置语法高亮和mathjax支持"><span class="toc-number">5.</span> <span class="toc-text">设置语法高亮和mathjax支持</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#打印成pdf"><span class="toc-number">6.</span> <span class="toc-text">打印成pdf</span></a></li></ol>
  
   </div>
 
 <div id="asidepart">
-<div class="closeaside"><a class="closebutton" href="#" title="Hide Sidebar"></a></div>
+<div class="closeaside"><a class="closebutton" href="#" title="隱藏側邊欄"></a></div>
 <aside class="clearfix">
 
   
 <div class="categorieslist">
-	<p class="asidetitle">Categories</p>
+	<p class="asidetitle">分類</p>
 		<ul>
 		
 		  
@@ -214,7 +214,7 @@
 		  
 		
 		  
-			<li><a href="/categories/工具/" title="工具">工具<sup>7</sup></a></li>
+			<li><a href="/categories/工具/" title="工具">工具<sup>8</sup></a></li>
 		  
 		
 		  
@@ -226,11 +226,22 @@
 
 
   
+<div class="tagslist">
+	<p class="asidetitle">標簽</p>
+		<ul class="clearfix">
+		
+			
+				<li><a href="/tags/git/" title="git">git<sup>1</sup></a></li>
+			
+		
+		</ul>
+</div>
+
 
   
   <div class="archiveslist">
-    <p class="asidetitle"><a href="/archives">Archives</a></p>
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">December 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">September 2015</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">August 2015</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04/">April 2014</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/03/">March 2014</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/01/">January 2014</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/12/">December 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/11/">November 2013</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/08/">August 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/07/">July 2013</a><span class="archive-list-count">3</span></li></ul>
+    <p class="asidetitle"><a href="/archives">歸檔</a></p>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">December 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">September 2015</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">August 2015</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04/">April 2014</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/03/">March 2014</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/01/">January 2014</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/12/">December 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/11/">November 2013</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/08/">August 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/07/">July 2013</a><span class="archive-list-count">3</span></li></ul>
   </div>
 
 
@@ -468,7 +479,7 @@ ga('send', 'pageview');
 <!-- Totop Begin -->
 
 	<div id="totop">
-	<a title="Back to Top"><img src="/img/scrollup.png"/></a>
+	<a title="返回頂部"><img src="/img/scrollup.png"/></a>
 	</div>
 	<script src="/js/totop.js"></script>
 

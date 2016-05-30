@@ -60,7 +60,7 @@
 				<h1 class="site-name"><a href="/" title="郭润民的博客">郭润民的博客</a></h1>
 				<h2 class="blog-motto"></h2>
 			</div>
-			<div class="navbar"><a class="navbutton navmobile" href="#" title="Menu">
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜單">
 			</a></div>
 			<nav class="animated">
 				<ul>
@@ -76,7 +76,7 @@
  					
 					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
 						<label>Search</label>
-						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="Search" />
+						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="搜索" />
 						<input type="hidden" name="q" value="site:blog.grunmin.org">
 					</form>
 					
@@ -99,14 +99,14 @@
 		<a href="/about" title="郭润民" target="_blank" itemprop="author">郭润民</a>
 		
   <p class="article-time">
-    <time datetime="2015-08-26T13:06:54.000Z" itemprop="datePublished"> Published 2015-08-26</time>
+    <time datetime="2015-08-26T13:06:54.000Z" itemprop="datePublished"> 發表於 2015-08-26</time>
     
   </p>
 </header>
 	<div class="article-content">
 		
 		<div id="toc" class="toc-article">
-			<strong class="toc-title">Contents</strong>
+			<strong class="toc-title">文章目錄</strong>
 		
 			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#前期工作"><span class="toc-number">1.</span> <span class="toc-text">前期工作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#环境安装"><span class="toc-number">2.</span> <span class="toc-text">环境安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git和ssh配置"><span class="toc-number">3.</span> <span class="toc-text">git和ssh配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#gitcafe的操作"><span class="toc-number">4.</span> <span class="toc-text">gitcafe的操作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#github的操作"><span class="toc-number">5.</span> <span class="toc-text">github的操作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#问题记录"><span class="toc-number">6.</span> <span class="toc-text">问题记录</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#推送github失败"><span class="toc-number">6.0.1.</span> <span class="toc-text">推送github失败</span></a></li></ol></li></ol></li></ol>
 		
@@ -118,26 +118,26 @@
 </ul>
 <h2 id="环境安装"><a href="#环境安装" class="headerlink" title="环境安装"></a>环境安装</h2><p>可在git bash里执行<code>mkdir blog</code>或者直接图形界面创建博客文件存放目录<br>进入该目录,按住shift键点击鼠标右键,在当前位置打开命令窗口,或者鼠标右键后选择git bash here,输入下列命令</p>
 <a id="more"></a>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br><span class="line">npm install -g hexo --save</span><br></pre></td></tr></table></figure>
-<p>在这一步后,当前目录即有了hexo环境,继续操作<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo init</span><br><span class="line">npm install</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm <span class="keyword">install</span> -g hexo-cli</span><br><span class="line">npm <span class="keyword">install</span> -g hexo <span class="comment">--save</span></span><br></pre></td></tr></table></figure>
+<p>在这一步后,当前目录即有了hexo环境,继续操作<br><figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo init</span><br><span class="line">npm <span class="keyword">install</span></span><br></pre></td></tr></table></figure></p>
 <p>这里安装大量hexo插件,请不要忘记执行上面第二个命令,否则后续很多操作不能执行</p>
 <h2 id="git和ssh配置"><a href="#git和ssh配置" class="headerlink" title="git和ssh配置"></a>git和ssh配置</h2><p>在git bash 窗口执行</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -C &apos;EMAIL&apos; -t rsa</span><br></pre></td></tr></table></figure>
-<p>将上面EMAIL替换为你的git想要使用的邮件地址.<br>测试key可以使用<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight mathematica"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -<span class="keyword">C</span> <span class="string">'EMAIL'</span> -t rsa</span><br></pre></td></tr></table></figure>
+<p>将上面EMAIL替换为你的git想要使用的邮件地址.<br>测试key可以使用<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">ssh</span> <span class="selector-tag">-T</span> <span class="selector-tag">git</span>@<span class="keyword">github</span>.<span class="keyword">com</span></span><br></pre></td></tr></table></figure></p>
 <p>如果正常，将返回</p>
 <blockquote>
 <p>Hi grunmin! You’ve successfully authenticated, but GitHub does not provide shell access.</p>
 </blockquote>
 <p>继续执行下列命令定义git变量</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name &apos;USERNAME&apos; </span><br><span class="line">git config --global user.email &apos;EMAIL&apos;</span><br></pre></td></tr></table></figure>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user<span class="selector-class">.name</span> <span class="string">'USERNAME'</span> </span><br><span class="line">git config --global user<span class="selector-class">.email</span> <span class="string">'EMAIL'</span></span><br></pre></td></tr></table></figure>
 <p>同样的,EMAIL和USERNAME需要自己替换</p>
-<h2 id="gitcafe的操作"><a href="#gitcafe的操作" class="headerlink" title="gitcafe的操作"></a>gitcafe的操作</h2><p>注册gitcafe账户后,添加ssh-key. key的位置在C盘用户目录下的.ssh目录,通常是<strong>id_rsa.pub</strong><br>新建gitcafe账户同名项目,根据创建成功页面的提示,因为本地已有git仓库.直接在blog目录<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">git init</span><br><span class="line">git remote add origin &apos;GITREPO&apos;</span><br><span class="line">git add .</span><br><span class="line">git commit -m &apos;init&apos;</span><br><span class="line">git push -u origin master</span><br></pre></td></tr></table></figure></p>
-<p><em>GITREPO</em>为项目git仓库地址,形如<strong>git@gitcafe.com:grunmin/grunmin.git</strong><br>在本地创建gitcafe-pages分支,并切换到该分支,推送<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git checkout -b gitcafe-pages</span><br><span class="line">git push origin gitcafe-pages</span><br></pre></td></tr></table></figure></p>
-<p>再次切换回master分支<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout master</span><br></pre></td></tr></table></figure></p>
-<p>修改blog目录下的<strong>_config.yml</strong>文件,找到这行代码,修改如下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: </span><br><span class="line">    gitcafe: git@gitcafe.com:grunmin/grunmin.git</span><br></pre></td></tr></table></figure></p>
-<p>hexo生成静态文件,推送到gitcafe中<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo d -g</span><br></pre></td></tr></table></figure></p>
+<h2 id="gitcafe的操作"><a href="#gitcafe的操作" class="headerlink" title="gitcafe的操作"></a>gitcafe的操作</h2><p>注册gitcafe账户后,添加ssh-key. key的位置在C盘用户目录下的.ssh目录,通常是<strong>id_rsa.pub</strong><br>新建gitcafe账户同名项目,根据创建成功页面的提示,因为本地已有git仓库.直接在blog目录<br><figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">git init</span><br><span class="line">git remote <span class="built_in">add</span> origin <span class="string">'GITREPO'</span></span><br><span class="line">git <span class="built_in">add</span> .</span><br><span class="line">git commit -m <span class="string">'init'</span></span><br><span class="line">git push -u origin master</span><br></pre></td></tr></table></figure></p>
+<p><em>GITREPO</em>为项目git仓库地址,形如<strong>git@gitcafe.com:grunmin/grunmin.git</strong><br>在本地创建gitcafe-pages分支,并切换到该分支,推送<br><figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">git</span> checkout -<span class="keyword">b </span>gitcafe-pages</span><br><span class="line"><span class="symbol">git</span> <span class="keyword">push </span>origin gitcafe-pages</span><br></pre></td></tr></table></figure></p>
+<p>再次切换回master分支<br><figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout <span class="literal">master</span></span><br></pre></td></tr></table></figure></p>
+<p>修改blog目录下的<strong>_config.yml</strong>文件,找到这行代码,修改如下<br><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">deploy</span>:</span><br><span class="line">  <span class="attribute">type</span>: git</span><br><span class="line">  <span class="attribute">repo</span>: </span><br><span class="line">    <span class="attribute">gitcafe</span>: git<span class="variable">@gitcafe</span>.<span class="attribute">com</span>:grunmin/grunmin.git</span><br></pre></td></tr></table></figure></p>
+<p>hexo生成静态文件,推送到gitcafe中<br><figure class="highlight cos"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo <span class="keyword">d</span> -g</span><br></pre></td></tr></table></figure></p>
 <p>成功后即可访问USERNAME.gitcafe.io<br>之后所有的操作都在master分支里</p>
-<h2 id="github的操作"><a href="#github的操作" class="headerlink" title="github的操作"></a>github的操作</h2><p>tonggitcafe,注册账户,添加ssh-key<br>新建一个仓库,命名为USERNAME.github.com<br>在_config.yml文件刚才修改的地方,再次添加一行记录,结果如下:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: </span><br><span class="line">    gitcafe: git@gitcafe.com:grunmin/grunmin.git</span><br><span class="line">    github: git@github.com:grunmin/grunmin.github.com.git</span><br></pre></td></tr></table></figure></p>
+<h2 id="github的操作"><a href="#github的操作" class="headerlink" title="github的操作"></a>github的操作</h2><p>tonggitcafe,注册账户,添加ssh-key<br>新建一个仓库,命名为USERNAME.github.com<br>在_config.yml文件刚才修改的地方,再次添加一行记录,结果如下:<br><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">deploy</span>:</span><br><span class="line">  <span class="attribute">type</span>: git</span><br><span class="line">  <span class="attribute">repo</span>: </span><br><span class="line">    <span class="attribute">gitcafe</span>: git<span class="variable">@gitcafe</span>.<span class="attribute">com</span>:grunmin/grunmin.git</span><br><span class="line">    <span class="attribute">github</span>: git<span class="variable">@github</span>.<span class="attribute">com</span>:grunmin/grunmin.github.com.git</span><br></pre></td></tr></table></figure></p>
 <p>再次执行hexo的推送命令即可将博文内容推送到两个仓库中.<br>现在即可访问USERNAME.github.io</p>
 <h2 id="问题记录"><a href="#问题记录" class="headerlink" title="问题记录"></a>问题记录</h2><h4 id="推送github失败"><a href="#推送github失败" class="headerlink" title="推送github失败"></a>推送github失败</h4><p>在成功推送gitcafe后,我尝试了上述的双线推送,每次推送github都失败.提示消息是请检查是否有权限进行操作.<br><del>我的解决办法是新建一个仓库,然后关联到本地仓库,进行导入key之后的第一次push操作.操作成功之后,再次执行hexo推送,这次成功了.<br>具体原因不明,猜测与github的安全机制有关.</del></p>
 <p>首先执行<code>ssh -T git@github.com</code>测试key是否正常，如果是从其他地方拷贝到key，注意存放的位置和文件名，注意公钥对加密内容是不换行的。<br>deploy之前请先修改文件并generate，否则github.com可能会拒绝连接</p>
@@ -199,22 +199,22 @@
 </section>
 
 </div>  
-      <div class="openaside"><a class="navbutton" href="#" title="Show Sidebar"></a></div>
+      <div class="openaside"><a class="navbutton" href="#" title="顯示側邊欄"></a></div>
 
   <div id="toc" class="toc-aside">
-  <strong class="toc-title">Contents</strong>
+  <strong class="toc-title">文章目錄</strong>
  
  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#前期工作"><span class="toc-number">1.</span> <span class="toc-text">前期工作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#环境安装"><span class="toc-number">2.</span> <span class="toc-text">环境安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git和ssh配置"><span class="toc-number">3.</span> <span class="toc-text">git和ssh配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#gitcafe的操作"><span class="toc-number">4.</span> <span class="toc-text">gitcafe的操作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#github的操作"><span class="toc-number">5.</span> <span class="toc-text">github的操作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#问题记录"><span class="toc-number">6.</span> <span class="toc-text">问题记录</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#推送github失败"><span class="toc-number">6.0.1.</span> <span class="toc-text">推送github失败</span></a></li></ol></li></ol></li></ol>
  
   </div>
 
 <div id="asidepart">
-<div class="closeaside"><a class="closebutton" href="#" title="Hide Sidebar"></a></div>
+<div class="closeaside"><a class="closebutton" href="#" title="隱藏側邊欄"></a></div>
 <aside class="clearfix">
 
   
 <div class="categorieslist">
-	<p class="asidetitle">Categories</p>
+	<p class="asidetitle">分類</p>
 		<ul>
 		
 		  
@@ -242,7 +242,7 @@
 		  
 		
 		  
-			<li><a href="/categories/工具/" title="工具">工具<sup>7</sup></a></li>
+			<li><a href="/categories/工具/" title="工具">工具<sup>8</sup></a></li>
 		  
 		
 		  
@@ -254,11 +254,22 @@
 
 
   
+<div class="tagslist">
+	<p class="asidetitle">標簽</p>
+		<ul class="clearfix">
+		
+			
+				<li><a href="/tags/git/" title="git">git<sup>1</sup></a></li>
+			
+		
+		</ul>
+</div>
+
 
   
   <div class="archiveslist">
-    <p class="asidetitle"><a href="/archives">Archives</a></p>
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">December 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">September 2015</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">August 2015</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04/">April 2014</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/03/">March 2014</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/01/">January 2014</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/12/">December 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/11/">November 2013</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/08/">August 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/07/">July 2013</a><span class="archive-list-count">3</span></li></ul>
+    <p class="asidetitle"><a href="/archives">歸檔</a></p>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">December 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">September 2015</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">August 2015</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04/">April 2014</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/03/">March 2014</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/01/">January 2014</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/12/">December 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/11/">November 2013</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/08/">August 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/07/">July 2013</a><span class="archive-list-count">3</span></li></ul>
   </div>
 
 
@@ -496,7 +507,7 @@ ga('send', 'pageview');
 <!-- Totop Begin -->
 
 	<div id="totop">
-	<a title="Back to Top"><img src="/img/scrollup.png"/></a>
+	<a title="返回頂部"><img src="/img/scrollup.png"/></a>
 	</div>
 	<script src="/js/totop.js"></script>
 

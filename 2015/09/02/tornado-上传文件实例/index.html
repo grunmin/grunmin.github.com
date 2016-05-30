@@ -51,7 +51,7 @@
 				<h1 class="site-name"><a href="/" title="郭润民的博客">郭润民的博客</a></h1>
 				<h2 class="blog-motto"></h2>
 			</div>
-			<div class="navbar"><a class="navbutton navmobile" href="#" title="Menu">
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜單">
 			</a></div>
 			<nav class="animated">
 				<ul>
@@ -67,7 +67,7 @@
  					
 					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
 						<label>Search</label>
-						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="Search" />
+						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="搜索" />
 						<input type="hidden" name="q" value="site:blog.grunmin.org">
 					</form>
 					
@@ -90,14 +90,14 @@
 		<a href="/about" title="郭润民" target="_blank" itemprop="author">郭润民</a>
 		
   <p class="article-time">
-    <time datetime="2015-09-02T11:00:53.000Z" itemprop="datePublished"> Published 2015-09-02</time>
+    <time datetime="2015-09-02T11:00:53.000Z" itemprop="datePublished"> 發表於 2015-09-02</time>
     
   </p>
 </header>
 	<div class="article-content">
 		
 		<div id="toc" class="toc-article">
-			<strong class="toc-title">Contents</strong>
+			<strong class="toc-title">文章目錄</strong>
 		
 			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#html代码"><span class="toc-number">1.</span> <span class="toc-text">html代码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#javascript代码"><span class="toc-number">2.</span> <span class="toc-text">javascript代码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#python代码"><span class="toc-number">3.</span> <span class="toc-text">python代码</span></a></li></ol>
 		
@@ -106,9 +106,9 @@
 		<p>使用tornado编程,有上传文件需求时一般有两种方案,一种是tornado自带的方法,一种是借助反向代理,比如nginx的上传模块.在业务需求简单的时候,用tornado自带的方法不失为一种高效的选择.</p>
 <p>下面的代码实现了简单的文件上传,将上传的文件保存在配置文件规定的静态文件存放目录的子目录img下.</p>
 <a id="more"></a>
-<h2 id="html代码"><a href="#html代码" class="headerlink" title="html代码"></a>html代码</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;form class=&quot;form-post&quot; action=&quot;/&quot;&gt;</span><br><span class="line">    &#123;% raw xsrf_form_html() %&#125;</span><br><span class="line">    &lt;input type=&quot;text&quot; name=&quot;Key&quot;&gt;</span><br><span class="line">    &lt;input type=&quot;file&quot; name=&quot;logo&quot;&gt;</span><br><span class="line">    &lt;button type=&quot;submit&quot;&gt;提交&lt;/button&gt;</span><br><span class="line">&lt;/form&gt;</span><br></pre></td></tr></table></figure>
-<h2 id="javascript代码"><a href="#javascript代码" class="headerlink" title="javascript代码"></a>javascript代码</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">$(document).delegate(&apos;.form-post&apos;,&apos;submit&apos;,  function() &#123;</span><br><span class="line">    var form = $(this);</span><br><span class="line">    var formData = new FormData(this)</span><br><span class="line">    $.ajax(&#123;</span><br><span class="line">        type : &apos;POST&apos;,</span><br><span class="line">        url : form.attr(&apos;action&apos;),</span><br><span class="line">        data : formData,</span><br><span class="line">        dataType : &apos;json&apos;,</span><br><span class="line">        cache : false,</span><br><span class="line">        contentType: false,</span><br><span class="line">        processData: false,</span><br><span class="line">        success : function(result) &#123;</span><br><span class="line">            //成功后执行的代码</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">    return false</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<h2 id="python代码"><a href="#python代码" class="headerlink" title="python代码"></a>python代码</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">import os</span><br><span class="line">import uuid</span><br><span class="line">//略去控制器声明等,只显示关键代码</span><br><span class="line">path = os.path.join(super(ThisHandler, self).settings[&apos;static_path&apos;],&apos;img&apos;)</span><br><span class="line">abspath = os.path.abspath(path)</span><br><span class="line">logo = self.request.files[&apos;logo&apos;][0]</span><br><span class="line">filename = logo[&apos;filename&apos;]</span><br><span class="line">&apos;&apos;&apos;</span><br><span class="line">filename = filename.split(&apos;.&apos;).pop(0)+&apos;_&apos;+str(uuid.uuid4())+&apos;.&apos;+filename.split(&apos;.&apos;).pop()</span><br><span class="line">将文件名进行唯一重命名处理,防止覆盖</span><br><span class="line">&apos;&apos;&apos;</span><br><span class="line">filebody = logo[&apos;body&apos;]</span><br><span class="line">savename = os.path.join(abspath,filename)</span><br><span class="line">with open(savename,&apos;wb&apos;) as f:</span><br><span class="line">    f.write(filebody)</span><br></pre></td></tr></table></figure>
+<h2 id="html代码"><a href="#html代码" class="headerlink" title="html代码"></a>html代码</h2><figure class="highlight django"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">form</span> <span class="attr">class</span>=<span class="string">"form-post"</span> <span class="attr">action</span>=<span class="string">"/"</span>&gt;</span></span><br><span class="line">    </span><span class="template-tag">&#123;% <span class="name">raw</span> xsrf_form_html() %&#125;</span><span class="xml"></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"Key"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"file"</span> <span class="attr">name</span>=<span class="string">"logo"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">"submit"</span>&gt;</span>提交<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+<h2 id="javascript代码"><a href="#javascript代码" class="headerlink" title="javascript代码"></a>javascript代码</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="built_in">document</span>).delegate(<span class="string">'.form-post'</span>,<span class="string">'submit'</span>,  <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> form = $(<span class="keyword">this</span>);</span><br><span class="line">    <span class="keyword">var</span> formData = <span class="keyword">new</span> FormData(<span class="keyword">this</span>)</span><br><span class="line">    $.ajax(&#123;</span><br><span class="line">        type : <span class="string">'POST'</span>,</span><br><span class="line">        url : form.attr(<span class="string">'action'</span>),</span><br><span class="line">        data : formData,</span><br><span class="line">        dataType : <span class="string">'json'</span>,</span><br><span class="line">        cache : <span class="literal">false</span>,</span><br><span class="line">        contentType: <span class="literal">false</span>,</span><br><span class="line">        processData: <span class="literal">false</span>,</span><br><span class="line">        success : <span class="function"><span class="keyword">function</span>(<span class="params">result</span>) </span>&#123;</span><br><span class="line">            <span class="comment">//成功后执行的代码</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h2 id="python代码"><a href="#python代码" class="headerlink" title="python代码"></a>python代码</h2><figure class="highlight asciidoc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">import os</span><br><span class="line">import uuid</span><br><span class="line"><span class="comment">//略去控制器声明等,只显示关键代码</span></span><br><span class="line">path = os.path.join(super(ThisHandler, self).settings[<span class="emphasis">'static_path'</span>],<span class="emphasis">'img'</span>)</span><br><span class="line">abspath = os.path.abspath(path)</span><br><span class="line">logo = self.request.files[<span class="emphasis">'logo'</span>][0]</span><br><span class="line">filename = logo[<span class="emphasis">'filename'</span>]</span><br><span class="line">'''</span><br><span class="line">filename = filename.split(<span class="emphasis">'.'</span>).pop(0)<span class="code">+'_'+</span>str(uuid.uuid4())<span class="code">+'.'+</span>filename.split(<span class="emphasis">'.'</span>).pop()</span><br><span class="line">将文件名进行唯一重命名处理,防止覆盖</span><br><span class="line">'''</span><br><span class="line">filebody = logo[<span class="emphasis">'body'</span>]</span><br><span class="line">savename = os.path.join(abspath,filename)</span><br><span class="line">with open(savename,<span class="emphasis">'wb'</span>) as f:</span><br><span class="line"><span class="code">    f.write(filebody)</span></span><br></pre></td></tr></table></figure>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -167,22 +167,22 @@
 </section>
 
 </div>  
-      <div class="openaside"><a class="navbutton" href="#" title="Show Sidebar"></a></div>
+      <div class="openaside"><a class="navbutton" href="#" title="顯示側邊欄"></a></div>
 
   <div id="toc" class="toc-aside">
-  <strong class="toc-title">Contents</strong>
+  <strong class="toc-title">文章目錄</strong>
  
  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#html代码"><span class="toc-number">1.</span> <span class="toc-text">html代码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#javascript代码"><span class="toc-number">2.</span> <span class="toc-text">javascript代码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#python代码"><span class="toc-number">3.</span> <span class="toc-text">python代码</span></a></li></ol>
  
   </div>
 
 <div id="asidepart">
-<div class="closeaside"><a class="closebutton" href="#" title="Hide Sidebar"></a></div>
+<div class="closeaside"><a class="closebutton" href="#" title="隱藏側邊欄"></a></div>
 <aside class="clearfix">
 
   
 <div class="categorieslist">
-	<p class="asidetitle">Categories</p>
+	<p class="asidetitle">分類</p>
 		<ul>
 		
 		  
@@ -210,7 +210,7 @@
 		  
 		
 		  
-			<li><a href="/categories/工具/" title="工具">工具<sup>7</sup></a></li>
+			<li><a href="/categories/工具/" title="工具">工具<sup>8</sup></a></li>
 		  
 		
 		  
@@ -222,11 +222,22 @@
 
 
   
+<div class="tagslist">
+	<p class="asidetitle">標簽</p>
+		<ul class="clearfix">
+		
+			
+				<li><a href="/tags/git/" title="git">git<sup>1</sup></a></li>
+			
+		
+		</ul>
+</div>
+
 
   
   <div class="archiveslist">
-    <p class="asidetitle"><a href="/archives">Archives</a></p>
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">December 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">September 2015</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">August 2015</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04/">April 2014</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/03/">March 2014</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/01/">January 2014</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/12/">December 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/11/">November 2013</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/08/">August 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/07/">July 2013</a><span class="archive-list-count">3</span></li></ul>
+    <p class="asidetitle"><a href="/archives">歸檔</a></p>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">December 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">September 2015</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">August 2015</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04/">April 2014</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/03/">March 2014</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/01/">January 2014</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/12/">December 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/11/">November 2013</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/08/">August 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/07/">July 2013</a><span class="archive-list-count">3</span></li></ul>
   </div>
 
 
@@ -464,7 +475,7 @@ ga('send', 'pageview');
 <!-- Totop Begin -->
 
 	<div id="totop">
-	<a title="Back to Top"><img src="/img/scrollup.png"/></a>
+	<a title="返回頂部"><img src="/img/scrollup.png"/></a>
 	</div>
 	<script src="/js/totop.js"></script>
 

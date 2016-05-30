@@ -48,7 +48,7 @@
 				<h1 class="site-name"><a href="/" title="郭润民的博客">郭润民的博客</a></h1>
 				<h2 class="blog-motto"></h2>
 			</div>
-			<div class="navbar"><a class="navbutton navmobile" href="#" title="Menu">
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜單">
 			</a></div>
 			<nav class="animated">
 				<ul>
@@ -64,7 +64,7 @@
  					
 					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
 						<label>Search</label>
-						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="Search" />
+						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="搜索" />
 						<input type="hidden" name="q" value="site:blog.grunmin.org">
 					</form>
 					
@@ -87,14 +87,14 @@
 		<a href="/about" title="郭润民" target="_blank" itemprop="author">郭润民</a>
 		
   <p class="article-time">
-    <time datetime="2014-04-08T08:06:00.000Z" itemprop="datePublished"> Published 2014-04-08</time>
+    <time datetime="2014-04-08T08:06:00.000Z" itemprop="datePublished"> 發表於 2014-04-08</time>
     
   </p>
 </header>
 	<div class="article-content">
 		
 		<div id="toc" class="toc-article">
-			<strong class="toc-title">Contents</strong>
+			<strong class="toc-title">文章目錄</strong>
 		
 			
 		
@@ -105,7 +105,7 @@
 <p>我们报名四六级的流程是这样的。学生网上报名，教务员将报名学生的信息发给学委，学委按照名单收取报名费。汇总到我这里的时候，总是发现报名的人数和缴费的人数有偏差。因为名单里只有学生专业信息（信工和光信），而学委收取费用是按行政班（5个班）划分的。因此不知道是哪个班的同学没有交齐。</p>
 <p>解决问题的关键就是找出缺漏的班级。毕竟让每班学委从几百个人名中挑出自己班的同学工作量太大，而且不能避免再次缺漏的情况。上一次我要求各班学委提供缴费名单给我，我一个一个核对。这一次没有人发给我，因此不能故技重施，得采用新的方法。</p>
 <p>首先搜索excel有没有提供某些映射功能。这个功能具体是这样的：表A里学号和班级有对应关系，让表B里的学号根据表A的对应关系自动显示对应的班级。表A即学生信息表，表B即报名表。最后统计出现的各班级的次数，与各班缴费的人数对比得出结果。但是我没有找到可以实现的方法。</p>
-<p>既然excel不能提供这样的功能，我只能通过数据库的方法。步骤是这样：将全级学生信息导入数据库，然后将报名表另存为csv文件，通过php的fgetcsv()函数获取报名表信息，递归查询输出各班出现的次数，最后汇总。<br>关键代码（用了CI框架）：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">function count()&#123;</span><br><span class="line">        $flag = array();   //班级标志，初始化</span><br><span class="line">        for($i = 0;$i &lt; 5;$i++)&#123; </span><br><span class="line">        $flag[$i] = 0;</span><br><span class="line">        &#125;</span><br><span class="line">        $file = fopen(base_url(&apos;static/english.csv&apos;),&apos;r&apos;);</span><br><span class="line">        while ($data = fgetcsv($file)) &#123;  //每次读取CSV里面的一行内容   </span><br><span class="line">            //print($data[0]);</span><br><span class="line">            $this-&gt;db-&gt;where(&quot;num&quot;,$data[0]);</span><br><span class="line">            $this-&gt;db-&gt;select(&quot;*&quot;);</span><br><span class="line">            $query=$this-&gt;db-&gt;get(&quot;xuewei&quot;);</span><br><span class="line">            $str = $query-&gt;result_array();</span><br><span class="line">            if (!empty($str)) &#123;</span><br><span class="line">                </span><br><span class="line">                $toflag = $str[0][&apos;class&apos;] - 1;</span><br><span class="line">                $flag[$toflag]++；</span><br><span class="line">            &#125;</span><br><span class="line">            else &#123;</span><br><span class="line">                print(&quot;Can not find this gay: &quot;.$data[0].&quot;&lt;br /&gt;&quot;);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        print_r($flag);</span><br><span class="line">        fclose($file);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
+<p>既然excel不能提供这样的功能，我只能通过数据库的方法。步骤是这样：将全级学生信息导入数据库，然后将报名表另存为csv文件，通过php的fgetcsv()函数获取报名表信息，递归查询输出各班出现的次数，最后汇总。<br>关键代码（用了CI框架）：<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">count</span><span class="params">()</span></span>&#123;</span><br><span class="line">        $flag = <span class="keyword">array</span>();   <span class="comment">//班级标志，初始化</span></span><br><span class="line">        <span class="keyword">for</span>($i = <span class="number">0</span>;$i &lt; <span class="number">5</span>;$i++)&#123; </span><br><span class="line">        $flag[$i] = <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        $file = fopen(base_url(<span class="string">'static/english.csv'</span>),<span class="string">'r'</span>);</span><br><span class="line">        <span class="keyword">while</span> ($data = fgetcsv($file)) &#123;  <span class="comment">//每次读取CSV里面的一行内容   </span></span><br><span class="line">            <span class="comment">//print($data[0]);</span></span><br><span class="line">            <span class="keyword">$this</span>-&gt;db-&gt;where(<span class="string">"num"</span>,$data[<span class="number">0</span>]);</span><br><span class="line">            <span class="keyword">$this</span>-&gt;db-&gt;select(<span class="string">"*"</span>);</span><br><span class="line">            $query=<span class="keyword">$this</span>-&gt;db-&gt;get(<span class="string">"xuewei"</span>);</span><br><span class="line">            $str = $query-&gt;result_array();</span><br><span class="line">            <span class="keyword">if</span> (!<span class="keyword">empty</span>($str)) &#123;</span><br><span class="line">                </span><br><span class="line">                $toflag = $str[<span class="number">0</span>][<span class="string">'class'</span>] - <span class="number">1</span>;</span><br><span class="line">                $flag[$toflag]++；</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="keyword">print</span>(<span class="string">"Can not find this gay: "</span>.$data[<span class="number">0</span>].<span class="string">"&lt;br /&gt;"</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        print_r($flag);</span><br><span class="line">        fclose($file);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
 <p>从输出就可以知道各班缴费的人数了。然后将这个班的报名同学信息通过类似的方法提取出来，与缴费名单比较，就可以知道是哪位同学没有缴费。</p>
   
 	</div>
@@ -165,22 +165,22 @@
 </section>
 
 </div>  
-      <div class="openaside"><a class="navbutton" href="#" title="Show Sidebar"></a></div>
+      <div class="openaside"><a class="navbutton" href="#" title="顯示側邊欄"></a></div>
 
   <div id="toc" class="toc-aside">
-  <strong class="toc-title">Contents</strong>
+  <strong class="toc-title">文章目錄</strong>
  
  
  
   </div>
 
 <div id="asidepart">
-<div class="closeaside"><a class="closebutton" href="#" title="Hide Sidebar"></a></div>
+<div class="closeaside"><a class="closebutton" href="#" title="隱藏側邊欄"></a></div>
 <aside class="clearfix">
 
   
 <div class="categorieslist">
-	<p class="asidetitle">Categories</p>
+	<p class="asidetitle">分類</p>
 		<ul>
 		
 		  
@@ -208,7 +208,7 @@
 		  
 		
 		  
-			<li><a href="/categories/工具/" title="工具">工具<sup>7</sup></a></li>
+			<li><a href="/categories/工具/" title="工具">工具<sup>8</sup></a></li>
 		  
 		
 		  
@@ -220,11 +220,22 @@
 
 
   
+<div class="tagslist">
+	<p class="asidetitle">標簽</p>
+		<ul class="clearfix">
+		
+			
+				<li><a href="/tags/git/" title="git">git<sup>1</sup></a></li>
+			
+		
+		</ul>
+</div>
+
 
   
   <div class="archiveslist">
-    <p class="asidetitle"><a href="/archives">Archives</a></p>
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">December 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">September 2015</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">August 2015</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04/">April 2014</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/03/">March 2014</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/01/">January 2014</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/12/">December 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/11/">November 2013</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/08/">August 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/07/">July 2013</a><span class="archive-list-count">3</span></li></ul>
+    <p class="asidetitle"><a href="/archives">歸檔</a></p>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">December 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">September 2015</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">August 2015</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04/">April 2014</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/03/">March 2014</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/01/">January 2014</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/12/">December 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/11/">November 2013</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/08/">August 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/07/">July 2013</a><span class="archive-list-count">3</span></li></ul>
   </div>
 
 
@@ -462,7 +473,7 @@ ga('send', 'pageview');
 <!-- Totop Begin -->
 
 	<div id="totop">
-	<a title="Back to Top"><img src="/img/scrollup.png"/></a>
+	<a title="返回頂部"><img src="/img/scrollup.png"/></a>
 	</div>
 	<script src="/js/totop.js"></script>
 

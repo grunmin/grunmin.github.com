@@ -50,7 +50,7 @@
 				<h1 class="site-name"><a href="/" title="郭润民的博客">郭润民的博客</a></h1>
 				<h2 class="blog-motto"></h2>
 			</div>
-			<div class="navbar"><a class="navbutton navmobile" href="#" title="Menu">
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜單">
 			</a></div>
 			<nav class="animated">
 				<ul>
@@ -66,7 +66,7 @@
  					
 					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
 						<label>Search</label>
-						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="Search" />
+						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="搜索" />
 						<input type="hidden" name="q" value="site:blog.grunmin.org">
 					</form>
 					
@@ -89,14 +89,14 @@
 		<a href="/about" title="郭润民" target="_blank" itemprop="author">郭润民</a>
 		
   <p class="article-time">
-    <time datetime="2015-09-02T10:28:49.000Z" itemprop="datePublished"> Published 2015-09-02</time>
+    <time datetime="2015-09-02T10:28:49.000Z" itemprop="datePublished"> 發表於 2015-09-02</time>
     
   </p>
 </header>
 	<div class="article-content">
 		
 		<div id="toc" class="toc-article">
-			<strong class="toc-title">Contents</strong>
+			<strong class="toc-title">文章目錄</strong>
 		
 			
 		
@@ -106,8 +106,8 @@
 <a id="more"></a>
 <p>一般而言,用ajax方式提交表单,我们通常用<code>form.serialize()</code>获取表单的字段和值,但是表单中的<em>type=”file”</em>的input元素是无法通过这个方式获取到的.如果存在表单和文件需要一起提交的场景,我们必须使用另一种方式获取表单的内容.</p>
 <p>一开始我尝试用js遍历表单中的input元素,获取包括了file在内的所有input元素的值,组合成字典传递给ajax.当然,结果是后台程序只获取到了文件名而没有文件内容.</p>
-<p>解决的办法是用html5提供的API<code>FormData</code>对象.这个API可以获取到包含file的输入类型.具体的用法如下(使用jquery):<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">$(document).delegate(&apos;.form-put&apos;,&apos;submit&apos;,  function() &#123;</span><br><span class="line">    form = $(this);</span><br><span class="line">    $.ajax(&#123;</span><br><span class="line">        type : &apos;PUT&apos;,</span><br><span class="line">        url : form.attr(&apos;action&apos;),</span><br><span class="line">        data : new FormData(this),</span><br><span class="line">        dataType : &apos;json&apos;,</span><br><span class="line">        cache : false,</span><br><span class="line">        contentType: false,</span><br><span class="line">        processData: false,</span><br><span class="line">        beforeSend: function(jqXHR, settings)&#123;</span><br><span class="line">            var xsrf = getCookie(&apos;_xsrf&apos;);</span><br><span class="line">            jqXHR.setRequestHeader(&apos;X-Xsrftoken&apos;, xsrf);</span><br><span class="line">        &#125;,</span><br><span class="line">        success : function(result) &#123;</span><br><span class="line">            if (result.error == 0) &#123;</span><br><span class="line">                window.location.href = result.msg;</span><br><span class="line">            &#125;</span><br><span class="line">            else if (result.error == 1) &#123;</span><br><span class="line">                notify(result.msg,&apos;warning&apos;);</span><br><span class="line">            &#125;</span><br><span class="line">            else if(result.error == 2)&#123;</span><br><span class="line">                notify(result.msg,&apos;danger&apos;);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">    return false;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
-<p>在ajax配置字典里,data字段是<strong>new FormData(this)</strong><br>需要注意的是,如果使用jquery下面两个字段是必须的,否则jquery文件执行会出错<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">contentType: false,</span><br><span class="line">processData: false,</span><br></pre></td></tr></table></figure></p>
+<p>解决的办法是用html5提供的API<code>FormData</code>对象.这个API可以获取到包含file的输入类型.具体的用法如下(使用jquery):<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="built_in">document</span>).delegate(<span class="string">'.form-put'</span>,<span class="string">'submit'</span>,  <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    form = $(<span class="keyword">this</span>);</span><br><span class="line">    $.ajax(&#123;</span><br><span class="line">        type : <span class="string">'PUT'</span>,</span><br><span class="line">        url : form.attr(<span class="string">'action'</span>),</span><br><span class="line">        data : <span class="keyword">new</span> FormData(<span class="keyword">this</span>),</span><br><span class="line">        dataType : <span class="string">'json'</span>,</span><br><span class="line">        cache : <span class="literal">false</span>,</span><br><span class="line">        contentType: <span class="literal">false</span>,</span><br><span class="line">        processData: <span class="literal">false</span>,</span><br><span class="line">        beforeSend: <span class="function"><span class="keyword">function</span>(<span class="params">jqXHR, settings</span>)</span>&#123;</span><br><span class="line">            <span class="keyword">var</span> xsrf = getCookie(<span class="string">'_xsrf'</span>);</span><br><span class="line">            jqXHR.setRequestHeader(<span class="string">'X-Xsrftoken'</span>, xsrf);</span><br><span class="line">        &#125;,</span><br><span class="line">        success : <span class="function"><span class="keyword">function</span>(<span class="params">result</span>) </span>&#123;</span><br><span class="line">            <span class="keyword">if</span> (result.error == <span class="number">0</span>) &#123;</span><br><span class="line">                <span class="built_in">window</span>.location.href = result.msg;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span> (result.error == <span class="number">1</span>) &#123;</span><br><span class="line">                notify(result.msg,<span class="string">'warning'</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(result.error == <span class="number">2</span>)&#123;</span><br><span class="line">                notify(result.msg,<span class="string">'danger'</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<p>在ajax配置字典里,data字段是<strong>new FormData(this)</strong><br>需要注意的是,如果使用jquery下面两个字段是必须的,否则jquery文件执行会出错<br><figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">contentType:</span> <span class="literal">false</span>,</span><br><span class="line"><span class="string">processData:</span> <span class="literal">false</span>,</span><br></pre></td></tr></table></figure></p>
 <p>提交的数据如下:<br><img src="/img/inputfile_ajax.png" alt=""></p>
   
 	</div>
@@ -167,22 +167,22 @@
 </section>
 
 </div>  
-      <div class="openaside"><a class="navbutton" href="#" title="Show Sidebar"></a></div>
+      <div class="openaside"><a class="navbutton" href="#" title="顯示側邊欄"></a></div>
 
   <div id="toc" class="toc-aside">
-  <strong class="toc-title">Contents</strong>
+  <strong class="toc-title">文章目錄</strong>
  
  
  
   </div>
 
 <div id="asidepart">
-<div class="closeaside"><a class="closebutton" href="#" title="Hide Sidebar"></a></div>
+<div class="closeaside"><a class="closebutton" href="#" title="隱藏側邊欄"></a></div>
 <aside class="clearfix">
 
   
 <div class="categorieslist">
-	<p class="asidetitle">Categories</p>
+	<p class="asidetitle">分類</p>
 		<ul>
 		
 		  
@@ -210,7 +210,7 @@
 		  
 		
 		  
-			<li><a href="/categories/工具/" title="工具">工具<sup>7</sup></a></li>
+			<li><a href="/categories/工具/" title="工具">工具<sup>8</sup></a></li>
 		  
 		
 		  
@@ -222,11 +222,22 @@
 
 
   
+<div class="tagslist">
+	<p class="asidetitle">標簽</p>
+		<ul class="clearfix">
+		
+			
+				<li><a href="/tags/git/" title="git">git<sup>1</sup></a></li>
+			
+		
+		</ul>
+</div>
+
 
   
   <div class="archiveslist">
-    <p class="asidetitle"><a href="/archives">Archives</a></p>
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">December 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">September 2015</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">August 2015</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04/">April 2014</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/03/">March 2014</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/01/">January 2014</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/12/">December 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/11/">November 2013</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/08/">August 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/07/">July 2013</a><span class="archive-list-count">3</span></li></ul>
+    <p class="asidetitle"><a href="/archives">歸檔</a></p>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">December 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">September 2015</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">August 2015</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04/">April 2014</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/03/">March 2014</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/01/">January 2014</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/12/">December 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/11/">November 2013</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/08/">August 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/07/">July 2013</a><span class="archive-list-count">3</span></li></ul>
   </div>
 
 
@@ -464,7 +475,7 @@ ga('send', 'pageview');
 <!-- Totop Begin -->
 
 	<div id="totop">
-	<a title="Back to Top"><img src="/img/scrollup.png"/></a>
+	<a title="返回頂部"><img src="/img/scrollup.png"/></a>
 	</div>
 	<script src="/js/totop.js"></script>
 

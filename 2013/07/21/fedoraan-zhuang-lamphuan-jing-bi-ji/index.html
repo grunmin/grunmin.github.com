@@ -48,7 +48,7 @@
 				<h1 class="site-name"><a href="/" title="郭润民的博客">郭润民的博客</a></h1>
 				<h2 class="blog-motto"></h2>
 			</div>
-			<div class="navbar"><a class="navbutton navmobile" href="#" title="Menu">
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜單">
 			</a></div>
 			<nav class="animated">
 				<ul>
@@ -64,7 +64,7 @@
  					
 					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
 						<label>Search</label>
-						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="Search" />
+						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="搜索" />
 						<input type="hidden" name="q" value="site:blog.grunmin.org">
 					</form>
 					
@@ -87,43 +87,43 @@
 		<a href="/about" title="郭润民" target="_blank" itemprop="author">郭润民</a>
 		
   <p class="article-time">
-    <time datetime="2013-07-21T03:20:00.000Z" itemprop="datePublished"> Published 2013-07-21</time>
+    <time datetime="2013-07-21T03:20:00.000Z" itemprop="datePublished"> 發表於 2013-07-21</time>
     
   </p>
 </header>
 	<div class="article-content">
 		
 		<div id="toc" class="toc-article">
-			<strong class="toc-title">Contents</strong>
+			<strong class="toc-title">文章目錄</strong>
 		
 			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#从软件包安装"><span class="toc-number">1.</span> <span class="toc-text">从软件包安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#源码包安装"><span class="toc-number">2.</span> <span class="toc-text">源码包安装</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#前期工作"><span class="toc-number">2.1.</span> <span class="toc-text">前期工作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装apache"><span class="toc-number">2.2.</span> <span class="toc-text">安装apache:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装mysql："><span class="toc-number">2.3.</span> <span class="toc-text">安装mysql：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装php"><span class="toc-number">2.4.</span> <span class="toc-text">安装php</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装phpMyAdmin"><span class="toc-number">2.5.</span> <span class="toc-text">安装phpMyAdmin:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q1"><span class="toc-number">2.6.</span> <span class="toc-text">Q1</span></a></li></ol></li></ol>
 		
 		</div>
 		
 		<p>在学习php编程的过程中，了解了lamp环境的重要性，因此尝试自行搭建。在这个过程中经历了很多困难，为了便于查阅和再次搭建，在此将过程都记录下来。有错漏或可以改进的地方，欢迎指出拨正。<br><a id="more"></a><br>此前都是用源码包安装，其实用rpm包安装省时省力。</p>
-<h2 id="从软件包安装"><a href="#从软件包安装" class="headerlink" title="从软件包安装"></a>从软件包安装</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># yum groupinstall &apos;web-server&apos; -y</span><br><span class="line"># yum install -y php-mysql php-gd libjpeg* php-imap php-ldap php-odbc php-pear php-xml php-xmlrpc php-mbstring php-mcrypt php-bcmath php-mhash libmcrypt pcre-devel libxml2-devel mysql-devel apr apr-devel apr-util apr-util-devel curl-devel libpng-devel mysql-server</span><br></pre></td></tr></table></figure>
-<h2 id="源码包安装"><a href="#源码包安装" class="headerlink" title="源码包安装"></a>源码包安装</h2><h3 id="前期工作"><a href="#前期工作" class="headerlink" title="前期工作"></a>前期工作</h3><p><strong>第1步</strong>： 在终端输入<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo yum update  # 更新系统</span><br></pre></td></tr></table></figure></p>
+<h2 id="从软件包安装"><a href="#从软件包安装" class="headerlink" title="从软件包安装"></a>从软件包安装</h2><figure class="highlight vala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"># yum groupinstall 'web-server' -y</span></span><br><span class="line"><span class="meta"># yum install -y php-mysql php-gd libjpeg* php-imap php-ldap php-odbc php-pear php-xml php-xmlrpc php-mbstring php-mcrypt php-bcmath php-mhash libmcrypt pcre-devel libxml2-devel mysql-devel apr apr-devel apr-util apr-util-devel curl-devel libpng-devel mysql-server</span></span><br></pre></td></tr></table></figure>
+<h2 id="源码包安装"><a href="#源码包安装" class="headerlink" title="源码包安装"></a>源码包安装</h2><h3 id="前期工作"><a href="#前期工作" class="headerlink" title="前期工作"></a>前期工作</h3><p><strong>第1步</strong>： 在终端输入<br><figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$ </span>sudo yum update  <span class="comment"># 更新系统</span></span><br></pre></td></tr></table></figure></p>
 <p><strong>第2步</strong>：下载apache,mysql,apr,apr-util,phpMyAdmin,php,pcre(非必需）安装包  </p>
-<p><strong>第3步</strong>：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo yum install gcc gcc-c++ libxml2 libxml2-devel pcre pcre-devel #安装依赖软件包</span><br></pre></td></tr></table></figure></p>
-<p><strong>第4步</strong>：tar -zxvf 解压apache,mysql,php,pcre 等压缩包， sudo mv 移动到/usr/local目录下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo cd /usr/local/pcre;./configure --prefix=/usr/local/pcre #安装pcre</span><br></pre></td></tr></table></figure></p>
+<p><strong>第3步</strong>：<br><figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo yum <span class="keyword">install</span> gcc gcc-c++ libxml2 libxml2-devel pcre pcre-devel <span class="comment">#安装依赖软件包</span></span><br></pre></td></tr></table></figure></p>
+<p><strong>第4步</strong>：tar -zxvf 解压apache,mysql,php,pcre 等压缩包， sudo mv 移动到/usr/local目录下<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo <span class="built_in">cd</span> /usr/<span class="built_in">local</span>/pcre;./configure --prefix=/usr/<span class="built_in">local</span>/pcre <span class="comment">#安装pcre</span></span><br></pre></td></tr></table></figure></p>
 <p>（非必需，如果安装apache时显示未安装pcre可按照此法安装）<br><strong>第5步</strong>： cd httpd/srclib/ 解压apr,apr-util 到目录下，修改文件名（不带版本号，如apr-util）</p>
-<h3 id="安装apache"><a href="#安装apache" class="headerlink" title="安装apache:"></a>安装apache:</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ cd /usr/local/httpd  # 进入安装目录  </span><br><span class="line">$ sudo ./configure --prefix=/usr/local/apache2 --enable-so --with-mpm=worker --with-pcre=/usr/local/pcre --with-included-apr # 配置（注意./configure的/前有个小点，若没有按照上文安装pcre，可去掉--with-pcre后面的路径）</span><br><span class="line">$ sudo make</span><br><span class="line">$ sudo make install</span><br><span class="line"> #(--prefix指定安装目录，配置文件在/usr/local/apache2/conf目录下，--enable-so启动加载共享模块的功能，--with-mpm=worker吿诉apache使用多线程化多处理模块worker.)</span><br></pre></td></tr></table></figure>
-<p><strong>启动apache</strong>:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo /usr/local/apache2/bin/httpd -k start | stop</span><br></pre></td></tr></table></figure></p>
-<p> 或<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo /usr/local/apache2/bin/apachectl start | stop</span><br></pre></td></tr></table></figure></p>
+<h3 id="安装apache"><a href="#安装apache" class="headerlink" title="安装apache:"></a>安装apache:</h3><figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$ </span>cd /usr/local/httpd  <span class="comment"># 进入安装目录  </span></span><br><span class="line"><span class="variable">$ </span>sudo ./configure --prefix=<span class="regexp">/usr/local</span><span class="regexp">/apache2 --enable-so --with-mpm=worker --with-pcre=/usr</span><span class="regexp">/local/pcre</span> --with-included-apr <span class="comment"># 配置（注意./configure的/前有个小点，若没有按照上文安装pcre，可去掉--with-pcre后面的路径）</span></span><br><span class="line"><span class="variable">$ </span>sudo make</span><br><span class="line"><span class="variable">$ </span>sudo make install</span><br><span class="line"> <span class="comment">#(--prefix指定安装目录，配置文件在/usr/local/apache2/conf目录下，--enable-so启动加载共享模块的功能，--with-mpm=worker吿诉apache使用多线程化多处理模块worker.)</span></span><br></pre></td></tr></table></figure>
+<p><strong>启动apache</strong>:<br><figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo /usr/<span class="built_in">local</span>/apache2/bin/httpd -k <span class="built_in">start</span> | <span class="built_in">stop</span></span><br></pre></td></tr></table></figure></p>
+<p> 或<br><figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo /usr/<span class="built_in">local</span>/apache2/bin/apachectl <span class="built_in">start</span> | <span class="built_in">stop</span></span><br></pre></td></tr></table></figure></p>
 <p>(可用ps -e | grep httpd 查看apache是否已开启）</p>
-<h3 id="安装mysql："><a href="#安装mysql：" class="headerlink" title="安装mysql："></a>安装mysql：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ cd /usr/local</span><br><span class="line">$ sudo ln -s /usr/local/mysql-××× mysql #链接源码到一个文件夹</span><br><span class="line">$ cd mysql</span><br><span class="line">$ scripts/mysql_install_db --user=[username]    #（username为自己的用户名，中括号不用打进去，下同）</span><br><span class="line">$ sudo chown -R root .     #（注意末尾有个小点）</span><br><span class="line">$ sudo chown -R [username] data</span><br><span class="line">$ sudo chgrp -R [username] .</span><br></pre></td></tr></table></figure>
-<p><strong>启动mysql</strong>:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo /usr/local/mysql/bin/mysqld_safe --user=[username] &amp;</span><br></pre></td></tr></table></figure></p>
-<p><strong>设置开机启动Mysql</strong>：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ sudo cp support-files/mysql.server /etc/init.d/[username]</span><br><span class="line">$ sudo cp support-files/mysqld_multi.server /etc/init.d/[username]</span><br><span class="line">$ sudo chmod +x /etc/init.d/[username]</span><br><span class="line">$ sudo chkconfig --add [username]</span><br></pre></td></tr></table></figure></p>
-<p><strong>测试</strong>：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ sudo /usr/local/mysql/bin/mysqladmin -u root -p version</span><br><span class="line">$ sudo /usr/local/mysql/bin/mysqlshow</span><br></pre></td></tr></table></figure></p>
-<p><strong>修改密码，删除匿名用户</strong>：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ sudo /usr/local/mysql/bin/mysqladmin -u root -p password [password]</span><br><span class="line">$ sudo /usr/local/mysql/bin/mysql -u root -p</span><br></pre></td></tr></table></figure></p>
-<p>[password]可以不输入，上面两个命令是修改密码用，此时进入mysql命令界面<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; delete from mysql.user where host=&apos;localhost&apos; and user=&apos;&apos;;</span><br><span class="line">mysql&gt; flush privileges;</span><br></pre></td></tr></table></figure></p>
-<h3 id="安装php"><a href="#安装php" class="headerlink" title="安装php"></a>安装php</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ cd /usr/local/php-5__</span><br><span class="line">$ sudo ./configure --prefix=/usr/local/php --with-apxs2=/usr/local/apache2/bin/apxs --with-mysql=/usr/local/mysql</span><br><span class="line">$ make</span><br><span class="line">$ sudo make install</span><br><span class="line">$ sudo cp /usr/local/php___/php.ini-__ /usr/local/php/lib/php.ini</span><br></pre></td></tr></table></figure>
-<p>修改httpd.conf 添加AddType application/x-httpd-php .php<br>在DirectoryIndex index.html 后加入index.php<br><strong>重启apache</strong>:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo /usr/local/apache2/bin/apachectl restart</span><br></pre></td></tr></table></figure></p>
-<h3 id="安装phpMyAdmin"><a href="#安装phpMyAdmin" class="headerlink" title="安装phpMyAdmin:"></a>安装phpMyAdmin:</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -zxvf phpMyAdmin___ -C /usr/local/apache2/htdocs</span><br></pre></td></tr></table></figure>
+<h3 id="安装mysql："><a href="#安装mysql：" class="headerlink" title="安装mysql："></a>安装mysql：</h3><figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$ </span>cd /usr/local</span><br><span class="line"><span class="variable">$ </span>sudo ln -s /usr/local/mysql-××× mysql <span class="comment">#链接源码到一个文件夹</span></span><br><span class="line"><span class="variable">$ </span>cd mysql</span><br><span class="line"><span class="variable">$ </span>scripts/mysql_install_db --user=[username]    <span class="comment">#（username为自己的用户名，中括号不用打进去，下同）</span></span><br><span class="line"><span class="variable">$ </span>sudo chown -R root .     <span class="comment">#（注意末尾有个小点）</span></span><br><span class="line"><span class="variable">$ </span>sudo chown -R [username] data</span><br><span class="line"><span class="variable">$ </span>sudo chgrp -R [username] .</span><br></pre></td></tr></table></figure>
+<p><strong>启动mysql</strong>:<br><figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo /usr/<span class="keyword">local</span>/mysql/bin/mysqld_safe <span class="comment">--user=[username] &amp;</span></span><br></pre></td></tr></table></figure></p>
+<p><strong>设置开机启动Mysql</strong>：<br><figure class="highlight gams"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">$</span> sudo cp support-<span class="keyword">files</span>/mysql.server /etc/init.d/[username]</span><br><span class="line"><span class="symbol">$</span> sudo cp support-<span class="keyword">files</span>/mysqld_multi.server /etc/init.d/[username]</span><br><span class="line"><span class="symbol">$</span> sudo chmod +x /etc/init.d/[username]</span><br><span class="line"><span class="symbol">$</span> sudo chkconfig --add [username]</span><br></pre></td></tr></table></figure></p>
+<p><strong>测试</strong>：<br><figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ sudo <span class="meta-keyword">/usr/</span>local<span class="meta-keyword">/mysql/</span>bin/mysqladmin -u root -p version</span><br><span class="line">$ sudo <span class="meta-keyword">/usr/</span>local<span class="meta-keyword">/mysql/</span>bin/mysqlshow</span><br></pre></td></tr></table></figure></p>
+<p><strong>修改密码，删除匿名用户</strong>：<br><figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ sudo <span class="meta-keyword">/usr/</span>local<span class="meta-keyword">/mysql/</span>bin/mysqladmin -u root -p password [password]</span><br><span class="line">$ sudo <span class="meta-keyword">/usr/</span>local<span class="meta-keyword">/mysql/</span>bin/mysql -u root -p</span><br></pre></td></tr></table></figure></p>
+<p>[password]可以不输入，上面两个命令是修改密码用，此时进入mysql命令界面<br><figure class="highlight livescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; <span class="keyword">delete</span> <span class="keyword">from</span> mysql.user where host=<span class="string">'localhost'</span> <span class="keyword">and</span> user=<span class="string">''</span>;</span><br><span class="line">mysql&gt; flush privileges;</span><br></pre></td></tr></table></figure></p>
+<h3 id="安装php"><a href="#安装php" class="headerlink" title="安装php"></a>安装php</h3><figure class="highlight crystal"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ cd /usr/local/php-<span class="number">5</span>__</span><br><span class="line">$ sudo ./configure --prefix=<span class="regexp">/usr/local</span><span class="regexp">/php --with-apxs2=/usr</span><span class="regexp">/local/apache</span>2/bin/apxs --<span class="keyword">with</span>-mysql=<span class="regexp">/usr/local</span><span class="regexp">/mysql</span><br><span class="line">$ make</span><br><span class="line">$ sudo make install</span><br><span class="line">$ sudo cp /usr</span><span class="regexp">/local/php</span>___/php.ini-__ /usr/local/php/<span class="class"><span class="keyword">lib</span>/<span class="title">php</span>.<span class="title">ini</span></span></span><br></pre></td></tr></table></figure>
+<p>修改httpd.conf 添加AddType application/x-httpd-php .php<br>在DirectoryIndex index.html 后加入index.php<br><strong>重启apache</strong>:<br><figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo <span class="meta-keyword">/usr/</span>local<span class="meta-keyword">/apache2/</span>bin/apachectl restart</span><br></pre></td></tr></table></figure></p>
+<h3 id="安装phpMyAdmin"><a href="#安装phpMyAdmin" class="headerlink" title="安装phpMyAdmin:"></a>安装phpMyAdmin:</h3><figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -zxvf phpMyAdmin___ -C <span class="meta-keyword">/usr/</span>local<span class="meta-keyword">/apache2/</span>htdocs</span><br></pre></td></tr></table></figure>
 <p>到此全部完成</p>
-<h3 id="Q1"><a href="#Q1" class="headerlink" title="Q1"></a>Q1</h3><p>如果测试mysql时没有显示版本信息等界面，而是显示Can’t connect to local MySQL server through socket ‘/tmp/mysql.sock’(2)则极有可能是mysql没有安装成功。解决办法是删除系统自带的mysql服务，<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ rpm -qa | grep mysql</span><br></pre></td></tr></table></figure></p>
-<p>若有输出结果，则直接用rpm -e删除之，再输入<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ chkconfig --list | grep -i mysql</span><br></pre></td></tr></table></figure></p>
-<p>检查mysql服务，有的话再删除之<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo chkconfig --del mysql</span><br></pre></td></tr></table></figure></p>
+<h3 id="Q1"><a href="#Q1" class="headerlink" title="Q1"></a>Q1</h3><p>如果测试mysql时没有显示版本信息等界面，而是显示Can’t connect to local MySQL server through socket ‘/tmp/mysql.sock’(2)则极有可能是mysql没有安装成功。解决办法是删除系统自带的mysql服务，<br><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ rpm -<span class="keyword">qa</span> | <span class="keyword">grep</span> mysql</span><br></pre></td></tr></table></figure></p>
+<p>若有输出结果，则直接用rpm -e删除之，再输入<br><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ chkconfig --<span class="keyword">list</span> | <span class="keyword">grep</span> -i mysql</span><br></pre></td></tr></table></figure></p>
+<p>检查mysql服务，有的话再删除之<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo chkconfig --<span class="selector-tag">del</span> mysql</span><br></pre></td></tr></table></figure></p>
 <p>然后按照安装mysql的步骤再安装一次即可。</p>
   
 	</div>
@@ -183,22 +183,22 @@
 </section>
 
 </div>  
-      <div class="openaside"><a class="navbutton" href="#" title="Show Sidebar"></a></div>
+      <div class="openaside"><a class="navbutton" href="#" title="顯示側邊欄"></a></div>
 
   <div id="toc" class="toc-aside">
-  <strong class="toc-title">Contents</strong>
+  <strong class="toc-title">文章目錄</strong>
  
  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#从软件包安装"><span class="toc-number">1.</span> <span class="toc-text">从软件包安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#源码包安装"><span class="toc-number">2.</span> <span class="toc-text">源码包安装</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#前期工作"><span class="toc-number">2.1.</span> <span class="toc-text">前期工作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装apache"><span class="toc-number">2.2.</span> <span class="toc-text">安装apache:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装mysql："><span class="toc-number">2.3.</span> <span class="toc-text">安装mysql：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装php"><span class="toc-number">2.4.</span> <span class="toc-text">安装php</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装phpMyAdmin"><span class="toc-number">2.5.</span> <span class="toc-text">安装phpMyAdmin:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Q1"><span class="toc-number">2.6.</span> <span class="toc-text">Q1</span></a></li></ol></li></ol>
  
   </div>
 
 <div id="asidepart">
-<div class="closeaside"><a class="closebutton" href="#" title="Hide Sidebar"></a></div>
+<div class="closeaside"><a class="closebutton" href="#" title="隱藏側邊欄"></a></div>
 <aside class="clearfix">
 
   
 <div class="categorieslist">
-	<p class="asidetitle">Categories</p>
+	<p class="asidetitle">分類</p>
 		<ul>
 		
 		  
@@ -226,7 +226,7 @@
 		  
 		
 		  
-			<li><a href="/categories/工具/" title="工具">工具<sup>7</sup></a></li>
+			<li><a href="/categories/工具/" title="工具">工具<sup>8</sup></a></li>
 		  
 		
 		  
@@ -238,11 +238,22 @@
 
 
   
+<div class="tagslist">
+	<p class="asidetitle">標簽</p>
+		<ul class="clearfix">
+		
+			
+				<li><a href="/tags/git/" title="git">git<sup>1</sup></a></li>
+			
+		
+		</ul>
+</div>
+
 
   
   <div class="archiveslist">
-    <p class="asidetitle"><a href="/archives">Archives</a></p>
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">December 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">September 2015</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">August 2015</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04/">April 2014</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/03/">March 2014</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/01/">January 2014</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/12/">December 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/11/">November 2013</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/08/">August 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/07/">July 2013</a><span class="archive-list-count">3</span></li></ul>
+    <p class="asidetitle"><a href="/archives">歸檔</a></p>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">December 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">September 2015</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">August 2015</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04/">April 2014</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/03/">March 2014</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/01/">January 2014</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/12/">December 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/11/">November 2013</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/08/">August 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/07/">July 2013</a><span class="archive-list-count">3</span></li></ul>
   </div>
 
 
@@ -480,7 +491,7 @@ ga('send', 'pageview');
 <!-- Totop Begin -->
 
 	<div id="totop">
-	<a title="Back to Top"><img src="/img/scrollup.png"/></a>
+	<a title="返回頂部"><img src="/img/scrollup.png"/></a>
 	</div>
 	<script src="/js/totop.js"></script>
 

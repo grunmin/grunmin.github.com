@@ -48,7 +48,7 @@
 				<h1 class="site-name"><a href="/" title="郭润民的博客">郭润民的博客</a></h1>
 				<h2 class="blog-motto"></h2>
 			</div>
-			<div class="navbar"><a class="navbutton navmobile" href="#" title="Menu">
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜單">
 			</a></div>
 			<nav class="animated">
 				<ul>
@@ -64,7 +64,7 @@
  					
 					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
 						<label>Search</label>
-						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="Search" />
+						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="搜索" />
 						<input type="hidden" name="q" value="site:blog.grunmin.org">
 					</form>
 					
@@ -87,14 +87,14 @@
 		<a href="/about" title="郭润民" target="_blank" itemprop="author">郭润民</a>
 		
   <p class="article-time">
-    <time datetime="2014-03-16T13:09:00.000Z" itemprop="datePublished"> Published 2014-03-16</time>
+    <time datetime="2014-03-16T13:09:00.000Z" itemprop="datePublished"> 發表於 2014-03-16</time>
     
   </p>
 </header>
 	<div class="article-content">
 		
 		<div id="toc" class="toc-article">
-			<strong class="toc-title">Contents</strong>
+			<strong class="toc-title">文章目錄</strong>
 		
 			<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#介绍"><span class="toc-number">1.</span> <span class="toc-text">介绍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装"><span class="toc-number">2.</span> <span class="toc-text">安装</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#安装命令行客户端"><span class="toc-number">2.0.1.</span> <span class="toc-text">安装命令行客户端</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#初始化设置"><span class="toc-number">2.0.2.</span> <span class="toc-text">初始化设置</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#使用gem更新rhc"><span class="toc-number">2.0.3.</span> <span class="toc-text">使用gem更新rhc</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#查看自己的app"><span class="toc-number">2.0.4.</span> <span class="toc-text">查看自己的app</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#创建应用"><span class="toc-number">3.</span> <span class="toc-text">创建应用</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#创建"><span class="toc-number">3.0.1.</span> <span class="toc-text">创建</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#添加mysql和phpmyadmin模块"><span class="toc-number">3.0.2.</span> <span class="toc-text">添加mysql和phpmyadmin模块</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#开始码字"><span class="toc-number">4.</span> <span class="toc-text">开始码字</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#访问"><span class="toc-number">5.</span> <span class="toc-text">访问</span></a></li></ol>
 		
@@ -107,30 +107,30 @@
 </blockquote>
 <p>简言之，就是一个面向开源开发人员开放的平台即服务(PaaS)。</p>
 <p>使用openshift首先需要一个账户，注册十分简单，不在此赘述。<br>配置自己的openshift可以通过几种方式，比如web端，命令行。web端适合刚刚接触的新手，建议新用户多点点链接，熟悉一下大体的使用方法和功能。当准备好创建应用时即往下看。本文是介绍命令行下的配置，毕竟修改代码什么的都需要在本地修改后再提交。而openshift的客户端就是基于命令行的。</p>
-<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><h5 id="安装命令行客户端"><a href="#安装命令行客户端" class="headerlink" title="安装命令行客户端"></a>安装命令行客户端</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo yum install rubygem-rhc -y</span><br></pre></td></tr></table></figure>
-<h5 id="初始化设置"><a href="#初始化设置" class="headerlink" title="初始化设置"></a>初始化设置</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo rhc setup</span><br></pre></td></tr></table></figure>
+<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><h5 id="安装命令行客户端"><a href="#安装命令行客户端" class="headerlink" title="安装命令行客户端"></a>安装命令行客户端</h5><figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo yum <span class="keyword">install</span> rubygem-rhc -y</span><br></pre></td></tr></table></figure>
+<h5 id="初始化设置"><a href="#初始化设置" class="headerlink" title="初始化设置"></a>初始化设置</h5><figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo rhc <span class="built_in">setup</span></span><br></pre></td></tr></table></figure>
 <p>此时需要输入帐号和密码，即为自己在openshift注册时的帐号。</p>
 <p>令人费解的是使用我的本地账户运行<code>rhc</code>显示找不到命令，切换为root运行也是如此。只能使用<code>sudo rhc</code>的方式，后面运行<code>git push</code>也是如此，必须是<code>sudo git push</code>。如果你知道原因，烦请不吝赐教。</p>
-<h5 id="使用gem更新rhc"><a href="#使用gem更新rhc" class="headerlink" title="使用gem更新rhc"></a>使用gem更新rhc</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo gem update rhc</span><br></pre></td></tr></table></figure>
-<p>然后看看自己的账户<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo rhc account</span><br></pre></td></tr></table></figure></p>
+<h5 id="使用gem更新rhc"><a href="#使用gem更新rhc" class="headerlink" title="使用gem更新rhc"></a>使用gem更新rhc</h5><figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">sudo</span> gem update rhc</span><br></pre></td></tr></table></figure>
+<p>然后看看自己的账户<br><figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">sudo</span> rhc account</span><br></pre></td></tr></table></figure></p>
 <p>在安装rhc的时候本地用户已和云端绑定，ssh公钥也导入了，因此之后的操作一般不需要再作验证。</p>
-<h5 id="查看自己的app"><a href="#查看自己的app" class="headerlink" title="查看自己的app"></a>查看自己的app</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo rhc apps</span><br></pre></td></tr></table></figure>
-<p>可以看到自己账户下有多少个app（免费账户最多3个），应用名，git仓库地址，主机地址，绑定的域名，以及模块，数据库版本，数据库用户和密码等等。比如我的wordpress（数据库账户和密码被我屏蔽）。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">blog @ http://blog-grunmin.rhcloud.com/ (uuid: 5325520fe0b8cd3a830009ff)</span><br><span class="line">------------------------------------------------------------------------</span><br><span class="line">  Domain:          grunmin</span><br><span class="line">  Created:         3:26 PM</span><br><span class="line">  Gears:           1 (defaults to small)</span><br><span class="line">  Git URL:         ssh://5325520fe0b8cd3a830009ff@blog-grunmin.rhcloud.com/~/git/blog.git/</span><br><span class="line">  Initial Git URL: https://github.com/openshift/wordpress-example.git</span><br><span class="line">  SSH:             5325520fe0b8cd3a830009ff@blog-grunmin.rhcloud.com</span><br><span class="line">  Deployment:      auto (on git push)</span><br><span class="line">  Aliases:         wp.guorunmin.cn</span><br><span class="line"></span><br><span class="line">  mysql-5.1 (MySQL 5.1)</span><br><span class="line">  ---------------------</span><br><span class="line">    Gears:          Located with php-5.3</span><br><span class="line">    Connection URL: mysql://$OPENSHIFT_MYSQL_DB_HOST:$OPENSHIFT_MYSQL_DB_PORT/</span><br><span class="line">    Database Name:  blog</span><br><span class="line">    Password:       ********</span><br><span class="line">    Username:       ******</span><br><span class="line"></span><br><span class="line">  php-5.3 (PHP 5.3)</span><br><span class="line">  -----------------</span><br><span class="line">    Gears: Located with mysql-5.1</span><br></pre></td></tr></table></figure></p>
-<h3 id="创建应用"><a href="#创建应用" class="headerlink" title="创建应用"></a>创建应用</h3><h5 id="创建"><a href="#创建" class="headerlink" title="创建"></a>创建</h5><p>看别人的东西干过瘾，不如自己创建一个，创建的方法也很简单，只需一个命令<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo rhc app create AppName</span><br></pre></td></tr></table></figure></p>
-<p>Openshift 支持Java，Ruby，Node.js，PHP，Perl和Python，在AppName 后面可以加其他参数，例如php应用是：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo rhc app create AppName php-5.4</span><br></pre></td></tr></table></figure></p>
+<h5 id="查看自己的app"><a href="#查看自己的app" class="headerlink" title="查看自己的app"></a>查看自己的app</h5><figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">sudo</span> rhc apps</span><br></pre></td></tr></table></figure>
+<p>可以看到自己账户下有多少个app（免费账户最多3个），应用名，git仓库地址，主机地址，绑定的域名，以及模块，数据库版本，数据库用户和密码等等。比如我的wordpress（数据库账户和密码被我屏蔽）。<br><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">blog @ <span class="attribute">http</span>:<span class="comment">//blog-grunmin.rhcloud.com/ (uuid: 5325520fe0b8cd3a830009ff)</span></span><br><span class="line">------------------------------------------------------------------------</span><br><span class="line">  <span class="attribute">Domain</span>:          grunmin</span><br><span class="line">  <span class="attribute">Created</span>:         <span class="number">3</span>:<span class="number">26</span> PM</span><br><span class="line">  <span class="attribute">Gears</span>:           <span class="number">1</span> (defaults to small)</span><br><span class="line">  Git <span class="attribute">URL</span>:         <span class="attribute">ssh</span>:<span class="comment">//5325520fe0b8cd3a830009ff@blog-grunmin.rhcloud.com/~/git/blog.git/</span></span><br><span class="line">  Initial Git <span class="attribute">URL</span>: <span class="attribute">https</span>:<span class="comment">//github.com/openshift/wordpress-example.git</span></span><br><span class="line">  <span class="attribute">SSH</span>:             <span class="number">5325520</span>fe0b8cd3a830009ff<span class="variable">@blog-grunmin</span>.rhcloud.com</span><br><span class="line">  <span class="attribute">Deployment</span>:      auto (on git push)</span><br><span class="line">  <span class="attribute">Aliases</span>:         wp.guorunmin.cn</span><br><span class="line"></span><br><span class="line">  mysql-<span class="number">5.1</span> (MySQL <span class="number">5.1</span>)</span><br><span class="line">  ---------------------</span><br><span class="line">    <span class="attribute">Gears</span>:          Located with php-<span class="number">5.3</span></span><br><span class="line">    Connection <span class="attribute">URL</span>: <span class="attribute">mysql</span>:<span class="comment">//$OPENSHIFT_MYSQL_DB_HOST:$OPENSHIFT_MYSQL_DB_PORT/</span></span><br><span class="line">    Database <span class="attribute">Name</span>:  blog</span><br><span class="line">    <span class="attribute">Password</span>:       ********</span><br><span class="line">    <span class="attribute">Username</span>:       ******</span><br><span class="line"></span><br><span class="line">  php-<span class="number">5.3</span> (PHP <span class="number">5.3</span>)</span><br><span class="line">  -----------------</span><br><span class="line">    <span class="attribute">Gears</span>: Located with mysql-<span class="number">5.1</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="创建应用"><a href="#创建应用" class="headerlink" title="创建应用"></a>创建应用</h3><h5 id="创建"><a href="#创建" class="headerlink" title="创建"></a>创建</h5><p>看别人的东西干过瘾，不如自己创建一个，创建的方法也很简单，只需一个命令<br><figure class="highlight gauss"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo rhc app <span class="keyword">create</span> AppName</span><br></pre></td></tr></table></figure></p>
+<p>Openshift 支持Java，Ruby，Node.js，PHP，Perl和Python，在AppName 后面可以加其他参数，例如php应用是：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">sudo</span> <span class="selector-tag">rhc</span> <span class="selector-tag">app</span> <span class="selector-tag">create</span> <span class="selector-tag">AppName</span> <span class="selector-tag">php-5</span><span class="selector-class">.4</span></span><br></pre></td></tr></table></figure></p>
 <p>有一种是diy模式，即自行搭建语言环境的，面对一台陌生的机器，我没有任何信心能完成这样的工作^_^。刚开始的时候，我找不到CI框架的环境（有ZF），所以选择新建空应用，以为我自己的代码可以在服务器上运行，想想还是比较天真哈哈哈<br>如果是安装环境了，改代码的之前需要将仓库克隆到本地。如果新建空应用，那么rhc会自动将仓库克隆下来。</p>
 <p>更多参数可以参见<a href="https://access.redhat.com/site/documentation/en-US/OpenShift_Online/2.0/html/User_Guide/Creating_an_Application5.html" target="_blank" rel="external">官方文档</a>，不用担心看不懂英文，我翻了一遍，文档大体都能看懂。</p>
-<h5 id="添加mysql和phpmyadmin模块"><a href="#添加mysql和phpmyadmin模块" class="headerlink" title="添加mysql和phpmyadmin模块"></a>添加mysql和phpmyadmin模块</h5><p>既然是php应用，mysql和phpmyadmin怎么能少呢！让我们添加一下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo rhc cartridge add mysql-5.1 -a AppName</span><br><span class="line">sudo rhc cartridge add phpmyadmin -a AppName</span><br></pre></td></tr></table></figure></p>
+<h5 id="添加mysql和phpmyadmin模块"><a href="#添加mysql和phpmyadmin模块" class="headerlink" title="添加mysql和phpmyadmin模块"></a>添加mysql和phpmyadmin模块</h5><p>既然是php应用，mysql和phpmyadmin怎么能少呢！让我们添加一下<br><figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo rhc cartridge <span class="built_in">add</span> mysql<span class="number">-5.1</span> -<span class="keyword">a</span> AppName</span><br><span class="line">sudo rhc cartridge <span class="built_in">add</span> phpmyadmin -<span class="keyword">a</span> AppName</span><br></pre></td></tr></table></figure></p>
 <p>此时新建的应用信息大概就是你看到的上面那个。建议保存一下有用的信息，比如phpmyadmin的地址，用户名和密码，尤其是使用web端创建的同学*_*</p>
 <p><em>安装wordpress后还需登陆网站添加安装配置信息</em></p>
-<p>如果要删除应用，执行<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo rhc app delete AppName</span><br></pre></td></tr></table></figure></p>
+<p>如果要删除应用，执行<br><figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo rhc app <span class="keyword">delete</span> AppName</span><br></pre></td></tr></table></figure></p>
 <h3 id="开始码字"><a href="#开始码字" class="headerlink" title="开始码字"></a>开始码字</h3><p>如果安装的是wordpress这些成熟的应用，因为它提供了管理界面，大概不用去修改代码。如果是自己开发的应用呢？Openshift支持git的方式修改云端上的代码。大体流程应该是这样：<br>克隆代码到本地-&gt;进入应用目录-&gt;进入代码目录-&gt;修改代码-&gt;git add,commit,push-&gt;服务器上的应用关闭-&gt;一系列编译布置-&gt;应用重启-&gt;完成</p>
-<p>克隆操作<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo rhc git-clone AppName</span><br></pre></td></tr></table></figure></p>
-<p>或者知道仓库地址，像这样<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo git clone ssh://53257e56e0b8cd671500019b@app-grunmin.rhcloud.com/~/git/app.git/</span><br></pre></td></tr></table></figure></p>
-<p>php应用根目录下默认有两个文件夹，.git和.openshift。（安装wordpress时候还有另外三个目录：libs,misc,php，但是我找不到wordpress的代码）.openshift目录的作用官网的说明挺详细，我只知道是存放git动作触发的脚本文件，没有深入研究。根目录下还有index.php文件，就是登陆AppName-AccountName.rhcloud.com时看到的页面。这样的设计应该很明朗了，我们直接将代码放在应用根目录下即可。或许你可以写个测试文件看看php的环境，比如”welcome.php”<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">         phpinfo();</span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure></p>
+<p>克隆操作<br><figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo rhc git-<span class="keyword">clone</span> <span class="title">AppName</span></span><br></pre></td></tr></table></figure></p>
+<p>或者知道仓库地址，像这样<br><figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo git <span class="keyword">clone</span> <span class="title">ssh</span>://<span class="number">53257</span>e56e0b8cd671500019b@app-grunmin.rhcloud.com/~/git/app.git/</span><br></pre></td></tr></table></figure></p>
+<p>php应用根目录下默认有两个文件夹，.git和.openshift。（安装wordpress时候还有另外三个目录：libs,misc,php，但是我找不到wordpress的代码）.openshift目录的作用官网的说明挺详细，我只知道是存放git动作触发的脚本文件，没有深入研究。根目录下还有index.php文件，就是登陆AppName-AccountName.rhcloud.com时看到的页面。这样的设计应该很明朗了，我们直接将代码放在应用根目录下即可。或许你可以写个测试文件看看php的环境，比如”welcome.php”<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="php"><span class="meta">&lt;?php</span></span><br><span class="line">         phpinfo();</span><br><span class="line"><span class="meta">?&gt;</span></span></span><br></pre></td></tr></table></figure></p>
 <p>另外我们可以ssh进去主机看看里面的文件。如果想了解的话还是自己找找资料吧，比如<a href="http://www.dashashi.com/index.php/2013/01/1435" target="_blank" rel="external">openshift用ssh登陆后的目录结构</a>。</p>
 <h3 id="访问"><a href="#访问" class="headerlink" title="访问"></a>访问</h3><p>虽说是否被墙是判断一个服务好坏的标准，不过眼看着这么好的服务被墙还是挺让人窝火。因此我也希望我们能够好好利用openshift，不要见缝插针，浪费资源。</p>
-<p>如果是博客，那么有一个自己的域名当然比较好。如果不是的话，为了避免被墙，建议也绑定一个，虽然不一定能起作用。绑定域名，也是一个命令搞定：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo rhc alias add AppName YourDomain</span><br></pre></td></tr></table></figure></p>
+<p>如果是博客，那么有一个自己的域名当然比较好。如果不是的话，为了避免被墙，建议也绑定一个，虽然不一定能起作用。绑定域名，也是一个命令搞定：<br><figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">sudo</span> rhc <span class="meta">alias</span> <span class="keyword">add </span>AppName YourDomain</span><br></pre></td></tr></table></figure></p>
 <p>当然，你需要在域名提供商那里添加一个CNAME记录，指向你的openshift域名。<br><em>因为缓存的原因，域名解析不会立刻生效。</em></p>
 <p>或者使用https的方式访问。</p>
 <p>其他跨栏的姿势很多，不赘述。</p>
@@ -194,22 +194,22 @@
 </section>
 
 </div>  
-      <div class="openaside"><a class="navbutton" href="#" title="Show Sidebar"></a></div>
+      <div class="openaside"><a class="navbutton" href="#" title="顯示側邊欄"></a></div>
 
   <div id="toc" class="toc-aside">
-  <strong class="toc-title">Contents</strong>
+  <strong class="toc-title">文章目錄</strong>
  
  <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#介绍"><span class="toc-number">1.</span> <span class="toc-text">介绍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装"><span class="toc-number">2.</span> <span class="toc-text">安装</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#安装命令行客户端"><span class="toc-number">2.0.1.</span> <span class="toc-text">安装命令行客户端</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#初始化设置"><span class="toc-number">2.0.2.</span> <span class="toc-text">初始化设置</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#使用gem更新rhc"><span class="toc-number">2.0.3.</span> <span class="toc-text">使用gem更新rhc</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#查看自己的app"><span class="toc-number">2.0.4.</span> <span class="toc-text">查看自己的app</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#创建应用"><span class="toc-number">3.</span> <span class="toc-text">创建应用</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#创建"><span class="toc-number">3.0.1.</span> <span class="toc-text">创建</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#添加mysql和phpmyadmin模块"><span class="toc-number">3.0.2.</span> <span class="toc-text">添加mysql和phpmyadmin模块</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#开始码字"><span class="toc-number">4.</span> <span class="toc-text">开始码字</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#访问"><span class="toc-number">5.</span> <span class="toc-text">访问</span></a></li></ol>
  
   </div>
 
 <div id="asidepart">
-<div class="closeaside"><a class="closebutton" href="#" title="Hide Sidebar"></a></div>
+<div class="closeaside"><a class="closebutton" href="#" title="隱藏側邊欄"></a></div>
 <aside class="clearfix">
 
   
 <div class="categorieslist">
-	<p class="asidetitle">Categories</p>
+	<p class="asidetitle">分類</p>
 		<ul>
 		
 		  
@@ -237,7 +237,7 @@
 		  
 		
 		  
-			<li><a href="/categories/工具/" title="工具">工具<sup>7</sup></a></li>
+			<li><a href="/categories/工具/" title="工具">工具<sup>8</sup></a></li>
 		  
 		
 		  
@@ -249,11 +249,22 @@
 
 
   
+<div class="tagslist">
+	<p class="asidetitle">標簽</p>
+		<ul class="clearfix">
+		
+			
+				<li><a href="/tags/git/" title="git">git<sup>1</sup></a></li>
+			
+		
+		</ul>
+</div>
+
 
   
   <div class="archiveslist">
-    <p class="asidetitle"><a href="/archives">Archives</a></p>
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">December 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">September 2015</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">August 2015</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04/">April 2014</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/03/">March 2014</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/01/">January 2014</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/12/">December 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/11/">November 2013</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/08/">August 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/07/">July 2013</a><span class="archive-list-count">3</span></li></ul>
+    <p class="asidetitle"><a href="/archives">歸檔</a></p>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">December 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">September 2015</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">August 2015</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04/">April 2014</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/03/">March 2014</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/01/">January 2014</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/12/">December 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/11/">November 2013</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/08/">August 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/07/">July 2013</a><span class="archive-list-count">3</span></li></ul>
   </div>
 
 
@@ -491,7 +502,7 @@ ga('send', 'pageview');
 <!-- Totop Begin -->
 
 	<div id="totop">
-	<a title="Back to Top"><img src="/img/scrollup.png"/></a>
+	<a title="返回頂部"><img src="/img/scrollup.png"/></a>
 	</div>
 	<script src="/js/totop.js"></script>
 
