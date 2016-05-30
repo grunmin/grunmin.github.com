@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>分享一个纯css实现的loading效果 | 郭润民的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="纯css动态效果,没有一行javascript代码哦
+来自codepen和thecodeplayer">
+<meta property="og:type" content="article">
+<meta property="og:title" content="分享一个纯css实现的loading效果">
+<meta property="og:url" content="http://blog.grunmin.org/2015/08/28/分享两个纯css实现的loading效果/index.html">
+<meta property="og:site_name" content="郭润民的博客">
+<meta property="og:description" content="纯css动态效果,没有一行javascript代码哦
+来自codepen和thecodeplayer">
+<meta property="og:image" content="http://blog.grunmin.org/img/20150828.gif">
+<meta property="og:updated_time" content="2015-09-11T12:02:22.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="分享一个纯css实现的loading效果">
+<meta name="twitter:description" content="纯css动态效果,没有一行javascript代码哦
+来自codepen和thecodeplayer">
+<meta name="twitter:image" content="http://blog.grunmin.org/img/20150828.gif">
+  
+    <link rel="alternate" href="/atom.xml" title="郭润民的博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">郭润民的博客</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://blog.grunmin.org"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-分享两个纯css实现的loading效果" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/08/28/分享两个纯css实现的loading效果/" class="article-date">
+  <time datetime="2015-08-28T12:41:23.000Z" itemprop="datePublished">2015-08-28</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/前端/">前端</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      分享一个纯css实现的loading效果
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>纯css动态效果,没有一行javascript代码哦</p>
+<p>来自<a href="http://codepen.io/malhadi/pen/WvmrRz" target="_blank" rel="external">codepen</a>和<a href="http://thecodeplayer.com/walkthrough/make-a-stopwatch-using-css3-without-images-or-javascript" target="_blank" rel="external">thecodeplayer</a></p>
+<a id="more"></a>
+<h2 id="大菊花-秒表代码"><a href="#大菊花-秒表代码" class="headerlink" title="大菊花+秒表代码"></a>大菊花+秒表代码</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;bg&quot;&gt;&lt;/div&gt;</span><br><span class="line"> &lt;div class=&quot;modal-loading&quot;&gt;</span><br><span class="line">    &lt;div class=&quot;small1&quot;&gt;</span><br><span class="line">      &lt;div class=&quot;small ball smallball1&quot;&gt;&lt;/div&gt;</span><br><span class="line">      &lt;div class=&quot;small ball smallball2&quot;&gt;&lt;/div&gt;</span><br><span class="line">      &lt;div class=&quot;small ball smallball3&quot;&gt;&lt;/div&gt;</span><br><span class="line">      &lt;div class=&quot;small ball smallball4&quot;&gt;&lt;/div&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">    &lt;div class=&quot;timer&quot;&gt;</span><br><span class="line">        &lt;div class=&quot;cell&quot;&gt;</span><br><span class="line">            &lt;div class=&quot;numbers tenminute movesix&quot;&gt;0 1 2 3 4 5 6&lt;/div&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">        &lt;div class=&quot;cell&quot;&gt;</span><br><span class="line">            &lt;div class=&quot;numbers minute moveten&quot;&gt;0 1 2 3 4 5 6 7 8 9&lt;/div&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">        &lt;div class=&quot;cell divider&quot;&gt;&lt;div class=&quot;numbers&quot;&gt;:&lt;/div&gt;&lt;/div&gt;</span><br><span class="line">        &lt;div class=&quot;cell&quot;&gt;</span><br><span class="line">            &lt;div class=&quot;numbers tensecond movesix&quot;&gt;0 1 2 3 4 5 6&lt;/div&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">        &lt;div class=&quot;cell&quot;&gt;</span><br><span class="line">            &lt;div class=&quot;numbers second moveten&quot;&gt;0 1 2 3 4 5 6 7 8 9&lt;/div&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">    &lt;div class=&quot;small2&quot;&gt;</span><br><span class="line">      &lt;div class=&quot;small ball smallball5&quot;&gt;&lt;/div&gt;</span><br><span class="line">      &lt;div class=&quot;small ball smallball6&quot;&gt;&lt;/div&gt;</span><br><span class="line">      &lt;div class=&quot;small ball smallball7&quot;&gt;&lt;/div&gt;</span><br><span class="line">      &lt;div class=&quot;small ball smallball8&quot;&gt;&lt;/div&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">    &lt;div class=&quot;bigcon&quot;&gt;</span><br><span class="line">      &lt;div class=&quot;big ball&quot;&gt;&lt;/div&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">    </span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br></pre></td><td class="code"><pre><span class="line">.modal-loading&#123;display:block;position:fixed;top:0%;background:#fff;z-index:2001;left:50%;opacity:0.7;top: 30vh;&#125;</span><br><span class="line">.bg&#123;display:block;position:fixed;width:100%;height:100%;background:#000;z-index:2000;top:0;left:0;opacity:0.7;&#125;</span><br><span class="line">.small2 &#123;</span><br><span class="line">  position: absolute;</span><br><span class="line">  height: 100px;</span><br><span class="line">  width: 100px;</span><br><span class="line">  background-color: transparent;</span><br><span class="line">  /*top: 30vh;*/</span><br><span class="line">  left: 50%;</span><br><span class="line">  transform: translate(-50%, -50%);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.small1 &#123;</span><br><span class="line">  position: absolute;</span><br><span class="line">  height: 100px;</span><br><span class="line">  width: 100px;</span><br><span class="line">  /*top: 30vh;*/</span><br><span class="line">  left: 50%;</span><br><span class="line">  transform-origin: center;</span><br><span class="line">  transform: translate(-50%, -50%) rotate(45deg);</span><br><span class="line">  background-color: transparent;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.bigcon &#123;</span><br><span class="line">  position: absolute;</span><br><span class="line">  height: 95px;</span><br><span class="line">  width: 95px;</span><br><span class="line">  /*top: 30vh;*/</span><br><span class="line">  left: 50%;</span><br><span class="line">  transform-origin: center;</span><br><span class="line">  transform: translate(-50%, -50%) rotate(-45deg);</span><br><span class="line">  background-color: transparent;</span><br><span class="line">  animation: bigcon 2s infinite linear;</span><br><span class="line">  animation-delay: 0.25s;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.ball &#123;</span><br><span class="line">  border-radius: 50%;</span><br><span class="line">  position: absolute;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.small &#123;</span><br><span class="line">  width: 22px;</span><br><span class="line">  height: 22px;</span><br><span class="line">  animation: small 2s infinite ease;</span><br><span class="line">  box-shadow: 0px 2px rgba(0,0,0,0.3);</span><br><span class="line">   background-color: #46b9ff;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.small:nth-child(1) &#123;</span><br><span class="line">  top: 0%;</span><br><span class="line">  left: 0%;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.small:nth-child(2) &#123;</span><br><span class="line">  top: 0%;</span><br><span class="line">  right: 0%;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.small:nth-child(3) &#123;</span><br><span class="line">  right: 0%;</span><br><span class="line">  bottom: 0%;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.small:nth-child(4) &#123;</span><br><span class="line">  bottom: 0%;</span><br><span class="line">  left: 0%;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.big &#123;</span><br><span class="line">  width: 20px;</span><br><span class="line">  height: 20px;</span><br><span class="line">  border-radius: 15px;</span><br><span class="line">  box-shadow:0px 0px 10px #54f7f8, 0px 0px 20px #54f7f8, 0px 0px 30px #54f7f8, 0px 0px 50px #54f7f8, 0px 0px 60px #54f7f8 ;</span><br><span class="line">  z-index: 1;</span><br><span class="line">  background-color: #54f7f8;</span><br><span class="line">  animation: bigball 1s infinite linear;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.smallball1&#123;</span><br><span class="line">  animation-delay: -1.75s;</span><br><span class="line">&#125;</span><br><span class="line">.smallball6&#123;</span><br><span class="line">  animation-delay: -1.5s;</span><br><span class="line">&#125;</span><br><span class="line">.smallball2&#123;</span><br><span class="line">  animation-delay: -1.25s;</span><br><span class="line">&#125;</span><br><span class="line">.smallball7&#123;</span><br><span class="line">  animation-delay: -1s;</span><br><span class="line">&#125;</span><br><span class="line">.smallball3&#123;</span><br><span class="line">  animation-delay: -0.75s;</span><br><span class="line">&#125;</span><br><span class="line">.smallball8&#123;</span><br><span class="line">  animation-delay: -0.5s;</span><br><span class="line">&#125;</span><br><span class="line">.smallball4&#123;</span><br><span class="line">  animation-delay: -0.25s;</span><br><span class="line">&#125;</span><br><span class="line">.smallball5&#123;</span><br><span class="line">  animation-delay: -0s;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@keyframes bigcon &#123;</span><br><span class="line">  0% &#123;</span><br><span class="line">    transform-origin: center;</span><br><span class="line">    transform: translate(-50%, -50%) rotate(45deg);</span><br><span class="line">  &#125;</span><br><span class="line">  100% &#123;</span><br><span class="line">    transform-origin: center;</span><br><span class="line">    transform: translate(-50%, -50%) rotate(405deg);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@keyframes small &#123;</span><br><span class="line">  0% &#123;</span><br><span class="line">    transform: scale(1);</span><br><span class="line">     background-color: #fff;</span><br><span class="line">  &#125;</span><br><span class="line">  10% &#123;</span><br><span class="line">    transform: scale(1.3);</span><br><span class="line">    background-color: #54f7f8;</span><br><span class="line">  &#125;</span><br><span class="line">  15% &#123;</span><br><span class="line">    transform: scale(1);</span><br><span class="line">  &#125;</span><br><span class="line">  25%&#123;</span><br><span class="line">transform: scale(1);</span><br><span class="line">     background-color: #fff;</span><br><span class="line">  &#125;</span><br><span class="line">  100%&#123;</span><br><span class="line">    transform: scale(1);</span><br><span class="line">     background-color: #fff;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.timer &#123;</span><br><span class="line">    position: absolute;</span><br><span class="line">    width: 100px;</span><br><span class="line">    margin-top:-20px;</span><br><span class="line">    margin-left: -30px;</span><br><span class="line">    transform-origin: center;</span><br><span class="line">    background-color: transparent;</span><br><span class="line">    padding: 0;</span><br><span class="line">    text-align: center;</span><br><span class="line">    overflow: hidden;</span><br><span class="line">    display: inline-block;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.cell &#123;</span><br><span class="line">    width: 0.60em;</span><br><span class="line">    height: 40px;</span><br><span class="line">    font-size: 20px;</span><br><span class="line">    overflow: hidden;</span><br><span class="line">    position: relative;</span><br><span class="line">    float: left;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.numbers &#123;</span><br><span class="line">    width: 0.6em;</span><br><span class="line">    line-height: 40px;</span><br><span class="line">    font-family: digital, arial, verdana;</span><br><span class="line">    text-align: center;</span><br><span class="line">    color: #fff;</span><br><span class="line">    </span><br><span class="line">    position: absolute;</span><br><span class="line">    top: 0;</span><br><span class="line">    left: 0;</span><br><span class="line">    </span><br><span class="line">    text-shadow: 0 0 5px rgba(255, 255, 255, 1);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.timer .numbers &#123;animation-play-state: running;&#125;</span><br><span class="line"></span><br><span class="line">.moveten &#123;</span><br><span class="line">    animation: moveten 1s steps(10, end) infinite;</span><br><span class="line">    animation-play-state: paused;</span><br><span class="line">&#125;</span><br><span class="line">.movesix &#123;</span><br><span class="line">    animation: movesix 1s steps(6, end) infinite;</span><br><span class="line">    animation-play-state: paused;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">.second &#123;animation-duration: 10s;&#125;</span><br><span class="line">.tensecond &#123;animation-duration: 60s;&#125; /*60 times .second*/</span><br><span class="line"></span><br><span class="line">.minute &#123;animation-duration: 600s;&#125; /*60 times .second*/</span><br><span class="line">.tenminute &#123;animation-duration: 3600s;&#125; /*60 times .minute*/</span><br><span class="line"></span><br><span class="line">@keyframes moveten &#123;</span><br><span class="line">    0% &#123;top: 0;&#125;</span><br><span class="line">    100% &#123;top: -400px;&#125; </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@keyframes movesix &#123;</span><br><span class="line">    0% &#123;top: 0;&#125;</span><br><span class="line">    100% &#123;top: -240px;&#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="效果"><a href="#效果" class="headerlink" title="效果"></a>效果</h2><p><img src="/img/20150828.gif" alt=""></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://blog.grunmin.org/2015/08/28/分享两个纯css实现的loading效果/" data-id="ciotjpq1g0021r4vr29vy6syx" class="article-share-link">Partager</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2015/09/02/用ajax提交包含-type-file-字段的表单/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Récent</strong>
+      <div class="article-nav-title">
+        
+          用ajax提交包含&#39;type=file&#39;字段的表单
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/08/28/Echarts使用记录-实例/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Ancien</strong>
+      <div class="article-nav-title">Echarts使用记录-实例</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Catégories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/">php</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/">python</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/windows/">windows</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/云/">云</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/">前端</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/工具/">工具</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/随笔/">随笔</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">December 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">September 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">August 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04/">April 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/03/">March 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/01/">January 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/12/">December 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/11/">November 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/08/">August 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/07/">July 2013</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Articles récents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2015/12/03/用highcharts实现数据统计中时间对比功能/">用highcharts实现数据统计中时间对比功能</a>
+          </li>
+        
+          <li>
+            <a href="/2015/09/16/windows和linux间共享互传文件/">windows和linux间共享互传文件</a>
+          </li>
+        
+          <li>
+            <a href="/2015/09/11/sublime-text高级应用-自定义快捷键/">sublime text高级应用-自定义快捷键</a>
+          </li>
+        
+          <li>
+            <a href="/2015/09/02/tornado-上传文件实例/">tornado 上传文件实例</a>
+          </li>
+        
+          <li>
+            <a href="/2015/09/02/用ajax提交包含-type-file-字段的表单/">用ajax提交包含&#39;type=file&#39;字段的表单</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2016 郭润民<br>
+      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

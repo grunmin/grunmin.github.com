@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Echarts使用记录-导入 | 郭润民的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Echarts是百度商业前端数据可视化团队开发 的商业级数据图表,提供折线,柱状,散点,K线,饼图,雷达,和铉,力导向分布图,地图,仪表盘等多种数据图表.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Echarts使用记录-导入">
+<meta property="og:url" content="http://blog.grunmin.org/2015/08/27/Echarts使用记录-导入/index.html">
+<meta property="og:site_name" content="郭润民的博客">
+<meta property="og:description" content="Echarts是百度商业前端数据可视化团队开发 的商业级数据图表,提供折线,柱状,散点,K线,饼图,雷达,和铉,力导向分布图,地图,仪表盘等多种数据图表.">
+<meta property="og:updated_time" content="2015-08-27T11:55:18.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Echarts使用记录-导入">
+<meta name="twitter:description" content="Echarts是百度商业前端数据可视化团队开发 的商业级数据图表,提供折线,柱状,散点,K线,饼图,雷达,和铉,力导向分布图,地图,仪表盘等多种数据图表.">
+  
+    <link rel="alternate" href="/atom.xml" title="郭润民的博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">郭润民的博客</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://blog.grunmin.org"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-Echarts使用记录-导入" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/08/27/Echarts使用记录-导入/" class="article-date">
+  <time datetime="2015-08-27T11:18:34.000Z" itemprop="datePublished">2015-08-27</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/前端/">前端</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Echarts使用记录-导入
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a href="http://echarts.baidu.com" target="_blank" rel="external">Echarts</a>是百度商业前端数据可视化团队开发 的商业级数据图表,提供折线,柱状,散点,K线,饼图,雷达,和铉,力导向分布图,地图,仪表盘等多种数据图表.</p>
+<a id="more"></a>
+<p>echarts主要文件在根目录下build/dit,包含一个echarts.js文件和chart文件夹.<br>echarts推荐模块化加载资源文件,需要用到什么图,再把对应的js文件require进来,实例:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">require.config(&#123;</span><br><span class="line">    paths: &#123;</span><br><span class="line">        echarts: &apos;/path/to/echarts/build/dist&apos;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line">require(</span><br><span class="line">    [</span><br><span class="line">        &apos;echarts&apos;,</span><br><span class="line">        &apos;echarts/chart/pie&apos;,</span><br><span class="line">        &apos;echarts/chart/line&apos;,</span><br><span class="line">    ],</span><br><span class="line">)</span><br></pre></td></tr></table></figure></p>
+<p>第一段指定资源文件存放目录,第二段中的文件都是相对这一路径的相对位置,是必需的.<br>第二段echarts指echarts.js文件,统一调配用.第二行开始根据需要加载.</p>
+<p>require之后,我们新建一个函数进行图表的配置,在这个函数中设置图表参数,元素初始化,动态数据生成等等.</p>
+<p>图表参数的设置类似这样,这里拿echarts官方文档的例子<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">var option = &#123;</span><br><span class="line">    legend: &#123;                                   // 图例配置</span><br><span class="line">        padding: 5,                             // 图例内边距，单位px，默认上下左右内边距为5</span><br><span class="line">        itemGap: 10,                            // Legend各个item之间的间隔，横向布局时为水平间隔，纵向布局时为纵向间隔</span><br><span class="line">        data: [&apos;ios&apos;, &apos;android&apos;]</span><br><span class="line">    &#125;,</span><br><span class="line">    tooltip: &#123;                                  // 气泡提示配置</span><br><span class="line">        trigger: &apos;item&apos;,                        // 触发类型，默认数据触发，可选为：&apos;axis&apos;</span><br><span class="line">    &#125;,</span><br><span class="line">    xAxis: [                                    // 直角坐标系中横轴数组</span><br><span class="line">        &#123;</span><br><span class="line">            type: &apos;category&apos;,                   // 坐标轴类型，横轴默认为类目轴，数值轴则参考yAxis说明</span><br><span class="line">            data: [&apos;Jan&apos;, &apos;Feb&apos;, &apos;Mar&apos;, &apos;Apr&apos;, &apos;May&apos;, &apos;Jun&apos;, &apos;Jul&apos;, &apos;Aug&apos;, &apos;Sep&apos;, &apos;Oct&apos;, &apos;Nov&apos;, &apos;Dec&apos;]</span><br><span class="line">        &#125;</span><br><span class="line">    ],</span><br><span class="line">    yAxis: [                                    // 直角坐标系中纵轴数组</span><br><span class="line">        &#123;</span><br><span class="line">            type: &apos;value&apos;,                      // 坐标轴类型，纵轴默认为数值轴，类目轴则参考xAxis说明</span><br><span class="line">            boundaryGap: [0.1, 0.1],            // 坐标轴两端空白策略，数组内数值代表百分比</span><br><span class="line">            splitNumber: 4                      // 数值轴用，分割段数，默认为5</span><br><span class="line">        &#125;</span><br><span class="line">    ],</span><br><span class="line">    series: [</span><br><span class="line">        &#123;</span><br><span class="line">            name: &apos;ios&apos;,                        // 系列名称</span><br><span class="line">            type: &apos;line&apos;,                       // 图表类型，折线图line、散点图scatter、柱状图bar、饼图pie、雷达图radar</span><br><span class="line">            data: [112, 23, 45, 56, 233, 343, 454, 89, 343, 123, 45, 123]</span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">            name: &apos;android&apos;,                    // 系列名称</span><br><span class="line">            type: &apos;line&apos;,                       // 图表类型，折线图line、散点图scatter、柱状图bar、饼图pie、雷达图radar</span><br><span class="line">            data: [45, 123, 145, 526, 233, 343, 44, 829, 33, 123, 45, 13]</span><br><span class="line">        &#125;</span><br><span class="line">    ]</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+<p>这个类json格式的对象定义了图表所需的参数,接下来用这两行代码将图表生成在对应的dom下.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var myChart = ec.init(document.getElementById(&apos;DOMID&apos;)); </span><br><span class="line">myChart.setOption(option);</span><br></pre></td></tr></table></figure></p>
+<p>当然,图表需要生成在指定的容器类,所以我们需要先设定一个dom<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line">&lt;div style=&quot;height:400px&quot; id=&quot;DOMID&quot;&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure></p>
+<p>这个容器的高度属性是不能缺少的,否则图表显示参数缺失.</p>
+<p>完整的图表代码如下:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;div style=&quot;height:400px&quot; id=&quot;domid&quot;&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;script src=&quot;/path/to/echarts/build/dist/echarts.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">&lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line">require.config(&#123;</span><br><span class="line">    paths: &#123;</span><br><span class="line">        echarts: &apos;/path/to/echarts/build/dist&apos;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line">require(</span><br><span class="line">    [</span><br><span class="line">        &apos;echarts&apos;,</span><br><span class="line">        &apos;echarts/chart/pie&apos;,</span><br><span class="line">        &apos;echarts/chart/line&apos;,</span><br><span class="line">    ],</span><br><span class="line">    var option = &#123;</span><br><span class="line">        legend: &#123;                                   // 图例配置</span><br><span class="line">            padding: 5,                             // 图例内边距，单位px，默认上下左右内边距为5</span><br><span class="line">            itemGap: 10,                            // Legend各个item之间的间隔，横向布局时为水平间隔，纵向布局时为纵向间隔</span><br><span class="line">            data: [&apos;ios&apos;, &apos;android&apos;]</span><br><span class="line">        &#125;,</span><br><span class="line">        tooltip: &#123;                                  // 气泡提示配置</span><br><span class="line">            trigger: &apos;item&apos;,                        // 触发类型，默认数据触发，可选为：&apos;axis&apos;</span><br><span class="line">        &#125;,</span><br><span class="line">        xAxis: [                                    // 直角坐标系中横轴数组</span><br><span class="line">            &#123;</span><br><span class="line">                type: &apos;category&apos;,                   // 坐标轴类型，横轴默认为类目轴，数值轴则参考yAxis说明</span><br><span class="line">                data: [&apos;Jan&apos;, &apos;Feb&apos;, &apos;Mar&apos;, &apos;Apr&apos;, &apos;May&apos;, &apos;Jun&apos;, &apos;Jul&apos;, &apos;Aug&apos;, &apos;Sep&apos;, &apos;Oct&apos;, &apos;Nov&apos;, &apos;Dec&apos;]</span><br><span class="line">            &#125;</span><br><span class="line">        ],</span><br><span class="line">        yAxis: [                                    // 直角坐标系中纵轴数组</span><br><span class="line">            &#123;</span><br><span class="line">                type: &apos;value&apos;,                      // 坐标轴类型，纵轴默认为数值轴，类目轴则参考xAxis说明</span><br><span class="line">                boundaryGap: [0.1, 0.1],            // 坐标轴两端空白策略，数组内数值代表百分比</span><br><span class="line">                splitNumber: 4                      // 数值轴用，分割段数，默认为5</span><br><span class="line">            &#125;</span><br><span class="line">        ],</span><br><span class="line">        series: [</span><br><span class="line">            &#123;</span><br><span class="line">                name: &apos;ios&apos;,                        // 系列名称</span><br><span class="line">                type: &apos;line&apos;,                       // 图表类型，折线图line、散点图scatter、柱状图bar、饼图pie、雷达图radar</span><br><span class="line">                data: [112, 23, 45, 56, 233, 343, 454, 89, 343, 123, 45, 123]</span><br><span class="line">            &#125;,</span><br><span class="line">            &#123;</span><br><span class="line">                name: &apos;android&apos;,                    // 系列名称</span><br><span class="line">                type: &apos;line&apos;,                       // 图表类型，折线图line、散点图scatter、柱状图bar、饼图pie、雷达图radar</span><br><span class="line">                data: [45, 123, 145, 526, 233, 343, 44, 829, 33, 123, 45, 13]</span><br><span class="line">            &#125;</span><br><span class="line">        ]</span><br><span class="line">    &#125;;</span><br><span class="line">    var myChart = ec.init(document.getElementById(&apos;domid&apos;)); </span><br><span class="line">    myChart.setOption(option); </span><br><span class="line">)</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://blog.grunmin.org/2015/08/27/Echarts使用记录-导入/" data-id="ciotjpq17001wr4vrgcp11v5l" class="article-share-link">Partager</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2015/08/27/Echarts使用记录-概念和参数/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Récent</strong>
+      <div class="article-nav-title">
+        
+          Echarts使用记录-概念和参数
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/08/26/搭建hexo博客记录/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Ancien</strong>
+      <div class="article-nav-title">搭建hexo博客记录</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Catégories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/">php</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/">python</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/windows/">windows</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/云/">云</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/">前端</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/工具/">工具</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/随笔/">随笔</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">December 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">September 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">August 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04/">April 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/03/">March 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/01/">January 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/12/">December 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/11/">November 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/08/">August 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/07/">July 2013</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Articles récents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2015/12/03/用highcharts实现数据统计中时间对比功能/">用highcharts实现数据统计中时间对比功能</a>
+          </li>
+        
+          <li>
+            <a href="/2015/09/16/windows和linux间共享互传文件/">windows和linux间共享互传文件</a>
+          </li>
+        
+          <li>
+            <a href="/2015/09/11/sublime-text高级应用-自定义快捷键/">sublime text高级应用-自定义快捷键</a>
+          </li>
+        
+          <li>
+            <a href="/2015/09/02/tornado-上传文件实例/">tornado 上传文件实例</a>
+          </li>
+        
+          <li>
+            <a href="/2015/09/02/用ajax提交包含-type-file-字段的表单/">用ajax提交包含&#39;type=file&#39;字段的表单</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2016 郭润民<br>
+      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

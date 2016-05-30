@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>技术改变生活(1) | 郭润民的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="早晨躺在床上看书的时候，脑子忽的又想起那个问题：我垫钱帮人交四六级报名费，却找不出这位不缴费的同学是谁。心里突然老大不愿意——这可是我半个星期的伙食费呢！于是开始思考对策，务必要找出漏网之鱼。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="技术改变生活(1)">
+<meta property="og:url" content="http://blog.grunmin.org/2014/04/08/ji-zhu-gai-bian-sheng-huo-1/index.html">
+<meta property="og:site_name" content="郭润民的博客">
+<meta property="og:description" content="早晨躺在床上看书的时候，脑子忽的又想起那个问题：我垫钱帮人交四六级报名费，却找不出这位不缴费的同学是谁。心里突然老大不愿意——这可是我半个星期的伙食费呢！于是开始思考对策，务必要找出漏网之鱼。">
+<meta property="og:updated_time" content="2015-08-25T12:59:46.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="技术改变生活(1)">
+<meta name="twitter:description" content="早晨躺在床上看书的时候，脑子忽的又想起那个问题：我垫钱帮人交四六级报名费，却找不出这位不缴费的同学是谁。心里突然老大不愿意——这可是我半个星期的伙食费呢！于是开始思考对策，务必要找出漏网之鱼。">
+  
+    <link rel="alternate" href="/atom.xml" title="郭润民的博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">郭润民的博客</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://blog.grunmin.org"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-ji-zhu-gai-bian-sheng-huo-1" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/04/08/ji-zhu-gai-bian-sheng-huo-1/" class="article-date">
+  <time datetime="2014-04-08T08:06:00.000Z" itemprop="datePublished">2014-04-08</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/php/">php</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      技术改变生活(1)
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>早晨躺在床上看书的时候，脑子忽的又想起那个问题：我垫钱帮人交四六级报名费，却找不出这位不缴费的同学是谁。心里突然老大不愿意——这可是我半个星期的伙食费呢！于是开始思考对策，务必要找出漏网之鱼。</p>
+<a id="more"></a>
+<p>我们报名四六级的流程是这样的。学生网上报名，教务员将报名学生的信息发给学委，学委按照名单收取报名费。汇总到我这里的时候，总是发现报名的人数和缴费的人数有偏差。因为名单里只有学生专业信息（信工和光信），而学委收取费用是按行政班（5个班）划分的。因此不知道是哪个班的同学没有交齐。</p>
+<p>解决问题的关键就是找出缺漏的班级。毕竟让每班学委从几百个人名中挑出自己班的同学工作量太大，而且不能避免再次缺漏的情况。上一次我要求各班学委提供缴费名单给我，我一个一个核对。这一次没有人发给我，因此不能故技重施，得采用新的方法。</p>
+<p>首先搜索excel有没有提供某些映射功能。这个功能具体是这样的：表A里学号和班级有对应关系，让表B里的学号根据表A的对应关系自动显示对应的班级。表A即学生信息表，表B即报名表。最后统计出现的各班级的次数，与各班缴费的人数对比得出结果。但是我没有找到可以实现的方法。</p>
+<p>既然excel不能提供这样的功能，我只能通过数据库的方法。步骤是这样：将全级学生信息导入数据库，然后将报名表另存为csv文件，通过php的fgetcsv()函数获取报名表信息，递归查询输出各班出现的次数，最后汇总。<br>关键代码（用了CI框架）：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">function count()&#123;</span><br><span class="line">        $flag = array();   //班级标志，初始化</span><br><span class="line">        for($i = 0;$i &lt; 5;$i++)&#123; </span><br><span class="line">        $flag[$i] = 0;</span><br><span class="line">        &#125;</span><br><span class="line">        $file = fopen(base_url(&apos;static/english.csv&apos;),&apos;r&apos;);</span><br><span class="line">        while ($data = fgetcsv($file)) &#123;  //每次读取CSV里面的一行内容   </span><br><span class="line">            //print($data[0]);</span><br><span class="line">            $this-&gt;db-&gt;where(&quot;num&quot;,$data[0]);</span><br><span class="line">            $this-&gt;db-&gt;select(&quot;*&quot;);</span><br><span class="line">            $query=$this-&gt;db-&gt;get(&quot;xuewei&quot;);</span><br><span class="line">            $str = $query-&gt;result_array();</span><br><span class="line">            if (!empty($str)) &#123;</span><br><span class="line">                </span><br><span class="line">                $toflag = $str[0][&apos;class&apos;] - 1;</span><br><span class="line">                $flag[$toflag]++；</span><br><span class="line">            &#125;</span><br><span class="line">            else &#123;</span><br><span class="line">                print(&quot;Can not find this gay: &quot;.$data[0].&quot;&lt;br /&gt;&quot;);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        print_r($flag);</span><br><span class="line">        fclose($file);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
+<p>从输出就可以知道各班缴费的人数了。然后将这个班的报名同学信息通过类似的方法提取出来，与缴费名单比较，就可以知道是哪位同学没有缴费。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://blog.grunmin.org/2014/04/08/ji-zhu-gai-bian-sheng-huo-1/" data-id="ciotjppzy0015r4vrfc8gr3eq" class="article-share-link">Partager</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2014/04/08/shi-mian/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Récent</strong>
+      <div class="article-nav-title">
+        
+          失眠
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2014/03/16/openshift-an-zhuang-shi-yong-jiao-cheng/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Ancien</strong>
+      <div class="article-nav-title">Openshift 安装使用教程</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Catégories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/">php</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/">python</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/windows/">windows</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/云/">云</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/">前端</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/工具/">工具</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/随笔/">随笔</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">December 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">September 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">August 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04/">April 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/03/">March 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/01/">January 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/12/">December 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/11/">November 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/08/">August 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/07/">July 2013</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Articles récents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2015/12/03/用highcharts实现数据统计中时间对比功能/">用highcharts实现数据统计中时间对比功能</a>
+          </li>
+        
+          <li>
+            <a href="/2015/09/16/windows和linux间共享互传文件/">windows和linux间共享互传文件</a>
+          </li>
+        
+          <li>
+            <a href="/2015/09/11/sublime-text高级应用-自定义快捷键/">sublime text高级应用-自定义快捷键</a>
+          </li>
+        
+          <li>
+            <a href="/2015/09/02/tornado-上传文件实例/">tornado 上传文件实例</a>
+          </li>
+        
+          <li>
+            <a href="/2015/09/02/用ajax提交包含-type-file-字段的表单/">用ajax提交包含&#39;type=file&#39;字段的表单</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2016 郭润民<br>
+      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

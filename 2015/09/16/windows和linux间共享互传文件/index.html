@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>windows和linux间共享互传文件 | 郭润民的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="windows物理机与linux虚拟机间可以通过共享文件的方式互传文件.vmware和vbox虚拟机软件提供了这一特性.另外,我们可以通过简单的设置进行两机之间的文件共享,从而避免了诸如安装vmvare tools这些繁琐的操作.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="windows和linux间共享互传文件">
+<meta property="og:url" content="http://blog.grunmin.org/2015/09/16/windows和linux间共享互传文件/index.html">
+<meta property="og:site_name" content="郭润民的博客">
+<meta property="og:description" content="windows物理机与linux虚拟机间可以通过共享文件的方式互传文件.vmware和vbox虚拟机软件提供了这一特性.另外,我们可以通过简单的设置进行两机之间的文件共享,从而避免了诸如安装vmvare tools这些繁琐的操作.">
+<meta property="og:image" content="http://blog.grunmin.org/img/20150916_1.png">
+<meta property="og:image" content="http://blog.grunmin.org/img/20150916_2.png">
+<meta property="og:image" content="http://blog.grunmin.org/img/20150916_3.png">
+<meta property="og:updated_time" content="2015-09-16T10:51:36.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="windows和linux间共享互传文件">
+<meta name="twitter:description" content="windows物理机与linux虚拟机间可以通过共享文件的方式互传文件.vmware和vbox虚拟机软件提供了这一特性.另外,我们可以通过简单的设置进行两机之间的文件共享,从而避免了诸如安装vmvare tools这些繁琐的操作.">
+<meta name="twitter:image" content="http://blog.grunmin.org/img/20150916_1.png">
+  
+    <link rel="alternate" href="/atom.xml" title="郭润民的博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">郭润民的博客</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://blog.grunmin.org"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-windows和linux间共享互传文件" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/09/16/windows和linux间共享互传文件/" class="article-date">
+  <time datetime="2015-09-16T10:35:46.000Z" itemprop="datePublished">2015-09-16</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/linux/">linux</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      windows和linux间共享互传文件
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>windows物理机与linux虚拟机间可以通过共享文件的方式互传文件.vmware和vbox虚拟机软件提供了这一特性.另外,我们可以通过简单的设置进行两机之间的文件共享,从而避免了诸如安装vmvare tools这些繁琐的操作.</p>
+<a id="more"></a>
+<ul>
+<li>在windows创建新的文件夹或者指定原有 的文件夹,右键<strong>属性</strong>,点击共享标签页,在此处共享给指定用户,记住共享名</li>
+</ul>
+<p><img src="/img/20150916_1.png" alt=""></p>
+<p><img src="/img/20150916_2.png" alt=""></p>
+<ul>
+<li>关闭windows防火墙</li>
+</ul>
+<p><img src="/img/20150916_3.png" alt=""></p>
+<ul>
+<li><p>在linux虚拟机创建挂载目录,比如需要挂载到<em>/data/python</em>目录下,则执行<code>mkdir /data/python -p</code></p>
+</li>
+<li><p>在linux虚拟机,执行<code>vi /etc/fstab</code>编辑设备挂载配置文件,添加如下记录</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">//网络地址/共享名 挂载目录 cifs defaults,username=用户名,password=密码 0 2</span><br></pre></td></tr></table></figure>
+<p>将上面的中文替换为真实环境中的值,比如</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">//10.2.60.76/python /data/python cifs defaults,username=admin,password=12345 0 2</span><br></pre></td></tr></table></figure>
+<ul>
+<li>挂载. 执行<code>mount -a</code>,若无出错信息,则windows共享目录已挂载到<em>/data/python</em>目录下. 下次重启虚拟机会自动挂载该目录</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://blog.grunmin.org/2015/09/16/windows和linux间共享互传文件/" data-id="ciotjpq26002kr4vrgyj7vayc" class="article-share-link">Partager</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2015/12/03/用highcharts实现数据统计中时间对比功能/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Récent</strong>
+      <div class="article-nav-title">
+        
+          用highcharts实现数据统计中时间对比功能
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/09/11/sublime-text高级应用-自定义快捷键/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Ancien</strong>
+      <div class="article-nav-title">sublime text高级应用-自定义快捷键</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Catégories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/">php</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/">python</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/windows/">windows</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/云/">云</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/">前端</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/工具/">工具</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/随笔/">随笔</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">December 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">September 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">August 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04/">April 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/03/">March 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/01/">January 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/12/">December 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/11/">November 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/08/">August 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/07/">July 2013</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Articles récents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2015/12/03/用highcharts实现数据统计中时间对比功能/">用highcharts实现数据统计中时间对比功能</a>
+          </li>
+        
+          <li>
+            <a href="/2015/09/16/windows和linux间共享互传文件/">windows和linux间共享互传文件</a>
+          </li>
+        
+          <li>
+            <a href="/2015/09/11/sublime-text高级应用-自定义快捷键/">sublime text高级应用-自定义快捷键</a>
+          </li>
+        
+          <li>
+            <a href="/2015/09/02/tornado-上传文件实例/">tornado 上传文件实例</a>
+          </li>
+        
+          <li>
+            <a href="/2015/09/02/用ajax提交包含-type-file-字段的表单/">用ajax提交包含&#39;type=file&#39;字段的表单</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2016 郭润民<br>
+      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

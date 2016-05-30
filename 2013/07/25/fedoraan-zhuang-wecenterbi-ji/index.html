@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>linux安装wecenter笔记 | 郭润民的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="此文是前文配置lamp的延伸在前面的一片文章里，用源码包安装的方式搭建了lamp环境，wecenter需要服务器支持mysqli或者pdo模块,支持curl,GD图像处理库，原来安装lamp过程中并无相关方面的配置，鼓捣了半天之后其他条件都已满足，唯独GD图像处理库不能安装。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="linux安装wecenter笔记">
+<meta property="og:url" content="http://blog.grunmin.org/2013/07/25/fedoraan-zhuang-wecenterbi-ji/index.html">
+<meta property="og:site_name" content="郭润民的博客">
+<meta property="og:description" content="此文是前文配置lamp的延伸在前面的一片文章里，用源码包安装的方式搭建了lamp环境，wecenter需要服务器支持mysqli或者pdo模块,支持curl,GD图像处理库，原来安装lamp过程中并无相关方面的配置，鼓捣了半天之后其他条件都已满足，唯独GD图像处理库不能安装。">
+<meta property="og:updated_time" content="2015-08-25T13:02:49.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="linux安装wecenter笔记">
+<meta name="twitter:description" content="此文是前文配置lamp的延伸在前面的一片文章里，用源码包安装的方式搭建了lamp环境，wecenter需要服务器支持mysqli或者pdo模块,支持curl,GD图像处理库，原来安装lamp过程中并无相关方面的配置，鼓捣了半天之后其他条件都已满足，唯独GD图像处理库不能安装。">
+  
+    <link rel="alternate" href="/atom.xml" title="郭润民的博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">郭润民的博客</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://blog.grunmin.org"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-fedoraan-zhuang-wecenterbi-ji" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2013/07/25/fedoraan-zhuang-wecenterbi-ji/" class="article-date">
+  <time datetime="2013-07-25T12:32:00.000Z" itemprop="datePublished">2013-07-25</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/php/">php</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      linux安装wecenter笔记
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><em>此文是前文配置lamp的延伸</em><br>在前面的一片文章里，用源码包安装的方式搭建了lamp环境，wecenter需要服务器支持mysqli或者pdo模块,支持curl,GD图像处理库，原来安装lamp过程中并无相关方面的配置，鼓捣了半天之后其他条件都已满足，唯独GD图像处理库不能安装。<br><a id="more"></a><br>谷歌了许多结果，一一尝试，一一失败，最后看到<a href="http://tech.soft6.com/665/16/78687.html" target="_blank" rel="external">这篇文章</a>，果断把之前编好的php删除了按照文中方法重装一遍，居然成功了！</p>
+<p>现在从零开始记录一下安装过程。</p>
+<p>按照上一篇笔记配置好lamp环境，php先不安装。<br>把下载下来的wecenter里的UPLOAD复制到/usr/local/apache2/htdocs/里（即文件根目录），打开浏览器，输入地址<code>http://localhost/UPLOAD/install</code>，进入安装界面。在我的机子上，一开始不能满足的条件是数据库模块，curl支持，图像处理库和目录权限。<br>从最简单的开始，因为后面还会要求UPLOAD下的文件开放权限，因此直接一个<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># chmod 777 /usr/local/apache2/htdocs/UPLOAD</span><br></pre></td></tr></table></figure></p>
+<p>之后就是折腾了很久的GD，Linux下得GD库安装要比windows麻烦很多。先参照此文：<a href="http://tech.soft6.com/665/16/78687.html" target="_blank" rel="external">http://tech.soft6.com/665/16/78687.html</a><br>此前的多次实验表明这个是唯一比较靠谱的安装方法（当然不才眼界有限）。装好之后就可以进行下一步了。<br>开启curl和mysqli或者pdo支持，可以用如下方法<br>以curl为例，首先<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># cd /usr/local/php-***/ext/curl #进入源码包的curl目录</span><br><span class="line"># /usr/local/php/bin/phpize #运行phpize命令</span><br><span class="line"># ./configure --with-php-config=/usr/local/php/bin/php-config</span><br><span class="line"># make &amp;&amp; make install</span><br></pre></td></tr></table></figure></p>
+<p>成功后可以看到创建的curl.so文件位于/usr/local/php/lib/php/extension/no-debug-non-zts-<strong><em>*</em></strong>/,复制curl.so到/usr/local/php/ext下(没有目录则创建一个)，再敲入<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># vi /usr/local/php/lib/php.ini​</span><br></pre></td></tr></table></figure></p>
+<p>在加载模块(一堆extension处 大概第980行)加上一行extension=curl.so 修改extension_dir=“/usr/local/php/ext” (第819行),重启apache即可。(前面的操作如需立刻看到效果也需重启apache)</p>
+<p><a href="http://blog.csdn.net/grunmin/article/details/9468639" target="_blank" rel="external">这里</a>是增加php模块的方法介绍，mysqli可用此法解决。</p>
+<p><em>注：用rpm包搭建lamp时没有出现上述问题</em></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://blog.grunmin.org/2013/07/25/fedoraan-zhuang-wecenterbi-ji/" data-id="ciotjppxa0000r4vrigftullj" class="article-share-link">Partager</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2013/08/02/fedora-an-zhuang-zend-frame-bi-ji/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Récent</strong>
+      <div class="article-nav-title">
+        
+          linux安装 Zend Frame 笔记
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2013/07/21/fedoraan-zhuang-lamphuan-jing-bi-ji/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Ancien</strong>
+      <div class="article-nav-title">linux搭建lamp环境笔记</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Catégories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/">php</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/">python</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/windows/">windows</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/云/">云</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/">前端</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/工具/">工具</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/随笔/">随笔</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">December 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">September 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">August 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04/">April 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/03/">March 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/01/">January 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/12/">December 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/11/">November 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/08/">August 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/07/">July 2013</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Articles récents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2015/12/03/用highcharts实现数据统计中时间对比功能/">用highcharts实现数据统计中时间对比功能</a>
+          </li>
+        
+          <li>
+            <a href="/2015/09/16/windows和linux间共享互传文件/">windows和linux间共享互传文件</a>
+          </li>
+        
+          <li>
+            <a href="/2015/09/11/sublime-text高级应用-自定义快捷键/">sublime text高级应用-自定义快捷键</a>
+          </li>
+        
+          <li>
+            <a href="/2015/09/02/tornado-上传文件实例/">tornado 上传文件实例</a>
+          </li>
+        
+          <li>
+            <a href="/2015/09/02/用ajax提交包含-type-file-字段的表单/">用ajax提交包含&#39;type=file&#39;字段的表单</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2016 郭润民<br>
+      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

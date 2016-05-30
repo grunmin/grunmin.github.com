@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>我的gvim安装和配置 | 郭润民的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="我将自己正在学习的小东西放到了github上，想要充分发挥云端服务器的优势，希望在其他windows电脑也能coding，因此草草配置了一下gvim。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="我的gvim安装和配置">
+<meta property="og:url" content="http://blog.grunmin.org/2013/11/17/wo-de-gviman-zhuang-he-pei-zhi/index.html">
+<meta property="og:site_name" content="郭润民的博客">
+<meta property="og:description" content="我将自己正在学习的小东西放到了github上，想要充分发挥云端服务器的优势，希望在其他windows电脑也能coding，因此草草配置了一下gvim。">
+<meta property="og:updated_time" content="2015-08-25T13:01:47.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="我的gvim安装和配置">
+<meta name="twitter:description" content="我将自己正在学习的小东西放到了github上，想要充分发挥云端服务器的优势，希望在其他windows电脑也能coding，因此草草配置了一下gvim。">
+  
+    <link rel="alternate" href="/atom.xml" title="郭润民的博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">郭润民的博客</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://blog.grunmin.org"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-wo-de-gviman-zhuang-he-pei-zhi" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2013/11/17/wo-de-gviman-zhuang-he-pei-zhi/" class="article-date">
+  <time datetime="2013-11-17T09:14:00.000Z" itemprop="datePublished">2013-11-17</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/linux/">linux</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      我的gvim安装和配置
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>我将自己正在学习的小东西放到了github上，想要充分发挥云端服务器的优势，希望在其他windows电脑也能coding，因此草草配置了一下gvim。<br><a id="more"></a></p>
+<p>我在linux下已经对vim有了很好的配置，在编写php文件时十分顺利方便。不想在windows下也重复这一过程（我配置linux下的vim花了几天时间才宣告满意收工），因此把linux下的所有文件都拿了过来，用极其简单粗暴的方式放进gvim的安装文件中。到目前为止，除了一些小问题，工作得还顺利，因此将这一过程记录下来。</p>
+<ul>
+<li><p><a href="http://www.vim.org/download.php#pc" target="_blank" rel="external">安装Gvim</a></p>
+</li>
+<li><p>安装<a href="http://vimcdoc.sourceforge.net/" target="_blank" rel="external">中文帮助</a></p>
+</li>
+<li><p>下载linux下的<a href="http://pan.baidu.com/s/1tcJSm" target="_blank" rel="external">vim</a>文件  </p>
+</li>
+<li><p>将.vim的plugin和doc夹下的全部内容添加到windows的vim的安装目录下对应的文件夹。并将.vimrc重命名为_vimrc,覆盖掉原有的_vimrc文件。</p>
+</li>
+<li><p>在_vimrc中添加以下命令以支持中文编码：    </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">set encoding=utf-8</span><br><span class="line">set termencoding=utf-8</span><br><span class="line">set fileencoding=utf-8</span><br><span class="line">set fileencodings=ucs-bom,utf-8,chinese,cp936</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>修改_vimrc中迁移后产生的个别路径错误问题。</p>
+</li>
+</ul>
+<p>配置好后的vim是<a href="http://pan.baidu.com/s/1kpsLc" target="_blank" rel="external">这样</a>的。   </p>
+<p>直接打开vim时依然会出现乱码，但是右键一个文件以vim打开时则不会，以后有时间再完善一下。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://blog.grunmin.org/2013/11/17/wo-de-gviman-zhuang-he-pei-zhi/" data-id="ciotjppz3000qr4vres271c8o" class="article-share-link">Partager</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2013/11/23/yong-ma-ke-fei-xiang-xie-bo-ke/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Récent</strong>
+      <div class="article-nav-title">
+        
+          用马克飞象写博客
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2013/11/15/yan-gong-da-tie-ji/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Ancien</strong>
+      <div class="article-nav-title">广工打铁记</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Catégories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/">php</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/">python</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/windows/">windows</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/云/">云</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/">前端</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/工具/">工具</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/随笔/">随笔</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">December 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">September 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">August 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04/">April 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/03/">March 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/01/">January 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/12/">December 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/11/">November 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/08/">August 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/07/">July 2013</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Articles récents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2015/12/03/用highcharts实现数据统计中时间对比功能/">用highcharts实现数据统计中时间对比功能</a>
+          </li>
+        
+          <li>
+            <a href="/2015/09/16/windows和linux间共享互传文件/">windows和linux间共享互传文件</a>
+          </li>
+        
+          <li>
+            <a href="/2015/09/11/sublime-text高级应用-自定义快捷键/">sublime text高级应用-自定义快捷键</a>
+          </li>
+        
+          <li>
+            <a href="/2015/09/02/tornado-上传文件实例/">tornado 上传文件实例</a>
+          </li>
+        
+          <li>
+            <a href="/2015/09/02/用ajax提交包含-type-file-字段的表单/">用ajax提交包含&#39;type=file&#39;字段的表单</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2016 郭润民<br>
+      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

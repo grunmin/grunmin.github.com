@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>RHCE note 1 | 郭润民的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="unit 1
+查看系统版本cat /etc/redhat-release
+
+查看网络参数ifconfig
+
+查看主机名hostname
+
+查看shellcat /etc/shells
+
+查看当前用户名称whoami
+
+查看当前位置pwd
+
+修改用户密码passwd username
+
+查看当前用户idid
+
+切换用户su - username
+
+查看历史命令并执行history!number或者">
+<meta property="og:type" content="article">
+<meta property="og:title" content="RHCE note 1">
+<meta property="og:url" content="http://blog.grunmin.org/2013/11/03/rhce-note-1/index.html">
+<meta property="og:site_name" content="郭润民的博客">
+<meta property="og:description" content="unit 1
+查看系统版本cat /etc/redhat-release
+
+查看网络参数ifconfig
+
+查看主机名hostname
+
+查看shellcat /etc/shells
+
+查看当前用户名称whoami
+
+查看当前位置pwd
+
+修改用户密码passwd username
+
+查看当前用户idid
+
+切换用户su - username
+
+查看历史命令并执行history!number或者">
+<meta property="og:updated_time" content="2015-08-26T00:26:57.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="RHCE note 1">
+<meta name="twitter:description" content="unit 1
+查看系统版本cat /etc/redhat-release
+
+查看网络参数ifconfig
+
+查看主机名hostname
+
+查看shellcat /etc/shells
+
+查看当前用户名称whoami
+
+查看当前位置pwd
+
+修改用户密码passwd username
+
+查看当前用户idid
+
+切换用户su - username
+
+查看历史命令并执行history!number或者">
+  
+    <link rel="alternate" href="/atom.xml" title="郭润民的博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">郭润民的博客</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://blog.grunmin.org"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-rhce-note-1" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2013/11/03/rhce-note-1/" class="article-date">
+  <time datetime="2013-11-02T18:07:00.000Z" itemprop="datePublished">2013-11-03</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/linux/">linux</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      RHCE note 1
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <a id="more"></a>
+<h2 id="unit-1"><a href="#unit-1" class="headerlink" title="unit 1"></a>unit 1</h2><ul>
+<li><p>查看系统版本<br>cat /etc/redhat-release</p>
+</li>
+<li><p>查看网络参数<br>ifconfig</p>
+</li>
+<li><p>查看主机名<br>hostname</p>
+</li>
+<li><p>查看shell<br>cat /etc/shells</p>
+</li>
+<li><p>查看当前用户名称<br>whoami</p>
+</li>
+<li><p>查看当前位置<br>pwd</p>
+</li>
+<li><p>修改用户密码<br>passwd username</p>
+</li>
+<li><p>查看当前用户id<br>id</p>
+</li>
+<li><p>切换用户<br>su - username</p>
+</li>
+<li><p>查看历史命令并执行<br>history<br>!number<br>或者!加命令前面几个字母<br>实例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">[root@instructor 920]# !ca</span><br><span class="line">cat /etc/shells </span><br><span class="line">/bin/sh</span><br><span class="line">/bin/bash</span><br><span class="line">/sbin/nologin</span><br><span class="line">/bin/tcsh</span><br><span class="line">/bin/csh</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>快捷输入前一个参数<br>Alt+.</p>
+</li>
+<li><p>查看后台任务，更改到前台运行，更改到后台运行<br>jobs，fg number，bg number<br>实例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">[root@instructor 920]# jobs</span><br><span class="line">[1]-  Running                 gedit day1.txt &amp;</span><br><span class="line">[2]+  Stopped                 firefox</span><br><span class="line">[root@instructor 920]# </span><br><span class="line">[root@instructor 920]# </span><br><span class="line">[root@instructor 920]# fg 2</span><br><span class="line">firefox</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>暂停当前任务并移到后台，停止当前命令：<br>Ctrl+z，Ctrl+c</p>
+</li>
+</ul>
+<h2 id="unit-6"><a href="#unit-6" class="headerlink" title="unit 6"></a>unit 6</h2><h3 id="创建文件系统"><a href="#创建文件系统" class="headerlink" title="创建文件系统"></a>创建文件系统</h3><ul>
+<li>mbr区域有512B大小，其中16*4的大小用来记录四个主分区  </li>
+<li>主分区，扩展分区和逻辑分区总数不能超过15   </li>
+<li><p>查看磁盘信息<br>实例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">[root@instructor 920]# fdisk -l /dev/sda</span><br><span class="line">Disk /dev/sda: 320.1 GB, 320072933376 bytes</span><br><span class="line">255 heads, 63 sectors/track, 38913 cylinders</span><br><span class="line">Units = cylinders of 16065 * 512 = 8225280 bytes</span><br><span class="line">Sector size (logical/physical): 512 bytes / 512 bytes</span><br><span class="line">I/O size (minimum/optimal): 512 bytes / 512 bytes</span><br><span class="line">Disk identifier: 0x0007213a</span><br><span class="line"></span><br><span class="line">   Device Boot      Start         End      Blocks   Id  System</span><br><span class="line">/dev/sda1   *           1          17      131072   83  Linux</span><br><span class="line">Partition 1 does not end on cylinder boundary.</span><br><span class="line">/dev/sda2              17        4096    32768000   8e  Linux LVM</span><br><span class="line">/dev/sda3            4096        6646    20480000   8e  Linux LVM</span><br><span class="line">/dev/sda4            6646       38914   259190784    5  Extended</span><br><span class="line">/dev/sda5            6646        7952    10485760   83  Linux</span><br><span class="line">/dev/sda6            7952        8605     5251727   83  Linux</span><br><span class="line">/dev/sda7            8606        8657      417658+  8e  Linux LVM</span><br><span class="line">/dev/sda8            8658        8785     1028128+  8e  Linux LVM</span><br><span class="line">/dev/sda9            8786        8888      827316   8e  Linux LVM</span><br><span class="line">/dev/sda10           8889       16722    62926573+  8e  Linux LVM</span><br><span class="line">/dev/sda11          16723       18812    16787893+  8e  Linux LVM</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>基本流程：<br>fdisk 分区 –&gt;  mkfs  格式化 –&gt; mount 挂载<br>1、分区<br>实例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br></pre></td><td class="code"><pre><span class="line">fdisk /dev/vda</span><br><span class="line">Command (m for help): m</span><br><span class="line">Command action</span><br><span class="line">   a   toggle a bootable flag</span><br><span class="line">   b   edit bsd disklabel</span><br><span class="line">   c   toggle the dos compatibility flag</span><br><span class="line">   d   delete a partition</span><br><span class="line">   l   list known partition types</span><br><span class="line">   m   print this menu</span><br><span class="line">   n   add a new partition</span><br><span class="line">   o   create a new empty DOS partition table</span><br><span class="line">   p   print the partition table</span><br><span class="line">   q   quit without saving changes</span><br><span class="line">   s   create a new empty Sun disklabel</span><br><span class="line">   t   change a partition&apos;s system id</span><br><span class="line">   u   change display/entry units</span><br><span class="line">   v   verify the partition table</span><br><span class="line">   w   write table to disk and exit</span><br><span class="line">   x   extra functionality (experts only)</span><br><span class="line">Command (m for help): n</span><br><span class="line">Command action</span><br><span class="line">   e   extended</span><br><span class="line">   p   primary partition (1-4)</span><br><span class="line">e</span><br><span class="line">Partition number (1-4): 3</span><br><span class="line">First cylinder (1-27046, default 1): 21328</span><br><span class="line">Last cylinder, +cylinders or +size&#123;K,M,G&#125; (21328-27046, default 27046): </span><br><span class="line">Using default value 27046</span><br><span class="line">Command (m for help): p</span><br><span class="line">Disk /dev/vda: 14.0 GB, 13958643712 bytes</span><br><span class="line">16 heads, 63 sectors/track, 27046 cylinders</span><br><span class="line">Units = cylinders of 1008 * 512 = 516096 bytes</span><br><span class="line">Sector size (logical/physical): 512 bytes / 512 bytes</span><br><span class="line">I/O size (minimum/optimal): 512 bytes / 512 bytes</span><br><span class="line">Disk identifier: 0x00064009</span><br><span class="line">   Device Boot      Start         End      Blocks   Id  System</span><br><span class="line">/dev/vda1   *           3         523      262144   83  Linux</span><br><span class="line">Partition 1 does not end on cylinder boundary.</span><br><span class="line">/dev/vda2             523       21328    10485760   8e  Linux LVM</span><br><span class="line">Partition 2 does not end on cylinder boundary.</span><br><span class="line">/dev/vda3           21328       27046     2882256    5  Extended</span><br><span class="line">Command (m for help): n</span><br><span class="line">Command action</span><br><span class="line">   l   logical (5 or over)</span><br><span class="line">   p   primary partition (1-4)</span><br><span class="line">l</span><br><span class="line">First cylinder (21328-27046, default 21328): </span><br><span class="line">Using default value 21328</span><br><span class="line">Last cylinder, +cylinders or +size&#123;K,M,G&#125; (21328-27046, default 27046): +100M</span><br><span class="line">Command (m for help): p</span><br><span class="line">Disk /dev/vda: 14.0 GB, 13958643712 bytes</span><br><span class="line">16 heads, 63 sectors/track, 27046 cylinders</span><br><span class="line">Units = cylinders of 1008 * 512 = 516096 bytes</span><br><span class="line">Sector size (logical/physical): 512 bytes / 512 bytes</span><br><span class="line">I/O size (minimum/optimal): 512 bytes / 512 bytes</span><br><span class="line">Disk identifier: 0x00064009</span><br><span class="line">   Device Boot      Start         End      Blocks   Id  System</span><br><span class="line">/dev/vda1   *           3         523      262144   83  Linux</span><br><span class="line">Partition 1 does not end on cylinder boundary.</span><br><span class="line">/dev/vda2             523       21328    10485760   8e  Linux LVM</span><br><span class="line">Partition 2 does not end on cylinder boundary.</span><br><span class="line">/dev/vda3           21328       27046     2882256    5  Extended</span><br><span class="line">/dev/vda5           21328       21531      102664+  83  Linux</span><br><span class="line">Command (m for help): w</span><br><span class="line">The partition table has been altered!</span><br><span class="line">Calling ioctl() to re-read partition table.</span><br><span class="line">WARNING: Re-reading the partition table failed with error 16: Device or resource busy.</span><br><span class="line">The kernel still uses the old table. The new table will be used at</span><br><span class="line">the next reboot or after you run partprobe(8) or kpartx(8)</span><br><span class="line">Syncing disks.</span><br><span class="line">[root@demo ~]# partx -a /dev/vda</span><br><span class="line">BLKPG: Device or resource busy</span><br><span class="line">error adding partition 1</span><br><span class="line">BLKPG: Device or resource busy</span><br><span class="line">error adding partition 2</span><br><span class="line">[root@demo ~]# </span><br><span class="line">[root@demo ~]# partx -a /dev/vda</span><br><span class="line">BLKPG: Device or resource busy</span><br><span class="line">error adding partition 1</span><br><span class="line">BLKPG: Device or resource busy</span><br><span class="line">error adding partition 2</span><br><span class="line">BLKPG: Device or resource busy</span><br><span class="line">error adding partition 3</span><br><span class="line">BLKPG: Device or resource busy</span><br><span class="line">error adding partition 5</span><br></pre></td></tr></table></figure>
+<p>2、格式化<br>实例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">[root@demo ~]# mkfs -t ext4 /dev/vda5</span><br><span class="line">mke2fs 1.41.12 (17-May-2010)</span><br><span class="line">Filesystem label=</span><br><span class="line">OS type: Linux</span><br><span class="line">Block size=1024 (log=0)</span><br><span class="line">Fragment size=1024 (log=0)</span><br><span class="line">Stride=0 blocks, Stripe width=0 blocks</span><br><span class="line">25688 inodes, 102664 blocks</span><br><span class="line">5133 blocks (5.00%) reserved for the super user</span><br><span class="line">First data block=1</span><br><span class="line">Maximum filesystem blocks=67371008</span><br><span class="line">13 block groups</span><br><span class="line">8192 blocks per group, 8192 fragments per group</span><br><span class="line">1976 inodes per group</span><br><span class="line">Superblock backups stored on blocks: </span><br><span class="line">	8193, 24577, 40961, 57345, 73729</span><br><span class="line">Writing inode tables: done                            </span><br><span class="line">Creating journal (4096 blocks): done</span><br><span class="line">Writing superblocks and filesystem accounting information: done</span><br><span class="line">This filesystem will be automatically checked every 23 mounts or</span><br><span class="line">180 days, whichever comes first.  Use tune2fs -c or -i to override.</span><br></pre></td></tr></table></figure>
+<p>3、挂载<br>实例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">[root@demo ~]# mkdir /togogo</span><br><span class="line">[root@demo ~]# </span><br><span class="line">[root@demo ~]# mount /dev/vda5 /togogo/</span><br><span class="line">[root@demo media]# mount | grep vda</span><br><span class="line">(ro,nosuid,nodev,uhelper=udisks,uid=0,gid=0,iocharset=utf8,mode=0400,dmode=0500)</span><br><span class="line">/dev/vda5 on /togogo type ext4 (rw)</span><br></pre></td></tr></table></figure>
+<p>4、修改配置文件<br>实例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">[root@demo ~]# cat /etc/fstab</span><br><span class="line">#</span><br><span class="line"># /etc/fstab</span><br><span class="line"># Created by anaconda on Sun Sep  1 09:14:16 2013</span><br><span class="line">#</span><br><span class="line"># Accessible filesystems, by reference, are maintained under &apos;/dev/disk&apos;</span><br><span class="line"># See man pages fstab(5), findfs(8), mount(8) and/or blkid(8) for more info</span><br><span class="line">#</span><br><span class="line">/dev/mapper/vgsrv-root  /                       ext4    defaults        1 1</span><br><span class="line">UUID=af186298-194c-4d01-8c3e-a21b28c45740 /boot                   ext4    defaults        1 2</span><br><span class="line">/dev/mapper/vgsrv-common /common                 ext4    defaults        1 2</span><br><span class="line">/dev/mapper/vgsrv-home  /home                   ext4    defaults        1 2</span><br><span class="line">/dev/mapper/vgsrv-shrink /shrink                 ext4    defaults        1 2</span><br><span class="line">/dev/mapper/vgsrv-swap  swap                    swap    defaults        0 0</span><br><span class="line">tmpfs                   /dev/shm                tmpfs   defaults        0 0</span><br><span class="line">devpts                  /dev/pts                devpts  gid=5,mode=620  0 0</span><br><span class="line">sysfs                   /sys                    sysfs   defaults        0 0</span><br><span class="line">proc                    /proc                   proc    defaults        0 0</span><br><span class="line">UUID=c061f12f-efa2-4aa2-8091-de8e73549bae	/data	ext4	defaults,_netdev	0 0</span><br><span class="line">/dev/vda5		/togogo			ext4	defaults	0 0</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>mount -a 可自动挂载已写在配置文件下的分区。</p>
+<h2 id="unit-7"><a href="#unit-7" class="headerlink" title="unit 7"></a>unit 7</h2><p>###创建逻辑卷<br>逻辑卷相对于普通分区的好处是可以动态修改卷的大小，以使用卷内文件数量的变化。</p>
+<ul>
+<li><p>基本流程：<br>fdisk 分区 –> pvcreate 创建物理卷 –> vgcreate 创建卷组 –> lvcreate 创建逻辑卷 –> mkfs 格式化 –> mount 挂载<br>实例：<br>1、分区，修改分区ID号</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br></pre></td><td class="code"><pre><span class="line">[root@demo ~]# fdisk /dev/vda</span><br><span class="line">WARNING: DOS-compatible mode is deprecated. It&apos;s strongly recommended to</span><br><span class="line">         switch off the mode (command &apos;c&apos;) and change display units to</span><br><span class="line">         sectors (command &apos;u&apos;).</span><br><span class="line">Command (m for help): n</span><br><span class="line">Command action</span><br><span class="line">   l   logical (5 or over)</span><br><span class="line">   p   primary partition (1-4)</span><br><span class="line">l</span><br><span class="line">First cylinder (21532-27046, default 21532): </span><br><span class="line">Using default value 21532</span><br><span class="line">Last cylinder, +cylinders or +size&#123;K,M,G&#125; (21532-27046, default 27046): +200M</span><br><span class="line">Command (m for help): n</span><br><span class="line">Command action</span><br><span class="line">   l   logical (5 or over)</span><br><span class="line">   p   primary partition (1-4)</span><br><span class="line">l</span><br><span class="line">First cylinder (21939-27046, default 21939): </span><br><span class="line">Using default value 21939</span><br><span class="line">Last cylinder, +cylinders or +size&#123;K,M,G&#125; (21939-27046, default 27046): +300M</span><br><span class="line">Command (m for help): p</span><br><span class="line">Disk /dev/vda: 14.0 GB, 13958643712 bytes</span><br><span class="line">16 heads, 63 sectors/track, 27046 cylinders</span><br><span class="line">Units = cylinders of 1008 * 512 = 516096 bytes</span><br><span class="line">Sector size (logical/physical): 512 bytes / 512 bytes</span><br><span class="line">I/O size (minimum/optimal): 512 bytes / 512 bytes</span><br><span class="line">Disk identifier: 0x00064009</span><br><span class="line">   Device Boot      Start         End      Blocks   Id  System</span><br><span class="line">/dev/vda1   *           3         523      262144   83  Linux</span><br><span class="line">Partition 1 does not end on cylinder boundary.</span><br><span class="line">/dev/vda2             523       21328    10485760   8e  Linux LVM</span><br><span class="line">Partition 2 does not end on cylinder boundary.</span><br><span class="line">/dev/vda3           21328       27046     2882256    5  Extended</span><br><span class="line">/dev/vda5           21328       21531      102664+  83  Linux</span><br><span class="line">/dev/vda6           21532       21938      205096+  83  Linux</span><br><span class="line">/dev/vda7           21939       22549      307912+  83  Linux</span><br><span class="line">Command (m for help): m</span><br><span class="line">Command action</span><br><span class="line">   a   toggle a bootable flag</span><br><span class="line">   b   edit bsd disklabel</span><br><span class="line">   c   toggle the dos compatibility flag</span><br><span class="line">   d   delete a partition</span><br><span class="line">   l   list known partition types</span><br><span class="line">   m   print this menu</span><br><span class="line">   n   add a new partition</span><br><span class="line">   o   create a new empty DOS partition table</span><br><span class="line">   p   print the partition table</span><br><span class="line">   q   quit without saving changes</span><br><span class="line">   s   create a new empty Sun disklabel</span><br><span class="line">   t   change a partition&apos;s system id</span><br><span class="line">   u   change display/entry units</span><br><span class="line">   v   verify the partition table</span><br><span class="line">   w   write table to disk and exit</span><br><span class="line">   x   extra functionality (experts only)</span><br><span class="line">Command (m for help): t</span><br><span class="line">Partition number (1-7): 6</span><br><span class="line">Hex code (type L to list codes): 8e</span><br><span class="line">Changed system type of partition 6 to 8e (Linux LVM)</span><br><span class="line">Command (m for help): t</span><br><span class="line">Partition number (1-7): 7</span><br><span class="line">Hex code (type L to list codes): 8e</span><br><span class="line">Changed system type of partition 7 to 8e (Linux LVM)</span><br><span class="line">Command (m for help): p</span><br><span class="line">Disk /dev/vda: 14.0 GB, 13958643712 bytes</span><br><span class="line">16 heads, 63 sectors/track, 27046 cylinders</span><br><span class="line">Units = cylinders of 1008 * 512 = 516096 bytes</span><br><span class="line">Sector size (logical/physical): 512 bytes / 512 bytes</span><br><span class="line">I/O size (minimum/optimal): 512 bytes / 512 bytes</span><br><span class="line">Disk identifier: 0x00064009</span><br><span class="line">   Device Boot      Start         End      Blocks   Id  System</span><br><span class="line">/dev/vda1   *           3         523      262144   83  Linux</span><br><span class="line">Partition 1 does not end on cylinder boundary.</span><br><span class="line">/dev/vda2             523       21328    10485760   8e  Linux LVM</span><br><span class="line">Partition 2 does not end on cylinder boundary.</span><br><span class="line">/dev/vda3           21328       27046     2882256    5  Extended</span><br><span class="line">/dev/vda5           21328       21531      102664+  83  Linux</span><br><span class="line">/dev/vda6           21532       21938      205096+  8e  Linux LVM</span><br><span class="line">/dev/vda7           21939       22549      307912+  8e  Linux LVM</span><br><span class="line">Command (m for help): w</span><br><span class="line">The partition table has been altered!</span><br><span class="line">Calling ioctl() to re-read partition table.</span><br><span class="line">[root@demo ~]# partx -a /dev/vda</span><br><span class="line">BLKPG: Device or resource busy</span><br><span class="line">error adding partition 1</span><br><span class="line">BLKPG: Device or resource busy</span><br><span class="line">error adding partition 2</span><br><span class="line">BLKPG: Device or resource busy</span><br><span class="line">error adding partition 3</span><br><span class="line">BLKPG: Device or resource busy</span><br><span class="line">error adding partition 5</span><br><span class="line">[root@demo ~]# </span><br><span class="line">[root@demo ~]# partx -a /dev/vda</span><br><span class="line">BLKPG: Device or resource busy</span><br><span class="line">error adding partition 1</span><br><span class="line">BLKPG: Device or resource busy</span><br><span class="line">error adding partition 2</span><br><span class="line">BLKPG: Device or resource busy</span><br><span class="line">error adding partition 3</span><br><span class="line">BLKPG: Device or resource busy</span><br><span class="line">error adding partition 5</span><br><span class="line">BLKPG: Device or resource busy</span><br><span class="line">error adding partition 6</span><br><span class="line">BLKPG: Device or resource busy</span><br><span class="line">error adding partition 7</span><br></pre></td></tr></table></figure>
+<p>2、创建物理卷</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">[root@demo ~]# pvcreate /dev/vda6</span><br><span class="line">  Writing physical volume data to disk &quot;/dev/vda6&quot;</span><br><span class="line">  Physical volume &quot;/dev/vda6&quot; successfully created</span><br><span class="line">[root@demo ~]# pvcreate /dev/vda7</span><br><span class="line">  Writing physical volume data to disk &quot;/dev/vda7&quot;</span><br><span class="line">  Physical volume &quot;/dev/vda7&quot; successfully created</span><br></pre></td></tr></table></figure>
+<p>3、创建卷组</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">[root@demo ~]# vgcreate togogovg /dev/vda6 /dev/vda7</span><br><span class="line">  Volume group &quot;togogovg&quot; successfully created</span><br><span class="line">[root@demo ~]# vgdisplay togogovg</span><br><span class="line">  --- Volume group ---</span><br><span class="line">  VG Name               togogovg</span><br><span class="line">  System ID             </span><br><span class="line">  Format                lvm2</span><br><span class="line">  Metadata Areas        2</span><br><span class="line">  Metadata Sequence No  1</span><br><span class="line">  VG Access             read/write</span><br><span class="line">  VG Status             resizable</span><br><span class="line">  MAX LV                0</span><br><span class="line">  Cur LV                0</span><br><span class="line">  Open LV               0</span><br><span class="line">  Max PV                0</span><br><span class="line">  Cur PV                2</span><br><span class="line">  Act PV                2</span><br><span class="line">  VG Size               492.00 MiB</span><br><span class="line">  PE Size               4.00 MiB</span><br><span class="line">  Total PE              123</span><br><span class="line">  Alloc PE / Size       0 / 0   </span><br><span class="line">  Free  PE / Size       123 / 492.00 MiB</span><br><span class="line">  VG UUID               fd7wDW-R1Ov-8oQh-iyvN-tBur-RMoG-VcYQ5d</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>4、创建逻辑卷<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[root@demo ~]# lvcreate -n lv01 -L 150M togogovg</span><br><span class="line">  Rounding up size to full physical extent 152.00 MiB</span><br><span class="line">  Logical volume &quot;lv01&quot; created</span><br></pre></td></tr></table></figure></p>
+<p>5、格式化<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">[root@demo ~]# mkfs -t ext4 /dev/mapper/togogovg-lv01</span><br><span class="line">mke2fs 1.41.12 (17-May-2010)</span><br><span class="line">Filesystem label=</span><br><span class="line">OS type: Linux</span><br><span class="line">Block size=1024 (log=0)</span><br><span class="line">Fragment size=1024 (log=0)</span><br><span class="line">Stride=0 blocks, Stripe width=0 blocks</span><br><span class="line">38912 inodes, 155648 blocks</span><br><span class="line">7782 blocks (5.00%) reserved for the super user</span><br><span class="line">First data block=1</span><br><span class="line">Maximum filesystem blocks=67371008</span><br><span class="line">19 block groups</span><br><span class="line">8192 blocks per group, 8192 fragments per group</span><br><span class="line">2048 inodes per group</span><br><span class="line">Superblock backups stored on blocks: </span><br><span class="line">	8193, 24577, 40961, 57345, 73729</span><br><span class="line">Writing inode tables: done                            </span><br><span class="line">Creating journal (4096 blocks): done</span><br><span class="line">Writing superblocks and filesystem accounting information: done</span><br><span class="line">This filesystem will be automatically checked every 20 mounts or</span><br><span class="line">180 days, whichever comes first.  Use tune2fs -c or -i to override.</span><br></pre></td></tr></table></figure></p>
+<p>6、挂载<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">[root@demo ~]# mkdir /lv01</span><br><span class="line">[root@demo ~]# blkid /dev/mapper/togogovg-lv01 </span><br><span class="line">/dev/mapper/togogovg-lv01: UUID=&quot;2460a9a1-f1ea-4aae-95ea-c39762380480&quot; TYPE=&quot;ext4&quot; </span><br><span class="line">[root@demo ~]# cat /etc/fstab</span><br><span class="line">#</span><br><span class="line"># /etc/fstab</span><br><span class="line"># Created by anaconda on Sun Sep  1 09:14:16 2013</span><br><span class="line">#</span><br><span class="line"># Accessible filesystems, by reference, are maintained under &apos;/dev/disk&apos;</span><br><span class="line"># See man pages fstab(5), findfs(8), mount(8) and/or blkid(8) for more info</span><br><span class="line">#</span><br><span class="line">/dev/mapper/vgsrv-root  /                       ext4    defaults        1 1</span><br><span class="line">UUID=af186298-194c-4d01-8c3e-a21b28c45740 /boot                   ext4    defaults        1 2</span><br><span class="line">/dev/mapper/vgsrv-common /common                 ext4    defaults        1 2</span><br><span class="line">/dev/mapper/vgsrv-home  /home                   ext4    defaults        1 2</span><br><span class="line">/dev/mapper/vgsrv-shrink /shrink                 ext4    defaults        1 2</span><br><span class="line">/dev/mapper/vgsrv-swap  swap                    swap    defaults        0 0</span><br><span class="line">tmpfs                   /dev/shm                tmpfs   defaults        0 0</span><br><span class="line">devpts                  /dev/pts                devpts  gid=5,mode=620  0 0</span><br><span class="line">sysfs                   /sys                    sysfs   defaults        0 0</span><br><span class="line">proc                    /proc                   proc    defaults        0 0</span><br><span class="line">UUID=c061f12f-efa2-4aa2-8091-de8e73549bae	/data	ext4	defaults,_netdev	0 0</span><br><span class="line">/dev/vda5		/togogo			ext4	defaults	0 0</span><br><span class="line">UUID=2460a9a1-f1ea-4aae-95ea-c39762380480	/lv01	ext4	defaults	0 0</span><br><span class="line">[root@demo ~]# mount</span><br><span class="line">/dev/mapper/vgsrv-root on / type ext4 (rw)</span><br><span class="line">proc on /proc type proc (rw)</span><br><span class="line">sysfs on /sys type sysfs (rw)</span><br><span class="line">devpts on /dev/pts type devpts (rw,gid=5,mode=620)</span><br><span class="line">tmpfs on /dev/shm type tmpfs (rw,rootcontext=&quot;system_u:object_r:tmpfs_t:s0&quot;)</span><br><span class="line">/dev/vda1 on /boot type ext4 (rw)</span><br><span class="line">/dev/mapper/vgsrv-common on /common type ext4 (rw)</span><br><span class="line">/dev/mapper/vgsrv-home on /home type ext4 (rw)</span><br><span class="line">/dev/mapper/vgsrv-shrink on /shrink type ext4 (rw)</span><br><span class="line">none on /proc/sys/fs/binfmt_misc type binfmt_misc (rw)</span><br><span class="line">sunrpc on /var/lib/nfs/rpc_pipefs type rpc_pipefs (rw)</span><br><span class="line">/dev/vda5 on /togogo type ext4 (rw)</span><br><span class="line">/dev/mapper/togogovg-lv01 on /lv01 type ext4 (rw)</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>扫描，查看物理卷，卷组，逻辑卷信息：<br>pvscan,pvdisplay<br>vgscan,vgdisplay<br>lvscan,lvdisplay<br>实例：  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line">[root@demo ~]# vgscan</span><br><span class="line">  Reading all physical volumes.  This may take a while...</span><br><span class="line">  Found volume group &quot;togogovg&quot; using metadata type lvm2</span><br><span class="line">  Found volume group &quot;vgsrv&quot; using metadata type lvm2</span><br><span class="line">[root@demo ~]# </span><br><span class="line">[root@demo ~]# pvscan</span><br><span class="line">  PV /dev/vda6   VG togogovg   lvm2 [196.00 MiB / 44.00 MiB free]</span><br><span class="line">  PV /dev/vda7   VG togogovg   lvm2 [296.00 MiB / 296.00 MiB free]</span><br><span class="line">  PV /dev/vda2   VG vgsrv      lvm2 [9.97 GiB / 4.75 GiB free]</span><br><span class="line">  Total: 3 [10.45 GiB] / in use: 3 [10.45 GiB] / in no VG: 0 [0   ]</span><br><span class="line">[root@demo ~]# pvdisplay /dev/vda6</span><br><span class="line">  --- Physical volume ---</span><br><span class="line">  PV Name               /dev/vda6</span><br><span class="line">  VG Name               togogovg</span><br><span class="line">  PV Size               200.29 MiB / not usable 4.29 MiB</span><br><span class="line">  Allocatable           yes </span><br><span class="line">  PE Size               4.00 MiB</span><br><span class="line">  Total PE              49</span><br><span class="line">  Free PE               11</span><br><span class="line">  Allocated PE          38</span><br><span class="line">  PV UUID               pjxkza-zEAg-3JF6-G7Gg-1oju-xcuZ-bJdF5x</span><br><span class="line">[root@demo ~]# vgdisplay togogovg</span><br><span class="line">  --- Volume group ---</span><br><span class="line">  VG Name               togogovg</span><br><span class="line">  System ID             </span><br><span class="line">  Format                lvm2</span><br><span class="line">  Metadata Areas        2</span><br><span class="line">  Metadata Sequence No  2</span><br><span class="line">  VG Access             read/write</span><br><span class="line">  VG Status             resizable</span><br><span class="line">  MAX LV                0</span><br><span class="line">  Cur LV                1</span><br><span class="line">  Open LV               1</span><br><span class="line">  Max PV                0</span><br><span class="line">  Cur PV                2</span><br><span class="line">  Act PV                2</span><br><span class="line">  VG Size               492.00 MiB</span><br><span class="line">  PE Size               4.00 MiB</span><br><span class="line">  Total PE              123</span><br><span class="line">  Alloc PE / Size       38 / 152.00 MiB</span><br><span class="line">  Free  PE / Size       85 / 340.00 MiB</span><br><span class="line">  VG UUID               fd7wDW-R1Ov-8oQh-iyvN-tBur-RMoG-VcYQ5d</span><br><span class="line">[root@demo ~]# lvdisplay /dev/mapper/togogovg-lv01 </span><br><span class="line">  --- Logical volume ---</span><br><span class="line">  LV Path                /dev/togogovg/lv01</span><br><span class="line">  LV Name                lv01</span><br><span class="line">  VG Name                togogovg</span><br><span class="line">  LV UUID                BMsz8a-ye5Q-77oH-rm5y-O3I6-moKB-YeOXmP</span><br><span class="line">  LV Write Access        read/write</span><br><span class="line">  LV Creation host, time demo.example.com, 2013-09-15 14:56:43 -0400</span><br><span class="line">  LV Status              available</span><br><span class="line">  # open                 1</span><br><span class="line">  LV Size                152.00 MiB</span><br><span class="line">  Current LE             38</span><br><span class="line">  Segments               1</span><br><span class="line">  Allocation             inherit</span><br><span class="line">  Read ahead sectors     auto</span><br><span class="line">  - currently set to     256</span><br><span class="line">  Block device           253:5</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="扩展逻辑卷"><a href="#扩展逻辑卷" class="headerlink" title="扩展逻辑卷"></a>扩展逻辑卷</h3><ul>
+<li>一般流程：<br>新建一个物理卷–&gt;将物理卷加入卷组–&gt;扩展逻辑卷<br>实例：<br>1、创建物理卷（略）<br>2、扩展卷组  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">[root@demo ~]# vgextend togogovg /dev/vda8</span><br><span class="line">  Volume group &quot;togogovg&quot; successfully extended</span><br><span class="line">[root@demo ~]# vgdisplay togogovg</span><br><span class="line">    </span><br><span class="line">  VG Name               togogovg</span><br><span class="line">  System ID             </span><br><span class="line">  Format                lvm2</span><br><span class="line">  Metadata Areas        3</span><br><span class="line">  Metadata Sequence No  3</span><br><span class="line">  VG Access             read/write</span><br><span class="line">  VG Status             resizable</span><br><span class="line">  MAX LV                0</span><br><span class="line">  Cur LV                1</span><br><span class="line">  Open LV               1</span><br><span class="line">  Max PV                0</span><br><span class="line">  Cur PV                3</span><br><span class="line">  Act PV                3</span><br><span class="line">  VG Size               788.00 MiB</span><br><span class="line">  PE Size               4.00 MiB</span><br><span class="line">  Total PE              197</span><br><span class="line">  Alloc PE / Size       38 / 152.00 MiB</span><br><span class="line">  Free  PE / Size       159 / 636.00 MiB</span><br><span class="line">  VG UUID               fd7wDW-R1Ov-8oQh-iyvN-tBur-RMoG-VcYQ5d</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>3、扩展逻辑卷<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line">[root@demo ~]# lvextend -L +148M /dev/mapper/togogovg-lv01 </span><br><span class="line">  Extending logical volume lv01 to 300.00 MiB</span><br><span class="line">  Logical volume lv01 successfully resized</span><br><span class="line">[root@demo ~]# lvdisplay /dev/mapper/togogovg-lv01</span><br><span class="line">  --- Logical volume ---</span><br><span class="line">  LV Path                /dev/togogovg/lv01</span><br><span class="line">  LV Name                lv01</span><br><span class="line">  VG Name                togogovg</span><br><span class="line">  LV UUID                BMsz8a-ye5Q-77oH-rm5y-O3I6-moKB-YeOXmP</span><br><span class="line">  LV Write Access        read/write</span><br><span class="line">  LV Creation host, time demo.example.com, 2013-09-15 14:56:43 -0400</span><br><span class="line">  LV Status              available</span><br><span class="line">  # open                 1</span><br><span class="line">  LV Size                300.00 MiB</span><br><span class="line">  Current LE             75</span><br><span class="line">  Segments               2</span><br><span class="line">  Allocation             inherit</span><br><span class="line">  Read ahead sectors     auto</span><br><span class="line">  - currently set to     256</span><br><span class="line">  Block device           253:5</span><br><span class="line">[root@demo ~]# df -h</span><br><span class="line">Filesystem            Size  Used Avail Use% Mounted on</span><br><span class="line">/dev/mapper/vgsrv-root 4.0G  2.6G  1.3G  68% /</span><br><span class="line">tmpfs                 499M   88K  499M   1% /dev/shm</span><br><span class="line">/dev/vda1             248M   33M  203M  14% /boot</span><br><span class="line">/dev/mapper/vgsrv-common 124M  5.6M  113M   5% /common</span><br><span class="line">/dev/mapper/vgsrv-home 248M   46M  191M  20% /home</span><br><span class="line">/dev/mapper/vgsrv-shrink 310M   11M  284M   4% /shrink</span><br><span class="line">/dev/vda5              98M  5.6M   87M   6% /togogo</span><br><span class="line">/dev/mapper/togogovg-lv01 148M  5.6M  135M   4% /lv01</span><br><span class="line">[root@demo ~]# resize2fs /dev/mapper/togogovg-lv01 </span><br><span class="line">resize2fs 1.41.12 (17-May-2010)</span><br><span class="line">Filesystem at /dev/mapper/togogovg-lv01 is mounted on /lv01; on-line resizing required</span><br><span class="line">old desc_blocks = 1, new_desc_blocks = 2</span><br><span class="line">Performing an on-line resize of /dev/mapper/togogovg-lv01 to 307200 (1k) blocks.</span><br><span class="line">The filesystem on /dev/mapper/togogovg-lv01 is now 307200 blocks long.</span><br><span class="line">[root@demo ~]# df -h</span><br><span class="line">Filesystem            Size  Used Avail Use% Mounted on</span><br><span class="line">/dev/mapper/vgsrv-root 4.0G  2.6G  1.3G  68% /</span><br><span class="line">tmpfs                 499M   88K  499M   1% /dev/shm</span><br><span class="line">/dev/vda1             248M   33M  203M  14% /boot</span><br><span class="line">/dev/mapper/vgsrv-common 124M  5.6M  113M   5% /common</span><br><span class="line">/dev/mapper/vgsrv-home 248M   46M  191M  20% /home</span><br><span class="line">/dev/mapper/vgsrv-shrink 310M   11M  284M   4% /shrink</span><br><span class="line">/dev/vda5              98M  5.6M   87M   6% /togogo</span><br><span class="line">/dev/mapper/togogovg-lv01  291M  6.1M  270M   3% /lv01</span><br><span class="line">[root@demo ~]# pvscan</span><br><span class="line">  PV /dev/vda6   VG togogovg   lvm2 [196.00 MiB / 0    free]</span><br><span class="line">  PV /dev/vda7   VG togogovg   lvm2 [296.00 MiB / 192.00 MiB free]</span><br><span class="line">  PV /dev/vda8   VG togogovg   lvm2 [296.00 MiB / 296.00 MiB free]</span><br><span class="line">  PV /dev/vda2   VG vgsrv      lvm2 [9.97 GiB / 4.75 GiB free]</span><br><span class="line">  Total: 4 [10.74 GiB] / in use: 4 [10.74 GiB] / in no VG: 0 [0   ]</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://blog.grunmin.org/2013/11/03/rhce-note-1/" data-id="ciotjppzo0010r4vrzivlwtf9" class="article-share-link">Partager</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2013/11/03/rhce-note-9/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Récent</strong>
+      <div class="article-nav-title">
+        
+          RHCE note 9
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2013/08/05/guan-yu-zhi-dao-bu-zhi-dao-de-ji-dian-li-jie/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Ancien</strong>
+      <div class="article-nav-title">关于知道不知道的几点理解</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Catégories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/">php</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/">python</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/windows/">windows</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/云/">云</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/">前端</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/工具/">工具</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/随笔/">随笔</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">December 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">September 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">August 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04/">April 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/03/">March 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/01/">January 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/12/">December 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/11/">November 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/08/">August 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/07/">July 2013</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Articles récents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2015/12/03/用highcharts实现数据统计中时间对比功能/">用highcharts实现数据统计中时间对比功能</a>
+          </li>
+        
+          <li>
+            <a href="/2015/09/16/windows和linux间共享互传文件/">windows和linux间共享互传文件</a>
+          </li>
+        
+          <li>
+            <a href="/2015/09/11/sublime-text高级应用-自定义快捷键/">sublime text高级应用-自定义快捷键</a>
+          </li>
+        
+          <li>
+            <a href="/2015/09/02/tornado-上传文件实例/">tornado 上传文件实例</a>
+          </li>
+        
+          <li>
+            <a href="/2015/09/02/用ajax提交包含-type-file-字段的表单/">用ajax提交包含&#39;type=file&#39;字段的表单</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2016 郭润民<br>
+      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

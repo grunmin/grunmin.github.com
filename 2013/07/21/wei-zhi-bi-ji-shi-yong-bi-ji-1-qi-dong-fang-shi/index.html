@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>为知笔记使用笔记(1)-启动方式 | 郭润民的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="linux下软件的启动方式有多种，双击快捷方式对为知笔记这个软件并不管用，因此我们寻求其他更有linux风格的方式。文中的方法对于所有应用程序都是通用的。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="为知笔记使用笔记(1)-启动方式">
+<meta property="og:url" content="http://blog.grunmin.org/2013/07/21/wei-zhi-bi-ji-shi-yong-bi-ji-1-qi-dong-fang-shi/index.html">
+<meta property="og:site_name" content="郭润民的博客">
+<meta property="og:description" content="linux下软件的启动方式有多种，双击快捷方式对为知笔记这个软件并不管用，因此我们寻求其他更有linux风格的方式。文中的方法对于所有应用程序都是通用的。">
+<meta property="og:updated_time" content="2015-08-26T00:24:42.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="为知笔记使用笔记(1)-启动方式">
+<meta name="twitter:description" content="linux下软件的启动方式有多种，双击快捷方式对为知笔记这个软件并不管用，因此我们寻求其他更有linux风格的方式。文中的方法对于所有应用程序都是通用的。">
+  
+    <link rel="alternate" href="/atom.xml" title="郭润民的博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">郭润民的博客</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://blog.grunmin.org"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-wei-zhi-bi-ji-shi-yong-bi-ji-1-qi-dong-fang-shi" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2013/07/21/wei-zhi-bi-ji-shi-yong-bi-ji-1-qi-dong-fang-shi/" class="article-date">
+  <time datetime="2013-07-21T02:40:00.000Z" itemprop="datePublished">2013-07-21</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/linux/">linux</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      为知笔记使用笔记(1)-启动方式
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>linux下软件的启动方式有多种，双击快捷方式对为知笔记这个软件并不管用，因此我们寻求其他更有linux风格的方式。<br>文中的方法对于所有应用程序都是通用的。<br><a id="more"></a></p>
+<h3 id="为知笔记下载："><a href="#为知笔记下载：" class="headerlink" title="为知笔记下载："></a><strong>为知笔记下载：</strong></h3><p><a href="http://www.wiz.cn/download.html" target="_blank" rel="external">为知笔记下载</a>  </p>
+<p>解压包到自己名下的文件夹，启动图标在bin文件夹里。</p>
+<h3 id="方式1-创建变量"><a href="#方式1-创建变量" class="headerlink" title="方式1 创建变量"></a>方式1 创建变量</h3><p>在加环境变量后可以直接在命令行启动<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># vi /etc/profile  </span><br><span class="line"># export PATH=&quot;$PATH:/home/username/path/wiznote/bin/&quot;  </span><br><span class="line"># source /etc/profile #重新加载环境变量</span><br></pre></td></tr></table></figure></p>
+<p>然后就可以在命令行下直接输入wiznote启动。</p>
+<h3 id="方式2-使用alias"><a href="#方式2-使用alias" class="headerlink" title="方式2 使用alias"></a>方式2 使用alias</h3><p>其实我们可以在命令行直接输入/path/to/wiznote/bin/wiznote来启动，不过每次都需要输入很长的一段命令，因此可以用alias来使命令更简单<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ vi .bashrc  #打开bash配置文件</span><br></pre></td></tr></table></figure></p>
+<p>在文档末尾添加一行<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alias note=&quot;/path/to/wiznote/bin/wiznote&quot;</span><br></pre></td></tr></table></figure></p>
+<p>保存，重新启动终端模拟器，输入note即可启动<br>（/path/to…… 需要根据自己的解压目录具体修改）</p>
+<h3 id="方式3-创建桌面快捷方式"><a href="#方式3-创建桌面快捷方式" class="headerlink" title="方式3 创建桌面快捷方式"></a>方式3 创建桌面快捷方式</h3><p>直接复制bin/wiznote到桌面是不能正常使用wiznote的，需要为其创建一个链接，具体如下：<br>在终端输入<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ln -s /path/to/wiznote/bin/wiznote /path/want/to/locate</span><br></pre></td></tr></table></figure></p>
+<p>第一个path是原来wiznote的目录，第二个path是要安放快捷方式的地方。<br>直接双击图标即可启动。</p>
+<h3 id="方式4-添加到快捷启动栏"><a href="#方式4-添加到快捷启动栏" class="headerlink" title="方式4 添加到快捷启动栏"></a>方式4 添加到快捷启动栏</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># vi /usr/share/applications/wiznote.desktop</span><br></pre></td></tr></table></figure>
+<p>复制一下代码到文件中：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">[Desktop Entry]  </span><br><span class="line">Name=wiznote  </span><br><span class="line">GenericName=cloud note-taking application  </span><br><span class="line">Comment=taking note and manage information  </span><br><span class="line">Exec=/pate/to/wiznote/bin/wiznote  </span><br><span class="line">Terminal=false  </span><br><span class="line">Type=Application  </span><br><span class="line">StartupNotify=true  </span><br><span class="line">Icon=/path/toznote/share/wiznote/skins/wiznote64.png  </span><br><span class="line">Categories=KDE;QT;Utility;</span><br></pre></td></tr></table></figure></p>
+<p>其实以上代码可在/path/to/wiznote/share/applications/wiznote中找到。<br>Name是启动栏里显示的名称，Exec是打开路径，Icon是图标路径，Categories是归类，可以填Network.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://blog.grunmin.org/2013/07/21/wei-zhi-bi-ji-shi-yong-bi-ji-1-qi-dong-fang-shi/" data-id="ciotjppxh0001r4vrh4uuxccm" class="article-share-link">Partager</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2013/07/21/fedoraan-zhuang-lamphuan-jing-bi-ji/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Récent</strong>
+      <div class="article-nav-title">
+        
+          linux搭建lamp环境笔记
+        
+      </div>
+    </a>
+  
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Catégories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/">php</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/">python</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/windows/">windows</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/云/">云</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/">前端</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/工具/">工具</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/随笔/">随笔</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">December 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">September 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">August 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04/">April 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/03/">March 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/01/">January 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/12/">December 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/11/">November 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/08/">August 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/07/">July 2013</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Articles récents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2015/12/03/用highcharts实现数据统计中时间对比功能/">用highcharts实现数据统计中时间对比功能</a>
+          </li>
+        
+          <li>
+            <a href="/2015/09/16/windows和linux间共享互传文件/">windows和linux间共享互传文件</a>
+          </li>
+        
+          <li>
+            <a href="/2015/09/11/sublime-text高级应用-自定义快捷键/">sublime text高级应用-自定义快捷键</a>
+          </li>
+        
+          <li>
+            <a href="/2015/09/02/tornado-上传文件实例/">tornado 上传文件实例</a>
+          </li>
+        
+          <li>
+            <a href="/2015/09/02/用ajax提交包含-type-file-字段的表单/">用ajax提交包含&#39;type=file&#39;字段的表单</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2016 郭润民<br>
+      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>wamp apache无法启动的解决方法 | 郭润民的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="如题，近日在安装wamp的时候出现了apache无法启动的情况。wamp图标一直显示橙色。网上搜索了许多资料都无效，最后还是我自己发现问题并予以解决了。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="wamp apache无法启动的解决方法">
+<meta property="og:url" content="http://blog.grunmin.org/2014/03/12/wamp-apachewu-fa-qi-dong-de-jie-jue-fang-fa/index.html">
+<meta property="og:site_name" content="郭润民的博客">
+<meta property="og:description" content="如题，近日在安装wamp的时候出现了apache无法启动的情况。wamp图标一直显示橙色。网上搜索了许多资料都无效，最后还是我自己发现问题并予以解决了。">
+<meta property="og:updated_time" content="2015-08-26T00:31:12.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="wamp apache无法启动的解决方法">
+<meta name="twitter:description" content="如题，近日在安装wamp的时候出现了apache无法启动的情况。wamp图标一直显示橙色。网上搜索了许多资料都无效，最后还是我自己发现问题并予以解决了。">
+  
+    <link rel="alternate" href="/atom.xml" title="郭润民的博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">郭润民的博客</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://blog.grunmin.org"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-wamp-apachewu-fa-qi-dong-de-jie-jue-fang-fa" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/03/12/wamp-apachewu-fa-qi-dong-de-jie-jue-fang-fa/" class="article-date">
+  <time datetime="2014-03-12T14:48:00.000Z" itemprop="datePublished">2014-03-12</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/windows/">windows</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      wamp apache无法启动的解决方法
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>如题，近日在安装wamp的时候出现了apache无法启动的情况。wamp图标一直显示橙色。网上搜索了许多资料都无效，最后还是我自己发现问题并予以解决了。</p>
+<a id="more"></a>
+<h3 id="VC的问题？"><a href="#VC的问题？" class="headerlink" title="VC的问题？"></a>VC的问题？</h3><p>我的电脑是新装的win8.1企业版。因此我怀疑是VC2008和2010没有安装的缘故，因此上官网下载了这两个安装包安装，结果如故。</p>
+<h3 id="没有安装服务？"><a href="#没有安装服务？" class="headerlink" title="没有安装服务？"></a>没有安装服务？</h3><p>直接<code>apache-&gt;service-&gt;remove service</code>，再install service ，重新打开wamp，结果如故。</p>
+<h3 id="80端口被占用？"><a href="#80端口被占用？" class="headerlink" title="80端口被占用？"></a>80端口被占用？</h3><p>用apache里service的test port 80，显示<code>Your port 80 is not actually used</code>。在cmd里用netstat -an 查找，没有一个软件占用80端口。为保险起见修改httpd.conf文件，修改其端口为8080，重启，结果如故。</p>
+<h3 id="netbios解析失败？"><a href="#netbios解析失败？" class="headerlink" title="netbios解析失败？"></a>netbios解析失败？</h3><p>打开网络共享中心，点击<code>本地连接-&gt;属性-&gt;Internet协议版本-&gt;属性-&gt;高级-&gt;WINS</code>，勾掉<code>启用LMHOST</code>查找。重启服务，结果如故。</p>
+<h3 id="httpd-conf修改后语法错误？"><a href="#httpd-conf修改后语法错误？" class="headerlink" title="httpd.conf修改后语法错误？"></a>httpd.conf修改后语法错误？</h3><p>新装的wamp，初始的配置文件怎么可能有语法错误……</p>
+<p>于是把wamp卸了又装装了又卸，问题得不到解决。</p>
+<p>换另一种方法，自己分开安装wamp。</p>
+<h3 id="失败！"><a href="#失败！" class="headerlink" title="失败！"></a>失败！</h3><p>在安装apache的时候显示找不到***文件，请检查路径之类的问题，安装程序出错，此举以失败告终。</p>
+<p>因此我再装一次wamp，查看httpd.conf，在其中看到的路径中包含了中文名。是不是因为名称的问题导致的呢？我不敢确定，因为同样是中文路径，mysqld服务可以成功启动。</p>
+<h3 id="成功！"><a href="#成功！" class="headerlink" title="成功！"></a>成功！</h3><p>接下来的事就简单了，不过也比较刺激。因为为了解决这个问题我搜索了两天，真的只是该死的中文路径名的问题。</p>
+<p>这次问题的解决再次提醒我注意之前多次遇到的问题，即windows下中文路径名的问题。即使转移到windows下，也不要忘了linux下良好的命名习惯呀。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://blog.grunmin.org/2014/03/12/wamp-apachewu-fa-qi-dong-de-jie-jue-fang-fa/" data-id="ciotjppzk000xr4vr8ktqf688" class="article-share-link">Partager</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2014/03/13/fedora-xia-diao-jie-wai-fang-yin-liang-he-ping-mu-liang-du/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Récent</strong>
+      <div class="article-nav-title">
+        
+          fedora 下调节外放音量和屏幕亮度
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2014/03/12/sublime-text-2-xia-de-markdownxie-zuo/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Ancien</strong>
+      <div class="article-nav-title">sublime text 2 下的Markdown写作</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Catégories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/">php</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/">python</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/windows/">windows</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/云/">云</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/">前端</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/工具/">工具</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/随笔/">随笔</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">December 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">September 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">August 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04/">April 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/03/">March 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/01/">January 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/12/">December 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/11/">November 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/08/">August 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/07/">July 2013</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Articles récents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2015/12/03/用highcharts实现数据统计中时间对比功能/">用highcharts实现数据统计中时间对比功能</a>
+          </li>
+        
+          <li>
+            <a href="/2015/09/16/windows和linux间共享互传文件/">windows和linux间共享互传文件</a>
+          </li>
+        
+          <li>
+            <a href="/2015/09/11/sublime-text高级应用-自定义快捷键/">sublime text高级应用-自定义快捷键</a>
+          </li>
+        
+          <li>
+            <a href="/2015/09/02/tornado-上传文件实例/">tornado 上传文件实例</a>
+          </li>
+        
+          <li>
+            <a href="/2015/09/02/用ajax提交包含-type-file-字段的表单/">用ajax提交包含&#39;type=file&#39;字段的表单</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2016 郭润民<br>
+      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

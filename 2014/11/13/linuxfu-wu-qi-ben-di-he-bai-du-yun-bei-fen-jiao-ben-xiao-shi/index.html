@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>linux服务器本地和百度云备份脚本小试 | 郭润民的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="本地单文件上传脚本命名uf这是在本机上做的测试，利用bpcs_uploader脚本实现，只是进行简单的封装，自动完善云端文件路径。
+技术要点：使用dirname获取文件所在目录，使用pwd获取文件完整路径，并作为云端文件路径。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="linux服务器本地和百度云备份脚本小试">
+<meta property="og:url" content="http://blog.grunmin.org/2014/11/13/linuxfu-wu-qi-ben-di-he-bai-du-yun-bei-fen-jiao-ben-xiao-shi/index.html">
+<meta property="og:site_name" content="郭润民的博客">
+<meta property="og:description" content="本地单文件上传脚本命名uf这是在本机上做的测试，利用bpcs_uploader脚本实现，只是进行简单的封装，自动完善云端文件路径。
+技术要点：使用dirname获取文件所在目录，使用pwd获取文件完整路径，并作为云端文件路径。">
+<meta property="og:updated_time" content="2015-08-26T00:37:23.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="linux服务器本地和百度云备份脚本小试">
+<meta name="twitter:description" content="本地单文件上传脚本命名uf这是在本机上做的测试，利用bpcs_uploader脚本实现，只是进行简单的封装，自动完善云端文件路径。
+技术要点：使用dirname获取文件所在目录，使用pwd获取文件完整路径，并作为云端文件路径。">
+  
+    <link rel="alternate" href="/atom.xml" title="郭润民的博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">郭润民的博客</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://blog.grunmin.org"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-linuxfu-wu-qi-ben-di-he-bai-du-yun-bei-fen-jiao-ben-xiao-shi" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/11/13/linuxfu-wu-qi-ben-di-he-bai-du-yun-bei-fen-jiao-ben-xiao-shi/" class="article-date">
+  <time datetime="2014-11-13T15:06:00.000Z" itemprop="datePublished">2014-11-13</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/linux/">linux</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      linux服务器本地和百度云备份脚本小试
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="本地单文件上传脚本"><a href="#本地单文件上传脚本" class="headerlink" title="本地单文件上传脚本"></a>本地单文件上传脚本</h3><p>命名uf<br>这是在本机上做的测试，利用<code>bpcs_uploader</code>脚本实现，只是进行简单的封装，自动完善云端文件路径。</p>
+<p>技术要点：使用<code>dirname</code>获取文件所在目录，使用<code>pwd</code>获取文件完整路径，并作为云端文件路径。</p>
+<a id="more"></a>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">#!/bin/bash</span><br><span class="line">cur_dir=$(cd &quot;$(dirname &quot;$1&quot;)&quot;; pwd)</span><br><span class="line">name=$(basename &quot;$1&quot;)</span><br><span class="line">/home/grm/bin/bpcs_uploader/bpcs_uploader.php upload $1 AWIN$cur_dir/$name</span><br></pre></td></tr></table></figure>
+<h3 id="本地文件夹上传脚本"><a href="#本地文件夹上传脚本" class="headerlink" title="本地文件夹上传脚本"></a>本地文件夹上传脚本</h3><p>命名ud<br><code>bpcs_uploader</code>脚本只能实现单个文件上传，用此脚本可以实现目录批量上传。</p>
+<p>技术要点：通过<code>find</code>命令输出目录下所有文件，用<code>xargs -t -n1</code>实现单个输出，从而可以遍历目录下所有文件，并作为参数逐次赋予脚本<code>uf</code>，通过不断调用脚本<code>uf</code>实现批量上传。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#!/bin/bash</span><br><span class="line">find $1 -name &apos;*.*&apos; |xargs -t -n1 /home/grm/bin/uf</span><br></pre></td></tr></table></figure></p>
+<h3 id="服务器数据库每日备份脚本"><a href="#服务器数据库每日备份脚本" class="headerlink" title="服务器数据库每日备份脚本"></a>服务器数据库每日备份脚本</h3><p>命名backupday.sh(改自鸟哥的linux私房菜)</p>
+<p>技术要点：基本都是常规操作，注意<code>find</code>命令<code>-mtime</code>参数的使用<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">#!/bin/bash</span><br><span class="line"># =========================================================</span><br><span class="line"># 请输入，你想让备份数据放置到那个独立的目录去</span><br><span class="line">basedir=/backup/daily/</span><br><span class="line"></span><br><span class="line"># =========================================================</span><br><span class="line">PATH=/bin:/usr/bin:/sbin:/usr/sbin; export PATH</span><br><span class="line">export LANG=C</span><br><span class="line">basefile1=$basedir/mysql.$(date +%Y-%m-%d).tar.bz2</span><br><span class="line">basefile2=$basedir/cgi-bin.$(date +%Y-%m-%d).tar.bz2</span><br><span class="line">[ ! -d &quot;$basedir&quot; ] &amp;&amp; mkdir $basedir</span><br><span class="line"></span><br><span class="line"># 1. MysQL (数据库目录在 /var/lib/mysql)</span><br><span class="line">cd /var/lib</span><br><span class="line">  tar -jpc -f $basefile1 mysql </span><br><span class="line"></span><br><span class="line"># 2. 定期删除旧备份</span><br><span class="line">DAYS=30</span><br><span class="line">find $basedir -name &quot;mysql*&quot; -type f -mtime +$DAYS -exec rm &#123;&#125; \;</span><br></pre></td></tr></table></figure></p>
+<h3 id="代码及其他配置每周备份脚本"><a href="#代码及其他配置每周备份脚本" class="headerlink" title="代码及其他配置每周备份脚本"></a>代码及其他配置每周备份脚本</h3><p>名为backupweek.sh<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line">#!/bin/bash</span><br><span class="line"># ====================================================================</span><br><span class="line"># 使用者参数输入位置：</span><br><span class="line"># basedir=你用来储存此脚本所预计备份的数据之目录(请独立文件系统)</span><br><span class="line">basedir=/backup/weekly  </span><br><span class="line"></span><br><span class="line"># ====================================================================</span><br><span class="line"># 底下请不要修改了！用默认值即可！</span><br><span class="line">PATH=/bin:/usr/bin:/sbin:/usr/sbin; export PATH</span><br><span class="line">export LANG=C</span><br><span class="line"></span><br><span class="line">D=$(date +&quot;%Y-%m-%d&quot;)</span><br><span class="line"></span><br><span class="line"># 配置要备份的服务的配置档，以及备份的目录</span><br><span class="line">postfixd=$basedir/postfix</span><br><span class="line">vsftpd=$basedir/vsftp</span><br><span class="line">sshd=$basedir/ssh</span><br><span class="line">wwwd=$basedir/www</span><br><span class="line">others=$basedir/others</span><br><span class="line">userinfod=$basedir/userinfo</span><br><span class="line"># 判断目录是否存在，若不存在则予以创建。</span><br><span class="line">for dirs in $postfixd $vsftpd $sshd $wwwd $others $userinfod</span><br><span class="line">do</span><br><span class="line">    [ ! -d &quot;$dirs&quot; ] &amp;&amp; mkdir -p $dirs</span><br><span class="line">done</span><br><span class="line"></span><br><span class="line"># 1. 将系统主要的服务之配置档分别备份下来，同时也备份 /etc 全部。</span><br><span class="line"></span><br><span class="line">cd /etc/</span><br><span class="line">    tar -jpc -f $vsftpd/vsftpd.$D.tar.bz2 vsftpd</span><br><span class="line">cd /etc/</span><br><span class="line">    tar -jpc -f $sshd/sshd.$D.tar.bz2 sshd ssh</span><br><span class="line">cd /etc/</span><br><span class="line">    tar -jpc -f $wwwd/httpd.$D.tar.bz2 httpd</span><br><span class="line">cd /var/www</span><br><span class="line">  tar -jpc -f $wwwd/html.$D.tar.bz2    html </span><br><span class="line">cd /</span><br><span class="line">  tar -jpc -f $others/etc.$D.tar.bz2   etc</span><br><span class="line"></span><br><span class="line"># 2. 关於使用者参数方面</span><br><span class="line">cp -a /etc/&#123;passwd,shadow,group&#125;    $userinfod</span><br><span class="line">cd /var/spool</span><br><span class="line">  tar -jpc -f $userinfod/mail.$D.tar.bz2   mail</span><br><span class="line">cd /</span><br><span class="line">  tar -jpc -f $userinfod/home.$D.tar.bz2   home</span><br><span class="line">cd /var/spool</span><br><span class="line">  tar -jpc -f $userinfod/cron.$D.tar.bz2   cron at</span><br><span class="line"></span><br><span class="line"># 3. 定期删除旧备份</span><br><span class="line">DAYS=30</span><br><span class="line">find $vsftpd -name &quot;vsftpd*&quot; -type f -mtime +$DAYS -exec rm &#123;&#125; \;</span><br><span class="line">find $sshd -name &quot;sshd*&quot; -type f -mtime +$DAYS -exec rm &#123;&#125; \;</span><br><span class="line">find $wwwd -name &quot;ht*&quot; -type f -mtime +$DAYS -exec rm &#123;&#125; \;</span><br><span class="line">find $others -name &quot;etc*&quot; -type f -mtime +$DAYS -exec rm &#123;&#125; \;</span><br><span class="line">find $userinfod -name &quot;cron*&quot; -type f -mtime +$DAYS -exec rm &#123;&#125; \;</span><br><span class="line">find $userinfod -name &quot;home*&quot; -type f -mtime +$DAYS -exec rm &#123;&#125; \;</span><br><span class="line">find $userinfod -name &quot;mail*&quot; -type f -mtime +$DAYS -exec rm &#123;&#125; \;</span><br></pre></td></tr></table></figure></p>
+<h3 id="自动上传脚本auto-upload-daily-sh"><a href="#自动上传脚本auto-upload-daily-sh" class="headerlink" title="自动上传脚本auto_upload_daily.sh"></a>自动上传脚本auto_upload_daily.sh</h3><p>其中upload.sh的代码与本地脚本<code>uf</code>相同。简言之，脚本<code>uf</code>是云备份的基础。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">#!/bin/bash</span><br><span class="line">LOCAL_DATA=/backup/daily</span><br><span class="line">MYSQL_BACKUP=mysql.$(date +&quot;%Y-%m-%d&quot;).tar.bz2</span><br><span class="line"></span><br><span class="line">upload.sh $LOCAL_DATA/$MYSQL_BACKUP</span><br></pre></td></tr></table></figure></p>
+<h3 id="自动上传脚本auto-upload-weekly-sh"><a href="#自动上传脚本auto-upload-weekly-sh" class="headerlink" title="自动上传脚本auto_upload_weekly.sh"></a>自动上传脚本auto_upload_weekly.sh</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">#!/bin/bash</span><br><span class="line">LOCAL_DATA=/backup/weekly</span><br><span class="line">D=$(date +&quot;%Y-%m-%d&quot;)</span><br><span class="line"></span><br><span class="line">HTTP=www/httpd.$D.tar.bz2</span><br><span class="line">HTML=www/html.$D.tar.bz2</span><br><span class="line">ETC=others/etc.$D.tar.bz2</span><br><span class="line">HOM=userinfo/home.$D.tar.bz2</span><br><span class="line">MAIL=userinfo/mail.$D.tar.bz2</span><br><span class="line">PASSWD=userinfo/passwd.$D.tar.bz2</span><br><span class="line">SHADOW=userinfo/shadow.$D.tar.bz2</span><br><span class="line">SSHD=ssh/sshd.$D.tar.bz2</span><br><span class="line">VSFTPD=vsftpd/vsftpd.$D.tar.bz2</span><br><span class="line">CRONA=userinfo/cron.$D.tar.bz2</span><br><span class="line"></span><br><span class="line">upload.sh $LOCAL_DATA/$HTTP</span><br><span class="line">upload.sh $LOCAL_DATA/$HTML</span><br><span class="line">upload.sh $LOCAL_DATA/$ETC</span><br><span class="line">upload.sh $LOCAL_DATA/$HOM</span><br><span class="line">upload.sh $LOCAL_DATA/$MAIL</span><br><span class="line">upload.sh $LOCAL_DATA/$PASSWD</span><br><span class="line">upload.sh $LOCAL_DATA/$SHADOW</span><br><span class="line">upload.sh $LOCAL_DATA/$CRONA</span><br><span class="line">upload.sh $LOCAL_DATA/$SSHD</span><br><span class="line">upload.sh $LOCAL_DATA/$VSFTPD</span><br></pre></td></tr></table></figure>
+<h3 id="最后，再启动定时任务"><a href="#最后，再启动定时任务" class="headerlink" title="最后，再启动定时任务"></a>最后，再启动定时任务</h3><p>为防止网络出现问题导致上传失败，重复了3次上传操作<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"># crontab -l</span><br><span class="line">01 1 * * * /bin/backupday.sh 2&gt;&gt;/backup/errors.log</span><br><span class="line">20 1 * * 0 /bin/backupwk.sh 2&gt;&gt;/backup/errors.log</span><br><span class="line">01 2 * * * /bin/auto_upload_daily.sh 2&gt;&gt;/backup/errors.log</span><br><span class="line">01 4 * * * /bin/auto_upload_daily.sh 2&gt;&gt;/backup/errors.log</span><br><span class="line">01 6 * * * /bin/auto_upload_daily.sh 2&gt;&gt;/backup/errors.log</span><br><span class="line">20 2 * * 0 /bin/auto_upload_weekly.sh 2&gt;&gt;/backup/errors.log</span><br><span class="line">20 4 * * 0 /bin/auto_upload_weekly.sh 2&gt;&gt;/backup/errors.log</span><br><span class="line">20 6 * * 0 /bin/auto_upload_weekly.sh 2&gt;&gt;/backup/errors.log</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://blog.grunmin.org/2014/11/13/linuxfu-wu-qi-ben-di-he-bai-du-yun-bei-fen-jiao-ben-xiao-shi/" data-id="ciotjpq0j001ir4vrfpwoqogx" class="article-share-link">Partager</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2014/11/13/fedora-xia-an-zhuang-jin-shan-kuai-pan-tong-bu-pan/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Récent</strong>
+      <div class="article-nav-title">
+        
+          Fedora 下安装金山快盘同步盘
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2014/11/13/wo-wei-shi-yao-xiang-kao-yan/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Ancien</strong>
+      <div class="article-nav-title">我为什么想考研</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Catégories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/">php</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/">python</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/windows/">windows</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/云/">云</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/">前端</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/工具/">工具</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/随笔/">随笔</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">December 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">September 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">August 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04/">April 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/03/">March 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/01/">January 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/12/">December 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/11/">November 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/08/">August 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/07/">July 2013</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Articles récents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2015/12/03/用highcharts实现数据统计中时间对比功能/">用highcharts实现数据统计中时间对比功能</a>
+          </li>
+        
+          <li>
+            <a href="/2015/09/16/windows和linux间共享互传文件/">windows和linux间共享互传文件</a>
+          </li>
+        
+          <li>
+            <a href="/2015/09/11/sublime-text高级应用-自定义快捷键/">sublime text高级应用-自定义快捷键</a>
+          </li>
+        
+          <li>
+            <a href="/2015/09/02/tornado-上传文件实例/">tornado 上传文件实例</a>
+          </li>
+        
+          <li>
+            <a href="/2015/09/02/用ajax提交包含-type-file-字段的表单/">用ajax提交包含&#39;type=file&#39;字段的表单</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2016 郭润民<br>
+      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

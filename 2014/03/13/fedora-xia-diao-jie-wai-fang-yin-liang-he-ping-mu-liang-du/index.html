@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>fedora 下调节外放音量和屏幕亮度 | 郭润民的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="声音fedora系统下笔记本外放功能可能有受到一些限制。接耳机的时候声音是正常的，但是拔下耳机后电脑并不能外放声音。网上搜到的方法是：">
+<meta property="og:type" content="article">
+<meta property="og:title" content="fedora 下调节外放音量和屏幕亮度">
+<meta property="og:url" content="http://blog.grunmin.org/2014/03/13/fedora-xia-diao-jie-wai-fang-yin-liang-he-ping-mu-liang-du/index.html">
+<meta property="og:site_name" content="郭润民的博客">
+<meta property="og:description" content="声音fedora系统下笔记本外放功能可能有受到一些限制。接耳机的时候声音是正常的，但是拔下耳机后电脑并不能外放声音。网上搜到的方法是：">
+<meta property="og:image" content="https://lh4.googleusercontent.com/-Pj4Qb92Mz3M/UyCOC4GBLFI/AAAAAAAAAJ0/IZSLgP3Xxqs/w614-h346-no/2014-03-13-002941_614x346_scrot.png">
+<meta property="og:updated_time" content="2015-08-26T00:31:27.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="fedora 下调节外放音量和屏幕亮度">
+<meta name="twitter:description" content="声音fedora系统下笔记本外放功能可能有受到一些限制。接耳机的时候声音是正常的，但是拔下耳机后电脑并不能外放声音。网上搜到的方法是：">
+<meta name="twitter:image" content="https://lh4.googleusercontent.com/-Pj4Qb92Mz3M/UyCOC4GBLFI/AAAAAAAAAJ0/IZSLgP3Xxqs/w614-h346-no/2014-03-13-002941_614x346_scrot.png">
+  
+    <link rel="alternate" href="/atom.xml" title="郭润民的博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">郭润民的博客</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://blog.grunmin.org"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-fedora-xia-diao-jie-wai-fang-yin-liang-he-ping-mu-liang-du" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/03/13/fedora-xia-diao-jie-wai-fang-yin-liang-he-ping-mu-liang-du/" class="article-date">
+  <time datetime="2014-03-12T16:43:00.000Z" itemprop="datePublished">2014-03-13</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/linux/">linux</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      fedora 下调节外放音量和屏幕亮度
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="声音"><a href="#声音" class="headerlink" title="声音"></a>声音</h3><p>fedora系统下笔记本外放功能可能有受到一些限制。接耳机的时候声音是正常的，但是拔下耳机后电脑并不能外放声音。网上搜到的方法是：  </p>
+<a id="more"></a>
+<p>终端运行alsamixer-&gt;按F6键，选中对应硬件，应该会出现这样的画面<img src="https://lh4.googleusercontent.com/-Pj4Qb92Mz3M/UyCOC4GBLFI/AAAAAAAAAJ0/IZSLgP3Xxqs/w614-h346-no/2014-03-13-002941_614x346_scrot.png" alt="">，调高第三条的音量即可实现外放。</p>
+<h3 id="显示"><a href="#显示" class="headerlink" title="显示"></a>显示</h3><p>1、可用命令行<code>xgamma -gamma X</code>暂时调节笔记本的屏幕亮度,X的值在1以下。</p>
+<p>2、如果用英特尔集成显卡，则<code>/sys/class/backlight/intel_backlight/brightness</code>是调节屏幕亮度的，文件中的数字即代表亮度。<br>用vim编辑器改是不可以的，因此用重定向的方法：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># echo 100 &gt; /sys/class/backlight/intel_backlight/brightness</span><br></pre></td></tr></table></figure></p>
+<p>数值大概在100到200之间（我的默认是187,后改为100）。</p>
+<p>如果用NVIDIA显卡，则存在<code>/sys/class/backlight/acpi_video0/brightness</code>这个文件，更改方法如上。</p>
+<p>这两个方法都不能永久性地更改亮度。不过我们可以通过脚本的方式，让计算机启动的时候执行这些命令，以达到开机即调整亮度的需求。  </p>
+<p>在/etc/rc.d/init.d/目录下，新建一脚本，比如命名为brightness，写入以下内容<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">#add for chkconfig</span><br><span class="line">#chkconfig:2345 70 30</span><br><span class="line">#description:modify brightness</span><br><span class="line">#processname:brightness</span><br><span class="line">xgamma -gamma 0.7</span><br><span class="line">echo 50 &gt; /sys/class/backlight/intel_backlight/brightness</span><br><span class="line">echo 50 &gt; /sys/class/backlight/acpi_video0/brightness</span><br></pre></td></tr></table></figure></p>
+<p>其中2345表示脚本在哪一运行级别生效，70和30表示开机/关机时启动/关闭的顺序，数字越大越靠后。processname即为服务的名称，作标识用。</p>
+<p>给脚本可执行权限<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod +x brightness</span><br></pre></td></tr></table></figure></p>
+<p>将脚本添加入服务控制列表<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chkconfig --add brightness</span><br></pre></td></tr></table></figure></p>
+<p>此时用<code>chkconfig --list</code>可查看brightness服务在2345运行级别里是默认开启的。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://blog.grunmin.org/2014/03/13/fedora-xia-diao-jie-wai-fang-yin-liang-he-ping-mu-liang-du/" data-id="ciotjppza000vr4vrshzbg5ea" class="article-share-link">Partager</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2014/03/15/android-xia-yong-jiao-ben-bei-fen-wen-jian-dao-dropboxde-shi-xian/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Récent</strong>
+      <div class="article-nav-title">
+        
+          android 下用脚本备份文件到dropbox的实现
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2014/03/12/wamp-apachewu-fa-qi-dong-de-jie-jue-fang-fa/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Ancien</strong>
+      <div class="article-nav-title">wamp apache无法启动的解决方法</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Catégories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/">php</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/">python</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/windows/">windows</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/云/">云</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/">前端</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/工具/">工具</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/随笔/">随笔</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">December 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">September 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">August 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04/">April 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/03/">March 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/01/">January 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/12/">December 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/11/">November 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/08/">August 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/07/">July 2013</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Articles récents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2015/12/03/用highcharts实现数据统计中时间对比功能/">用highcharts实现数据统计中时间对比功能</a>
+          </li>
+        
+          <li>
+            <a href="/2015/09/16/windows和linux间共享互传文件/">windows和linux间共享互传文件</a>
+          </li>
+        
+          <li>
+            <a href="/2015/09/11/sublime-text高级应用-自定义快捷键/">sublime text高级应用-自定义快捷键</a>
+          </li>
+        
+          <li>
+            <a href="/2015/09/02/tornado-上传文件实例/">tornado 上传文件实例</a>
+          </li>
+        
+          <li>
+            <a href="/2015/09/02/用ajax提交包含-type-file-字段的表单/">用ajax提交包含&#39;type=file&#39;字段的表单</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2016 郭润民<br>
+      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

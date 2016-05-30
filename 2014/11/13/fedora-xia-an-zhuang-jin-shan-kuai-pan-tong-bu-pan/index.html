@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Fedora 下安装金山快盘同步盘 | 郭润民的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="金山快盘推出了linux系统下的同步盘客户端，但是很遗憾没有红帽系的rpm安装包。尽管如此，我们可以通过一些操作在fedora下安装（mate桌面）（其他红帽系的没有尝试）">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Fedora 下安装金山快盘同步盘">
+<meta property="og:url" content="http://blog.grunmin.org/2014/11/13/fedora-xia-an-zhuang-jin-shan-kuai-pan-tong-bu-pan/index.html">
+<meta property="og:site_name" content="郭润民的博客">
+<meta property="og:description" content="金山快盘推出了linux系统下的同步盘客户端，但是很遗憾没有红帽系的rpm安装包。尽管如此，我们可以通过一些操作在fedora下安装（mate桌面）（其他红帽系的没有尝试）">
+<meta property="og:updated_time" content="2015-08-25T12:59:08.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Fedora 下安装金山快盘同步盘">
+<meta name="twitter:description" content="金山快盘推出了linux系统下的同步盘客户端，但是很遗憾没有红帽系的rpm安装包。尽管如此，我们可以通过一些操作在fedora下安装（mate桌面）（其他红帽系的没有尝试）">
+  
+    <link rel="alternate" href="/atom.xml" title="郭润民的博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">郭润民的博客</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://blog.grunmin.org"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-fedora-xia-an-zhuang-jin-shan-kuai-pan-tong-bu-pan" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/11/13/fedora-xia-an-zhuang-jin-shan-kuai-pan-tong-bu-pan/" class="article-date">
+  <time datetime="2014-11-13T15:07:00.000Z" itemprop="datePublished">2014-11-13</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/linux/">linux</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Fedora 下安装金山快盘同步盘
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>金山快盘推出了linux系统下的同步盘客户端，但是很遗憾没有红帽系的rpm安装包。尽管如此，我们可以通过一些操作在fedora下安装（mate桌面）（其他红帽系的没有尝试）</p>
+<a id="more"></a>
+<ul>
+<li>进入<a href="http://www.ubuntukylin.com/applications/showimg.php?lang=cn&amp;id=21" target="_blank" rel="external">官网</a> 下载ubuntu版本的客户端（注意系统位数）</li>
+<li>解压deb包，可看到<code>DEBIAN</code>,<code>etc</code>,<code>usr</code>,<code>opt</code>这几个文件夹（如只看到data.tar压缩包，则解压这个压缩包，可看到这几个文件夹）</li>
+<li><p>进入解压后文件夹根目录，将<code>usr</code>,<code>opt</code>文件夹复制到系统根目录下</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># cp -r usr /</span><br><span class="line"># cp -r opt /</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>安装库文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># yum install libqxt</span><br><span class="line"># yum install boost-iostreams</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>需要什么库文件可以通过在终端启动快盘时显示的错误信息排查。如果不是这两个的话也是正常情况。</p>
+<ul>
+<li>创建链接<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># ln /usr/bin/kuaipan4uk /home/yourhomedirectory/anywhereyoulike</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>此时双击该链接即可启动快盘</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://blog.grunmin.org/2014/11/13/fedora-xia-an-zhuang-jin-shan-kuai-pan-tong-bu-pan/" data-id="ciotjpq0d001gr4vrmmtoshig" class="article-share-link">Partager</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2014/11/13/mu-yang-shao-nian-qi-huan-zhi-lu/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Récent</strong>
+      <div class="article-nav-title">
+        
+          《牧羊少年奇幻之旅》
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2014/11/13/linuxfu-wu-qi-ben-di-he-bai-du-yun-bei-fen-jiao-ben-xiao-shi/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Ancien</strong>
+      <div class="article-nav-title">linux服务器本地和百度云备份脚本小试</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Catégories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/">php</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/">python</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/windows/">windows</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/云/">云</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/">前端</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/工具/">工具</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/随笔/">随笔</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">December 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">September 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">August 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04/">April 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/03/">March 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/01/">January 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/12/">December 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/11/">November 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/08/">August 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/07/">July 2013</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Articles récents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2015/12/03/用highcharts实现数据统计中时间对比功能/">用highcharts实现数据统计中时间对比功能</a>
+          </li>
+        
+          <li>
+            <a href="/2015/09/16/windows和linux间共享互传文件/">windows和linux间共享互传文件</a>
+          </li>
+        
+          <li>
+            <a href="/2015/09/11/sublime-text高级应用-自定义快捷键/">sublime text高级应用-自定义快捷键</a>
+          </li>
+        
+          <li>
+            <a href="/2015/09/02/tornado-上传文件实例/">tornado 上传文件实例</a>
+          </li>
+        
+          <li>
+            <a href="/2015/09/02/用ajax提交包含-type-file-字段的表单/">用ajax提交包含&#39;type=file&#39;字段的表单</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2016 郭润民<br>
+      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

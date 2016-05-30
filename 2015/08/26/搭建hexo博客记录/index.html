@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>搭建hexo博客记录 | 郭润民的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="前期工作
+安装nodejs
+安装git
+
+环境安装可在git bash里执行mkdir blog或者直接图形界面创建博客文件存放目录进入该目录,按住shift键点击鼠标右键,在当前位置打开命令窗口,或者鼠标右键后选择git bash here,输入下列命令">
+<meta property="og:type" content="article">
+<meta property="og:title" content="搭建hexo博客记录">
+<meta property="og:url" content="http://blog.grunmin.org/2015/08/26/搭建hexo博客记录/index.html">
+<meta property="og:site_name" content="郭润民的博客">
+<meta property="og:description" content="前期工作
+安装nodejs
+安装git
+
+环境安装可在git bash里执行mkdir blog或者直接图形界面创建博客文件存放目录进入该目录,按住shift键点击鼠标右键,在当前位置打开命令窗口,或者鼠标右键后选择git bash here,输入下列命令">
+<meta property="og:updated_time" content="2015-12-03T12:31:50.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="搭建hexo博客记录">
+<meta name="twitter:description" content="前期工作
+安装nodejs
+安装git
+
+环境安装可在git bash里执行mkdir blog或者直接图形界面创建博客文件存放目录进入该目录,按住shift键点击鼠标右键,在当前位置打开命令窗口,或者鼠标右键后选择git bash here,输入下列命令">
+  
+    <link rel="alternate" href="/atom.xml" title="郭润民的博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">郭润民的博客</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://blog.grunmin.org"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-搭建hexo博客记录" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/08/26/搭建hexo博客记录/" class="article-date">
+  <time datetime="2015-08-26T13:06:54.000Z" itemprop="datePublished">2015-08-26</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/工具/">工具</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      搭建hexo博客记录
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="前期工作"><a href="#前期工作" class="headerlink" title="前期工作"></a>前期工作</h2><ul>
+<li>安装<a href="https://nodejs.org/download/" target="_blank" rel="external">nodejs</a></li>
+<li>安装<a href="https://git-scm.com/download/win" target="_blank" rel="external">git</a></li>
+</ul>
+<h2 id="环境安装"><a href="#环境安装" class="headerlink" title="环境安装"></a>环境安装</h2><p>可在git bash里执行<code>mkdir blog</code>或者直接图形界面创建博客文件存放目录<br>进入该目录,按住shift键点击鼠标右键,在当前位置打开命令窗口,或者鼠标右键后选择git bash here,输入下列命令</p>
+<a id="more"></a>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br><span class="line">npm install -g hexo --save</span><br></pre></td></tr></table></figure>
+<p>在这一步后,当前目录即有了hexo环境,继续操作<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo init</span><br><span class="line">npm install</span><br></pre></td></tr></table></figure></p>
+<p>这里安装大量hexo插件,请不要忘记执行上面第二个命令,否则后续很多操作不能执行</p>
+<h2 id="git和ssh配置"><a href="#git和ssh配置" class="headerlink" title="git和ssh配置"></a>git和ssh配置</h2><p>在git bash 窗口执行</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -C &apos;EMAIL&apos; -t rsa</span><br></pre></td></tr></table></figure>
+<p>将上面EMAIL替换为你的git想要使用的邮件地址.<br>测试key可以使用<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure></p>
+<p>如果正常，将返回</p>
+<blockquote>
+<p>Hi grunmin! You’ve successfully authenticated, but GitHub does not provide shell access.</p>
+</blockquote>
+<p>继续执行下列命令定义git变量</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name &apos;USERNAME&apos; </span><br><span class="line">git config --global user.email &apos;EMAIL&apos;</span><br></pre></td></tr></table></figure>
+<p>同样的,EMAIL和USERNAME需要自己替换</p>
+<h2 id="gitcafe的操作"><a href="#gitcafe的操作" class="headerlink" title="gitcafe的操作"></a>gitcafe的操作</h2><p>注册gitcafe账户后,添加ssh-key. key的位置在C盘用户目录下的.ssh目录,通常是<strong>id_rsa.pub</strong><br>新建gitcafe账户同名项目,根据创建成功页面的提示,因为本地已有git仓库.直接在blog目录<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">git init</span><br><span class="line">git remote add origin &apos;GITREPO&apos;</span><br><span class="line">git add .</span><br><span class="line">git commit -m &apos;init&apos;</span><br><span class="line">git push -u origin master</span><br></pre></td></tr></table></figure></p>
+<p><em>GITREPO</em>为项目git仓库地址,形如<strong>git@gitcafe.com:grunmin/grunmin.git</strong><br>在本地创建gitcafe-pages分支,并切换到该分支,推送<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git checkout -b gitcafe-pages</span><br><span class="line">git push origin gitcafe-pages</span><br></pre></td></tr></table></figure></p>
+<p>再次切换回master分支<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout master</span><br></pre></td></tr></table></figure></p>
+<p>修改blog目录下的<strong>_config.yml</strong>文件,找到这行代码,修改如下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: </span><br><span class="line">    gitcafe: git@gitcafe.com:grunmin/grunmin.git</span><br></pre></td></tr></table></figure></p>
+<p>hexo生成静态文件,推送到gitcafe中<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo d -g</span><br></pre></td></tr></table></figure></p>
+<p>成功后即可访问USERNAME.gitcafe.io<br>之后所有的操作都在master分支里</p>
+<h2 id="github的操作"><a href="#github的操作" class="headerlink" title="github的操作"></a>github的操作</h2><p>tonggitcafe,注册账户,添加ssh-key<br>新建一个仓库,命名为USERNAME.github.com<br>在_config.yml文件刚才修改的地方,再次添加一行记录,结果如下:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: </span><br><span class="line">    gitcafe: git@gitcafe.com:grunmin/grunmin.git</span><br><span class="line">    github: git@github.com:grunmin/grunmin.github.com.git</span><br></pre></td></tr></table></figure></p>
+<p>再次执行hexo的推送命令即可将博文内容推送到两个仓库中.<br>现在即可访问USERNAME.github.io</p>
+<h2 id="问题记录"><a href="#问题记录" class="headerlink" title="问题记录"></a>问题记录</h2><h4 id="推送github失败"><a href="#推送github失败" class="headerlink" title="推送github失败"></a>推送github失败</h4><p>在成功推送gitcafe后,我尝试了上述的双线推送,每次推送github都失败.提示消息是请检查是否有权限进行操作.<br><del>我的解决办法是新建一个仓库,然后关联到本地仓库,进行导入key之后的第一次push操作.操作成功之后,再次执行hexo推送,这次成功了.<br>具体原因不明,猜测与github的安全机制有关.</del></p>
+<p>首先执行<code>ssh -T git@github.com</code>测试key是否正常，如果是从其他地方拷贝到key，注意存放的位置和文件名，注意公钥对加密内容是不换行的。<br>deploy之前请先修改文件并generate，否则github.com可能会拒绝连接</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://blog.grunmin.org/2015/08/26/搭建hexo博客记录/" data-id="ciotjpq0w001sr4vrf69yw0zh" class="article-share-link">Partager</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2015/08/27/Echarts使用记录-导入/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Récent</strong>
+      <div class="article-nav-title">
+        
+          Echarts使用记录-导入
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2014/11/13/wo-de-fedoraying-yong-lie-biao/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Ancien</strong>
+      <div class="article-nav-title">我的fedora应用列表</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Catégories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/php/">php</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/python/">python</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/windows/">windows</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/云/">云</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/">前端</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/工具/">工具</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/随笔/">随笔</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">December 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">September 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">August 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04/">April 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/03/">March 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/01/">January 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/12/">December 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/11/">November 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/08/">August 2013</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/07/">July 2013</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Articles récents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2015/12/03/用highcharts实现数据统计中时间对比功能/">用highcharts实现数据统计中时间对比功能</a>
+          </li>
+        
+          <li>
+            <a href="/2015/09/16/windows和linux间共享互传文件/">windows和linux间共享互传文件</a>
+          </li>
+        
+          <li>
+            <a href="/2015/09/11/sublime-text高级应用-自定义快捷键/">sublime text高级应用-自定义快捷键</a>
+          </li>
+        
+          <li>
+            <a href="/2015/09/02/tornado-上传文件实例/">tornado 上传文件实例</a>
+          </li>
+        
+          <li>
+            <a href="/2015/09/02/用ajax提交包含-type-file-字段的表单/">用ajax提交包含&#39;type=file&#39;字段的表单</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2016 郭润民<br>
+      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
