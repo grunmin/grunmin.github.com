@@ -4,35 +4,26 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>搭建hexo博客记录 | 郭润民的博客</title>
+    <title>Hexo博客迁移 | 郭润民的博客</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="郭润民">
     
 
     
-    <meta name="description" content="前期工作
-安装nodejs
-安装git
-
-环境安装可在git bash里执行mkdir blog或者直接图形界面创建博客文件存放目录进入该目录,按住shift键点击鼠标右键,在当前位置打开命令窗口,或者鼠标右键后选择git bash here,输入下列命令">
+    <meta name="description" content="托管我的博客的gitcafe已经不提供服务了，只好将博客迁移到coding上。得益于近期了解一些npm和js相关的技术，对hexo搭建和安装不再一脸懵逼的状况。
+事实上，Hexo封装了一些git命令，hexo d命令的执行会将/public目录上传到远端仓库中（没错，hexo不在博客根目录执行git初始化）。博客的源代码，包括source，theme等都原封不动保存在本地。因此，当需要在其他电脑同">
 <meta property="og:type" content="article">
-<meta property="og:title" content="搭建hexo博客记录">
-<meta property="og:url" content="http://blog.grunmin.org/2015/08/26/搭建hexo博客记录/index.html">
+<meta property="og:title" content="Hexo博客迁移">
+<meta property="og:url" content="http://blog.grunmin.org/2016/05/30/Hexo博客迁移/index.html">
 <meta property="og:site_name" content="郭润民的博客">
-<meta property="og:description" content="前期工作
-安装nodejs
-安装git
-
-环境安装可在git bash里执行mkdir blog或者直接图形界面创建博客文件存放目录进入该目录,按住shift键点击鼠标右键,在当前位置打开命令窗口,或者鼠标右键后选择git bash here,输入下列命令">
-<meta property="og:updated_time" content="2015-12-03T12:31:50.000Z">
+<meta property="og:description" content="托管我的博客的gitcafe已经不提供服务了，只好将博客迁移到coding上。得益于近期了解一些npm和js相关的技术，对hexo搭建和安装不再一脸懵逼的状况。
+事实上，Hexo封装了一些git命令，hexo d命令的执行会将/public目录上传到远端仓库中（没错，hexo不在博客根目录执行git初始化）。博客的源代码，包括source，theme等都原封不动保存在本地。因此，当需要在其他电脑同">
+<meta property="og:updated_time" content="2016-05-30T12:45:20.926Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="搭建hexo博客记录">
-<meta name="twitter:description" content="前期工作
-安装nodejs
-安装git
-
-环境安装可在git bash里执行mkdir blog或者直接图形界面创建博客文件存放目录进入该目录,按住shift键点击鼠标右键,在当前位置打开命令窗口,或者鼠标右键后选择git bash here,输入下列命令">
+<meta name="twitter:title" content="Hexo博客迁移">
+<meta name="twitter:description" content="托管我的博客的gitcafe已经不提供服务了，只好将博客迁移到coding上。得益于近期了解一些npm和js相关的技术，对hexo搭建和安装不再一脸懵逼的状况。
+事实上，Hexo封装了一些git命令，hexo d命令的执行会将/public目录上传到远端仓库中（没错，hexo不在博客根目录执行git初始化）。博客的源代码，包括source，theme等都原封不动保存在本地。因此，当需要在其他电脑同">
 
     
     <link rel="alternative" href="/atom.xml" title="郭润民的博客" type="application/atom+xml">
@@ -92,14 +83,14 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2015/08/26/搭建hexo博客记录/" title="搭建hexo博客记录" itemprop="url">搭建hexo博客记录</a>
+      <a href="/2016/05/30/Hexo博客迁移/" title="Hexo博客迁移" itemprop="url">Hexo博客迁移</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="郭润民" target="_blank" itemprop="author">郭润民</a>
 		
   <p class="article-time">
-    <time datetime="2015-08-26T13:06:54.000Z" itemprop="datePublished"> Published 2015-08-26</time>
+    <time datetime="2016-05-30T12:23:54.000Z" itemprop="datePublished"> Published 2016-05-30</time>
     
   </p>
 </header>
@@ -108,39 +99,17 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">Contents</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#前期工作"><span class="toc-number">1.</span> <span class="toc-text">前期工作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#环境安装"><span class="toc-number">2.</span> <span class="toc-text">环境安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git和ssh配置"><span class="toc-number">3.</span> <span class="toc-text">git和ssh配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#gitcafe的操作"><span class="toc-number">4.</span> <span class="toc-text">gitcafe的操作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#github的操作"><span class="toc-number">5.</span> <span class="toc-text">github的操作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#问题记录"><span class="toc-number">6.</span> <span class="toc-text">问题记录</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#推送github失败"><span class="toc-number">6.0.1.</span> <span class="toc-text">推送github失败</span></a></li></ol></li></ol></li></ol>
+			
 		
 		</div>
 		
-		<h2 id="前期工作"><a href="#前期工作" class="headerlink" title="前期工作"></a>前期工作</h2><ul>
-<li>安装<a href="https://nodejs.org/download/" target="_blank" rel="external">nodejs</a></li>
-<li>安装<a href="https://git-scm.com/download/win" target="_blank" rel="external">git</a></li>
-</ul>
-<h2 id="环境安装"><a href="#环境安装" class="headerlink" title="环境安装"></a>环境安装</h2><p>可在git bash里执行<code>mkdir blog</code>或者直接图形界面创建博客文件存放目录<br>进入该目录,按住shift键点击鼠标右键,在当前位置打开命令窗口,或者鼠标右键后选择git bash here,输入下列命令</p>
-<a id="more"></a>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br><span class="line">npm install -g hexo --save</span><br></pre></td></tr></table></figure>
-<p>在这一步后,当前目录即有了hexo环境,继续操作<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo init</span><br><span class="line">npm install</span><br></pre></td></tr></table></figure></p>
-<p>这里安装大量hexo插件,请不要忘记执行上面第二个命令,否则后续很多操作不能执行</p>
-<h2 id="git和ssh配置"><a href="#git和ssh配置" class="headerlink" title="git和ssh配置"></a>git和ssh配置</h2><p>在git bash 窗口执行</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -C &apos;EMAIL&apos; -t rsa</span><br></pre></td></tr></table></figure>
-<p>将上面EMAIL替换为你的git想要使用的邮件地址.<br>测试key可以使用<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure></p>
-<p>如果正常，将返回</p>
-<blockquote>
-<p>Hi grunmin! You’ve successfully authenticated, but GitHub does not provide shell access.</p>
-</blockquote>
-<p>继续执行下列命令定义git变量</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name &apos;USERNAME&apos; </span><br><span class="line">git config --global user.email &apos;EMAIL&apos;</span><br></pre></td></tr></table></figure>
-<p>同样的,EMAIL和USERNAME需要自己替换</p>
-<h2 id="gitcafe的操作"><a href="#gitcafe的操作" class="headerlink" title="gitcafe的操作"></a>gitcafe的操作</h2><p>注册gitcafe账户后,添加ssh-key. key的位置在C盘用户目录下的.ssh目录,通常是<strong>id_rsa.pub</strong><br>新建gitcafe账户同名项目,根据创建成功页面的提示,因为本地已有git仓库.直接在blog目录<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">git init</span><br><span class="line">git remote add origin &apos;GITREPO&apos;</span><br><span class="line">git add .</span><br><span class="line">git commit -m &apos;init&apos;</span><br><span class="line">git push -u origin master</span><br></pre></td></tr></table></figure></p>
-<p><em>GITREPO</em>为项目git仓库地址,形如<strong>git@gitcafe.com:grunmin/grunmin.git</strong><br>在本地创建gitcafe-pages分支,并切换到该分支,推送<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git checkout -b gitcafe-pages</span><br><span class="line">git push origin gitcafe-pages</span><br></pre></td></tr></table></figure></p>
-<p>再次切换回master分支<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout master</span><br></pre></td></tr></table></figure></p>
-<p>修改blog目录下的<strong>_config.yml</strong>文件,找到这行代码,修改如下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: </span><br><span class="line">    gitcafe: git@gitcafe.com:grunmin/grunmin.git</span><br></pre></td></tr></table></figure></p>
-<p>hexo生成静态文件,推送到gitcafe中<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo d -g</span><br></pre></td></tr></table></figure></p>
-<p>成功后即可访问USERNAME.gitcafe.io<br>之后所有的操作都在master分支里</p>
-<h2 id="github的操作"><a href="#github的操作" class="headerlink" title="github的操作"></a>github的操作</h2><p>tonggitcafe,注册账户,添加ssh-key<br>新建一个仓库,命名为USERNAME.github.com<br>在_config.yml文件刚才修改的地方,再次添加一行记录,结果如下:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: </span><br><span class="line">    gitcafe: git@gitcafe.com:grunmin/grunmin.git</span><br><span class="line">    github: git@github.com:grunmin/grunmin.github.com.git</span><br></pre></td></tr></table></figure></p>
-<p>再次执行hexo的推送命令即可将博文内容推送到两个仓库中.<br>现在即可访问USERNAME.github.io</p>
-<h2 id="问题记录"><a href="#问题记录" class="headerlink" title="问题记录"></a>问题记录</h2><h4 id="推送github失败"><a href="#推送github失败" class="headerlink" title="推送github失败"></a>推送github失败</h4><p>在成功推送gitcafe后,我尝试了上述的双线推送,每次推送github都失败.提示消息是请检查是否有权限进行操作.<br><del>我的解决办法是新建一个仓库,然后关联到本地仓库,进行导入key之后的第一次push操作.操作成功之后,再次执行hexo推送,这次成功了.<br>具体原因不明,猜测与github的安全机制有关.</del></p>
-<p>首先执行<code>ssh -T git@github.com</code>测试key是否正常，如果是从其他地方拷贝到key，注意存放的位置和文件名，注意公钥对加密内容是不换行的。<br>deploy之前请先修改文件并generate，否则github.com可能会拒绝连接</p>
+		<p>托管我的博客的gitcafe已经不提供服务了，只好将博客迁移到coding上。<br>得益于近期了解一些npm和js相关的技术，对hexo搭建和安装不再一脸懵逼的状况。</p>
+<p>事实上，Hexo封装了一些git命令，<code>hexo d</code>命令的执行会将<code>/public</code>目录上传到远端仓库中（没错，hexo不在博客根目录执行git初始化）。博客的源代码，包括<code>source</code>，<code>theme</code>等都原封不动保存在本地。因此，当需要在其他电脑同步写博客时，需要额外做一些操作。</p>
+<p>具体来说就是将<code>public</code>之外的目录也纳入版本控制一并推送到远程仓库。可以通过分支的方法做到这一点。在远端仓库<code>master</code>分支存放源代码，<code>pages</code>分支存放博文静态文件。</p>
+<p>当前博客根目录是没有git版本控制的，因此可以直接执行<code>git init</code>初始化，并且分支为<code>master</code>。OK，在hexo配置文件<code>_config.yml</code>存放静态文件的远端仓库的分支如果不是<code>master</code>，只要<code>git remote add origin git@********.git</code>即可连接远端仓库了。hexo初始化时已经生成了<code>.gitngore</code>文件，将<code>public</code>，<code>node_module</code>等目录排除在版本控制之外。在新电脑将master分支拉下来，然后再<code>npm install</code>即可将所需组件装上。</p>
+<p>如此一来，<code>hexo</code>系列操作执行博文更新，<code>git</code>系列操作执行代码和配置备份。</p>
+<p><em>另外需要注意的是，theme纳入版本控制，但是如果通过<code>git clone</code>下载了其他主题，而后更改主题配置（或者添加一些静态文件），这个主题的自定义修改是不会被推送到自己的仓库的（只会推到原主题仓库），因此，clone了主题之后可将主题根目录下的<code>.git</code>目录删除</em></p>
+<p><em><code>hexo d</code>有时候很诡异的报<code>Permission denied (publickey)</code>问题，测试<code>ssh -T</code>显示拥有仓库权限，而且仓库也是存在的。没办法只能通过再重新生成添加密钥来解决。</em></p>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -158,7 +127,7 @@
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://blog.grunmin.org/2015/08/26/搭建hexo博客记录/" data-title="搭建hexo博客记录 | 郭润民的博客" data-tsina="null" class="share clearfix">
+	  <div data-url="http://blog.grunmin.org/2016/05/30/Hexo博客迁移/" data-title="Hexo博客迁移 | 郭润民的博客" data-tsina="null" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -171,19 +140,11 @@
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2015/08/27/Echarts使用记录-导入/" title="Echarts使用记录-导入">
-  <strong>上一篇：</strong><br/>
-  <span>
-  Echarts使用记录-导入</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/2014/11/13/wo-de-fedoraying-yong-lie-biao/"  title="我的fedora应用列表">
+<a href="/2015/12/03/用highcharts实现数据统计中时间对比功能/"  title="用highcharts实现数据统计中时间对比功能">
  <strong>下一篇：</strong><br/> 
- <span>我的fedora应用列表
+ <span>用highcharts实现数据统计中时间对比功能
 </span>
 </a>
 </div>
@@ -204,7 +165,7 @@
   <div id="toc" class="toc-aside">
   <strong class="toc-title">Contents</strong>
  
- <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#前期工作"><span class="toc-number">1.</span> <span class="toc-text">前期工作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#环境安装"><span class="toc-number">2.</span> <span class="toc-text">环境安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git和ssh配置"><span class="toc-number">3.</span> <span class="toc-text">git和ssh配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#gitcafe的操作"><span class="toc-number">4.</span> <span class="toc-text">gitcafe的操作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#github的操作"><span class="toc-number">5.</span> <span class="toc-text">github的操作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#问题记录"><span class="toc-number">6.</span> <span class="toc-text">问题记录</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#推送github失败"><span class="toc-number">6.0.1.</span> <span class="toc-text">推送github失败</span></a></li></ol></li></ol></li></ol>
+ 
  
   </div>
 
