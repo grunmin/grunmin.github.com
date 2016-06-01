@@ -17,7 +17,7 @@
 <meta property="og:url" content="http://blog.grunmin.org/2016/05/31/IP地理位置查询API收集/index.html">
 <meta property="og:site_name" content="郭润民的博客">
 <meta property="og:description" content="日前在跟进一个提供ip查询的内部项目，主数据库用的ipip，在查询页面同时提供一些第三方提供查询结果，收集了部分api">
-<meta property="og:updated_time" content="2016-05-31T13:15:32.443Z">
+<meta property="og:updated_time" content="2016-06-01T04:59:49.941Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="IP地理位置查询API收集">
 <meta name="twitter:description" content="日前在跟进一个提供ip查询的内部项目，主数据库用的ipip，在查询页面同时提供一些第三方提供查询结果，收集了部分api">
@@ -48,7 +48,7 @@
 				<h1 class="site-name"><a href="/" title="郭润民的博客">郭润民的博客</a></h1>
 				<h2 class="blog-motto"></h2>
 			</div>
-			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="Menu">
 			</a></div>
 			<nav class="animated">
 				<ul>
@@ -64,7 +64,7 @@
  					
 					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
 						<label>Search</label>
-						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="搜索" />
+						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="Search" />
 						<input type="hidden" name="q" value="site:blog.grunmin.org">
 					</form>
 					
@@ -87,16 +87,16 @@
 		<a href="/about" title="郭润民" target="_blank" itemprop="author">郭润民</a>
 		
   <p class="article-time">
-    <time datetime="2016-05-31T12:54:12.000Z" itemprop="datePublished"> 发表于 2016-05-31</time>
+    <time datetime="2016-05-31T12:54:12.000Z" itemprop="datePublished"> Published 2016-05-31</time>
     
   </p>
 </header>
 	<div class="article-content">
 		
 		<div id="toc" class="toc-article">
-			<strong class="toc-title">文章目录</strong>
+			<strong class="toc-title">Contents</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#淘宝"><span class="toc-number">1.</span> <span class="toc-text">淘宝</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#新浪"><span class="toc-number">2.</span> <span class="toc-text">新浪</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#太平洋IP地址库-pconline"><span class="toc-number">3.</span> <span class="toc-text">太平洋IP地址库(pconline)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ip138"><span class="toc-number">4.</span> <span class="toc-text">ip138</span></a></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#淘宝"><span class="toc-number">1.</span> <span class="toc-text">淘宝</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#新浪"><span class="toc-number">2.</span> <span class="toc-text">新浪</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#太平洋IP地址库-pconline"><span class="toc-number">3.</span> <span class="toc-text">太平洋IP地址库(pconline)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ip138"><span class="toc-number">4.</span> <span class="toc-text">ip138</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#GeoIp"><span class="toc-number">5.</span> <span class="toc-text">GeoIp</span></a></li></ol>
 		
 		</div>
 		
@@ -122,6 +122,8 @@
 <p>同样返回包含地理位置信息的字符串</p>
 <p>例程：<code>python</code></p>
 <figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">url = <span class="string">"http://test.ip138.com/query/?ip="</span>+ip</span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    r = requests.<span class="keyword">get</span>(url, timeout=<span class="number">5</span>)</span><br><span class="line">except Exception, e:</span><br><span class="line">    result = &#123;</span><br><span class="line">        <span class="string">"error"</span>: <span class="number">1</span>,</span><br><span class="line">        <span class="string">"msg"</span>: <span class="string">'请求失败'</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> result</span><br><span class="line"><span class="keyword">if</span> r.status_code == requests.codes.ok:</span><br><span class="line">    <span class="keyword">data</span> = r.json()</span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">data</span>.<span class="keyword">get</span>(<span class="string">"ret"</span>) == <span class="string">"ok"</span>:</span><br><span class="line">        msg = <span class="keyword">data</span>.<span class="keyword">get</span>(<span class="string">"data"</span>)</span><br><span class="line">        result = &#123;</span><br><span class="line">            <span class="string">"error"</span>: <span class="number">0</span>,</span><br><span class="line">            <span class="string">"msg"</span>: <span class="string">' '</span>.join(msg),</span><br><span class="line">            <span class="string">"thirdpart"</span>: <span class="string">'ip138'</span></span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
+<h2 id="GeoIp"><a href="#GeoIp" class="headerlink" title="GeoIp"></a>GeoIp</h2><figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">url</span>: <span class="string">"http://geoip.nekudo.com/api/%s/zh"</span> % <span class="built_in">ip</span></span><br></pre></td></tr></table></figure>
+<p>GeoIp有离线版数据库可以下载，提供了多个语言的调用方法，包括了python，看<a href="https://dev.maxmind.com/geoip/legacy/downloadable/" target="_blank" rel="external">这里</a><br>如果不想使用离线版，这个网站提供了api，返回json格式数据.<br>例程:<code>python</code><br><figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">url = <span class="string">"http://geoip.nekudo.com/api/%s/zh"</span> % ip</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        r = requests.<span class="keyword">get</span>(url, timeout=<span class="number">5</span>)</span><br><span class="line">    except Exception, e:</span><br><span class="line">        result = &#123;</span><br><span class="line">            <span class="string">"error"</span>: <span class="number">1</span>,</span><br><span class="line">            <span class="string">"msg"</span>: <span class="string">'请求失败'</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> result</span><br><span class="line">    <span class="keyword">if</span> r.status_code == requests.codes.ok:</span><br><span class="line">        <span class="keyword">data</span> = r.json()</span><br><span class="line">        msg = [<span class="keyword">data</span>.<span class="keyword">get</span>(<span class="string">"country"</span>,[]).<span class="keyword">get</span>(<span class="string">"name"</span>) or <span class="string">''</span>, <span class="keyword">data</span>.<span class="keyword">get</span>(<span class="string">"city"</span>) or <span class="string">''</span>]</span><br><span class="line">        result = &#123;</span><br><span class="line">            <span class="string">"error"</span>: <span class="number">0</span>,</span><br><span class="line">            <span class="string">"msg"</span>: <span class="string">' '</span>.join(msg),</span><br><span class="line">            <span class="string">"thirdpart"</span>: <span class="string">'GeoIp'</span></span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure></p>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -172,22 +174,22 @@
 </section>
 
 </div>  
-      <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
+      <div class="openaside"><a class="navbutton" href="#" title="Show Sidebar"></a></div>
 
   <div id="toc" class="toc-aside">
-  <strong class="toc-title">文章目录</strong>
+  <strong class="toc-title">Contents</strong>
  
- <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#淘宝"><span class="toc-number">1.</span> <span class="toc-text">淘宝</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#新浪"><span class="toc-number">2.</span> <span class="toc-text">新浪</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#太平洋IP地址库-pconline"><span class="toc-number">3.</span> <span class="toc-text">太平洋IP地址库(pconline)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ip138"><span class="toc-number">4.</span> <span class="toc-text">ip138</span></a></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#淘宝"><span class="toc-number">1.</span> <span class="toc-text">淘宝</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#新浪"><span class="toc-number">2.</span> <span class="toc-text">新浪</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#太平洋IP地址库-pconline"><span class="toc-number">3.</span> <span class="toc-text">太平洋IP地址库(pconline)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ip138"><span class="toc-number">4.</span> <span class="toc-text">ip138</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#GeoIp"><span class="toc-number">5.</span> <span class="toc-text">GeoIp</span></a></li></ol>
  
   </div>
 
 <div id="asidepart">
-<div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
+<div class="closeaside"><a class="closebutton" href="#" title="Hide Sidebar"></a></div>
 <aside class="clearfix">
 
   
 <div class="categorieslist">
-	<p class="asidetitle">分类</p>
+	<p class="asidetitle">Categories</p>
 		<ul>
 		
 		  
@@ -232,7 +234,7 @@
 
   
 <div class="tagslist">
-	<p class="asidetitle">标签</p>
+	<p class="asidetitle">Tags</p>
 		<ul class="clearfix">
 		
 			
@@ -245,13 +247,13 @@
 
   
   <div class="archiveslist">
-    <p class="asidetitle"><a href="/archives">归档</a></p>
+    <p class="asidetitle"><a href="/archives">Archives</a></p>
       <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">December 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">September 2015</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">August 2015</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04/">April 2014</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/03/">March 2014</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/01/">January 2014</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/12/">December 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/11/">November 2013</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/08/">August 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/07/">July 2013</a><span class="archive-list-count">3</span></li></ul>
   </div>
 
 
   <div class="linkslist">
-  <p class="asidetitle">友情链接</p>
+  <p class="asidetitle">Links</p>
     <ul>
         
           <li>
@@ -497,7 +499,7 @@ ga('send', 'pageview');
 <!-- Totop Begin -->
 
 	<div id="totop">
-	<a title="返回顶部"><img src="/img/scrollup.png"/></a>
+	<a title="Back to Top"><img src="/img/scrollup.png"/></a>
 	</div>
 	<script src="/js/totop.js"></script>
 
