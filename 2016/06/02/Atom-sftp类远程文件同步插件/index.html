@@ -1,0 +1,515 @@
+
+ <!DOCTYPE HTML>
+<html >
+<head>
+  <meta charset="UTF-8">
+  
+    <title>Atom sftp类远程文件同步插件 | 郭润民的博客</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+    
+    <meta name="author" content="郭润民">
+    
+
+    
+    <meta name="description" content="sublime text 下babel插件好像优化不好，有一些性能问题。特别是在创建文件的时候，即便没有打开，插件也会尝试把文件树里的js类文件重新渲染一遍。因为js项目所用组件繁多，导致sublime text经常卡死。因此尝试用atom。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Atom sftp类远程文件同步插件">
+<meta property="og:url" content="http://blog.grunmin.org/2016/06/02/Atom-sftp类远程文件同步插件/index.html">
+<meta property="og:site_name" content="郭润民的博客">
+<meta property="og:description" content="sublime text 下babel插件好像优化不好，有一些性能问题。特别是在创建文件的时候，即便没有打开，插件也会尝试把文件树里的js类文件重新渲染一遍。因为js项目所用组件繁多，导致sublime text经常卡死。因此尝试用atom。">
+<meta property="og:updated_time" content="2016-06-02T13:12:19.697Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Atom sftp类远程文件同步插件">
+<meta name="twitter:description" content="sublime text 下babel插件好像优化不好，有一些性能问题。特别是在创建文件的时候，即便没有打开，插件也会尝试把文件树里的js类文件重新渲染一遍。因为js项目所用组件繁多，导致sublime text经常卡死。因此尝试用atom。">
+
+    
+    <link rel="alternative" href="/atom.xml" title="郭润民的博客" type="application/atom+xml">
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/icon.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/img/icon.jpg">
+    
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+  <body>
+    <header>
+      
+<div>
+		
+			<div id="imglogo">
+				<a href="/"><img src="/img/icon.png" alt="郭润民的博客" title="郭润民的博客"/></a>
+			</div>
+			
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="郭润民的博客">郭润民的博客</a></h1>
+				<h2 class="blog-motto"></h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="Menu">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					<ul>
+					 
+						<li><a href="/">主页</a></li>
+					
+						<li><a href="/archives">归档</a></li>
+					
+						<li><a href="/about">作者</a></li>
+					
+					<li>
+ 					
+					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="Search" />
+						<input type="hidden" name="q" value="site:blog.grunmin.org">
+					</form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+  
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2016/06/02/Atom-sftp类远程文件同步插件/" title="Atom sftp类远程文件同步插件" itemprop="url">Atom sftp类远程文件同步插件</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="郭润民" target="_blank" itemprop="author">郭润民</a>
+		
+  <p class="article-time">
+    <time datetime="2016-06-02T12:10:50.000Z" itemprop="datePublished"> Published 2016-06-02</time>
+    
+  </p>
+</header>
+	<div class="article-content">
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">Contents</strong>
+		
+			<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#remote-sync"><span class="toc-number">1.</span> <span class="toc-text">remote-sync</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#remote-ftp"><span class="toc-number">2.</span> <span class="toc-text">remote-ftp</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#sftp-deployment"><span class="toc-number">3.</span> <span class="toc-text">sftp-deployment</span></a></li></ol>
+		
+		</div>
+		
+		<p>sublime text 下babel插件好像优化不好，有一些性能问题。特别是在创建文件的时候，即便没有打开，插件也会尝试把文件树里的js类文件重新渲染一遍。因为js项目所用组件繁多，导致sublime text经常卡死。因此尝试用atom。</p>
+<a id="more"></a>
+<p>将本地代码文件与linux服务器上的同步一般用sftp类型的插件。在sublime text上可以用sftp。atom的插件大致查找一下，有这么3个：</p>
+<h2 id="remote-sync"><a href="#remote-sync" class="headerlink" title="remote-sync"></a>remote-sync</h2><p>与sublime text上的sftp插件相似度最高，配置文件是json格式，可以用用户名/密码组合，也可以使用key。配置文件名称是<code>.remote-sync.json</code>，例子如下</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"uploadOnSave"</span>: <span class="literal">false</span>,</span><br><span class="line">  <span class="attr">"useAtomicWrites"</span>: <span class="literal">false</span>,</span><br><span class="line">  <span class="attr">"deleteLocal"</span>: <span class="literal">false</span>,</span><br><span class="line">  <span class="attr">"hostname"</span>: <span class="string">"IP OR HOSTNAME"</span>,</span><br><span class="line">  <span class="attr">"port"</span>: <span class="string">"POST"</span>,</span><br><span class="line">  <span class="attr">"target"</span>: <span class="string">"REMOTE PATH"</span>,</span><br><span class="line">  <span class="attr">"ignore"</span>: [</span><br><span class="line">    <span class="string">".remote-sync.json"</span>,</span><br><span class="line">    <span class="string">".git/**"</span>,</span><br><span class="line">    <span class="string">".gitignore"</span></span><br><span class="line">  ],</span><br><span class="line">  <span class="attr">"username"</span>: <span class="string">"USERNAME"</span>,</span><br><span class="line">  <span class="attr">"keyfile"</span>: <span class="string">"PUB KEY PATH"</span>,</span><br><span class="line">  <span class="attr">"watch"</span>: [FILE WILL AUTO UPLOAD WHILE CHANGE],</span><br><span class="line">  <span class="attr">"saveOnUpload"</span>: <span class="literal">true</span>,</span><br><span class="line">  <span class="attr">"transport"</span>: <span class="string">"scp"</span>,</span><br><span class="line">  <span class="attr">"passphrase"</span>: <span class="string">"PUB KEY PASSWORD"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>和sublime text上的sftp插件使用基本一致，可以绑定快捷键，同步时窗口下方有日志输出，可以在保存时自动上传也可以上传时自动保存。</p>
+<p>相对来说，唯一的缺点是，公钥的密码是明文保存的，不是交互式输入，有安全隐患，希望作者早日改进吧。</p>
+<h2 id="remote-ftp"><a href="#remote-ftp" class="headerlink" title="remote-ftp"></a>remote-ftp</h2><p>当前下载次数最多的同类插件(与上一个差不多)，同样支持用户名/密码和key登录。配置文件名称是<code>.ftpconfig</code>，例子如下:</p>
+<figure class="highlight nimrod"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="string">"protocol"</span>: <span class="string">"sftp"</span>,</span><br><span class="line">    <span class="string">"host"</span>: <span class="string">"IP"</span>, // <span class="built_in">string</span> - <span class="type">Hostname</span> <span class="keyword">or</span> <span class="type">IP</span> address <span class="keyword">of</span> the server. <span class="type">Default</span>: 'localhost'</span><br><span class="line">    <span class="string">"port"</span>: <span class="number">22</span>, // integer - <span class="type">Port</span> number <span class="keyword">of</span> the server. <span class="type">Default</span>: <span class="number">22</span></span><br><span class="line">    <span class="string">"user"</span>: <span class="string">"root"</span>, // <span class="built_in">string</span> - <span class="type">Username</span> <span class="keyword">for</span> authentication. <span class="type">Default</span>: (none)</span><br><span class="line">    <span class="string">"pass"</span>: <span class="string">"pass"</span>, // <span class="built_in">string</span> - <span class="type">Password</span> <span class="keyword">for</span> password-based user authentication. <span class="type">Default</span>: (none)，如果是key登录，注释掉这行</span><br><span class="line">    <span class="string">"promptForPass"</span>: <span class="literal">true</span>, // boolean - <span class="type">Set</span> to <span class="literal">true</span> <span class="keyword">for</span> enable password/passphrase dialog. <span class="type">This</span> will prevent <span class="keyword">from</span> <span class="keyword">using</span> cleartext password/passphrase <span class="keyword">in</span> this config. <span class="type">Default</span>: <span class="literal">false</span></span><br><span class="line">    <span class="string">"remote"</span>: <span class="string">"/"</span>, // <span class="keyword">try</span> to use absolute paths starting <span class="keyword">with</span> /</span><br><span class="line">    <span class="string">"agent"</span>: <span class="string">""</span>, // <span class="built_in">string</span> - <span class="type">Path</span> to ssh-agent's <span class="type">UNIX</span> socket <span class="keyword">for</span> ssh-agent-based user authentication. <span class="type">Windows</span> users: <span class="built_in">set</span> to 'pageant' <span class="keyword">for</span> authenticating <span class="keyword">with</span> <span class="type">Pageant</span> <span class="keyword">or</span> (actual) path to a cygwin <span class="string">"UNIX socket."</span> <span class="type">Default</span>: (none)</span><br><span class="line">    <span class="string">"privatekey"</span>: <span class="string">"C:/Users/orchid/.ssh/id_rsa_4399"</span>, // <span class="built_in">string</span> - <span class="type">Path</span> to the private key file (<span class="keyword">in</span> <span class="type">OpenSSH</span> format). <span class="type">Default</span>: (none)</span><br><span class="line">    //<span class="string">"passphrase"</span>: <span class="string">""</span>, // <span class="built_in">string</span> - <span class="type">For</span> an encrypted private key, this <span class="keyword">is</span> the passphrase used to decrypt it. <span class="type">Default</span>: (none) 如果要交互输入，注释掉这行</span><br><span class="line">    <span class="string">"hosthash"</span>: <span class="string">""</span>, // <span class="built_in">string</span> - 'md5' <span class="keyword">or</span> 'sha1'. <span class="type">The</span> host's key <span class="keyword">is</span> hashed <span class="keyword">using</span> this <span class="keyword">method</span> <span class="keyword">and</span> passed to the hostVerifier function. <span class="type">Default</span>: (none)</span><br><span class="line">    <span class="string">"ignorehost"</span>: <span class="literal">true</span>,</span><br><span class="line">    <span class="string">"connTimeout"</span>: <span class="number">10000</span>, // integer - <span class="type">How</span> long (<span class="keyword">in</span> milliseconds) to wait <span class="keyword">for</span> the <span class="type">SSH</span> handshake to complete. <span class="type">Default</span>: <span class="number">10000</span></span><br><span class="line">    <span class="string">"keepalive"</span>: <span class="number">10000</span> // integer - <span class="type">How</span> often (<span class="keyword">in</span> milliseconds) to send <span class="type">SSH</span>-level keepalive packets to the server (<span class="keyword">in</span> a similar way <span class="keyword">as</span> <span class="type">OpenSSH</span>'s <span class="type">ServerAliveInterval</span> config option). <span class="type">Set</span> to <span class="number">0</span> to disable. <span class="type">Default</span>: <span class="number">10000</span></span><br><span class="line">    //<span class="string">"watch"</span>:[ // <span class="built_in">array</span> - <span class="type">Files</span> that are watched <span class="keyword">and</span> <span class="keyword">when</span> edited outside <span class="keyword">of</span> the atom editor are uploaded. <span class="type">Useful</span> <span class="keyword">if</span> <span class="keyword">using</span> a build tool e.g <span class="type">Gulp</span>. <span class="type">Default</span> : []</span><br><span class="line">    //    <span class="string">"./dist/stylesheets/main.css"</span> // reference file <span class="keyword">from</span> the root <span class="keyword">of</span> the project.</span><br><span class="line">    //]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>相对上个插件，一个重要的改进是key密码是交互式输入了，类似sublime text。</p>
+<p>然而让我困惑的是，这个插件同步的时候<strong>没有日志回显</strong>，没有任何迹象。以至于我不敢确定是否已经通过过去了，因此没有使用。</p>
+<p>另外，好像它的同步是整个项目的， 目前尚未证实。</p>
+<h2 id="sftp-deployment"><a href="#sftp-deployment" class="headerlink" title="sftp-deployment"></a>sftp-deployment</h2><p>配置文件名是<code>deployment-config.json</code>，例子如下:<br><figure class="highlight clojure"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="string">"type"</span>: <span class="string">"sftp"</span>,</span><br><span class="line">    <span class="string">"host"</span>: <span class="string">"IP"</span>,</span><br><span class="line">    <span class="string">"username"</span>: <span class="string">"root"</span>, //这里是username，不是user，否则会报错<span class="string">"Cannot established connection : invalid username"</span>。官网文档没有及时更新。</span><br><span class="line">    <span class="string">"port"</span>: <span class="string">"PORT"</span>,</span><br><span class="line">    <span class="string">"remotePath"</span>: <span class="string">"REMOTE PATH"</span>,</span><br><span class="line">    <span class="string">"sshKeyFile"</span>: <span class="string">"PUB KEY PATH"</span>,</span><br><span class="line">    <span class="string">"passphrase"</span>: <span class="string">"PUB KEY PASSWORD"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>感觉这个插件目前没什么亮点，没有日志回显（不过同步时右上角有显示状态）。key的密码也是明文保存的。</p>
+<p>而且，插件只会识别第一个项目目录下的配置文件，如果导入了两个项目，第二个项目是无法读取到正确的配置的，至少目前是如此。</p>
+<p>Atom目前还是个年轻的编辑器，插件开发社区也十分活跃。相信目前存在的这些问题很快会得到改进的。</p>
+  
+	</div>
+		<footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/工具/">工具</a>
+</div>
+
+
+</div>
+
+
+
+	<div class="article-share" id="share">
+	
+	  <div data-url="http://blog.grunmin.org/2016/06/02/Atom-sftp类远程文件同步插件/" data-title="Atom sftp类远程文件同步插件 | 郭润民的博客" data-tsina="null" class="share clearfix">
+	  </div>
+	
+	</div>
+
+
+</footer>
+
+   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+
+<div class="next">
+<a href="/2016/06/01/nginx-X-Accel-Redirect头的利用/"  title="nginx X-Accel-Redirect头的利用">
+ <strong>下一篇：</strong><br/> 
+ <span>nginx X-Accel-Redirect头的利用
+</span>
+</a>
+</div>
+
+</nav>
+
+	
+
+<section id="comments" class="comment">
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
+
+</div>  
+      <div class="openaside"><a class="navbutton" href="#" title="Show Sidebar"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">Contents</strong>
+ 
+ <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#remote-sync"><span class="toc-number">1.</span> <span class="toc-text">remote-sync</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#remote-ftp"><span class="toc-number">2.</span> <span class="toc-text">remote-ftp</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#sftp-deployment"><span class="toc-number">3.</span> <span class="toc-text">sftp-deployment</span></a></li></ol>
+ 
+  </div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="Hide Sidebar"></a></div>
+<aside class="clearfix">
+
+  
+<div class="categorieslist">
+	<p class="asidetitle">Categories</p>
+		<ul>
+		
+		  
+			<li><a href="/categories/linux/" title="linux">linux<sup>12</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/php/" title="php">php<sup>4</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/python/" title="python">python<sup>2</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/windows/" title="windows">windows<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/云/" title="云">云<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/其他/" title="其他">其他<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/前端/" title="前端">前端<sup>6</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/工具/" title="工具">工具<sup>9</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/随笔/" title="随笔">随笔<sup>10</sup></a></li>
+		  
+		
+		</ul>
+</div>
+
+
+  
+<div class="tagslist">
+	<p class="asidetitle">Tags</p>
+		<ul class="clearfix">
+		
+			
+				<li><a href="/tags/nginx/" title="nginx">nginx<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/git/" title="git">git<sup>1</sup></a></li>
+			
+		
+		</ul>
+</div>
+
+
+  
+  <div class="archiveslist">
+    <p class="asidetitle"><a href="/archives">Archives</a></p>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">December 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">September 2015</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">August 2015</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04/">April 2014</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/03/">March 2014</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/01/">January 2014</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/12/">December 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/11/">November 2013</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/08/">August 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/07/">July 2013</a><span class="archive-list-count">3</span></li></ul>
+  </div>
+
+
+  <div class="linkslist">
+  <p class="asidetitle">Links</p>
+    <ul>
+        
+          <li>
+            
+            	<a href="http://blog.91ant.top" target="_blank" title="孝明的博客">孝明的博客</a>
+            
+          </li>
+        
+    </ul>
+</div>
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<div class="social-font" class="clearfix">
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	</div>
+			
+		
+
+		<p class="copyright">
+		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2016 
+		
+		<a href="/about" target="_blank" title="郭润民">郭润民</a>
+		
+		
+		</p>
+</div>
+</footer>
+    <script src="/js/jquery-2.0.3.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/jquery.qrcode-0.12.0.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+  
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else{
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  c.click(function(){
+    ta.css('display', 'block').addClass('fadeIn');
+  });
+  o.click(function(){
+    ta.css('display', 'none');
+  });
+  $(window).scroll(function(){
+    ta.css("top",Math.max(140,320-$(this).scrollTop()));
+  });
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina'),
+      description = $this.attr('description');
+  var html = [
+  '<div class="hoverqrcode clearfix"></div>',
+  '<a class="overlay" id="qrcode"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="微信"></a>',
+  '<a href="http://widget.renren.com/dialog/share?resourceUrl=' + encodedUrl + '&srcUrl=' + encodedUrl + '&title=' + title +'" class="article-share-renren" target="_blank" title="人人"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="微博"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+
+  $('.hoverqrcode').hide();
+
+  var myWidth = 0;
+  function updatehoverqrcode(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+    var qrsize = myWidth > 1024 ? 200:100;
+    var options = {render: 'image', size: qrsize, fill: '#2ca6cb', text: url, radius: 0.5, quiet: 1};
+    var p = $('.article-share-qrcode').position();
+    $('.hoverqrcode').empty().css('width', qrsize).css('height', qrsize)
+                          .css('left', p.left-qrsize/2+20).css('top', p.top-qrsize-10)
+                          .qrcode(options);
+  };
+  $(window).resize(function(){
+    $('.hoverqrcode').hide();
+  });
+  $('.article-share-qrcode').click(function(){
+    updatehoverqrcode();
+    $('.hoverqrcode').toggle();
+  });
+  $('.article-share-qrcode').hover(function(){}, function(){
+      $('.hoverqrcode').hide();
+  });
+});   
+</script>
+
+
+
+
+<script type="text/javascript">
+
+var disqus_shortname = 'grunmin';
+
+(function(){
+  var dsq = document.createElement('script');
+  dsq.type = 'text/javascript';
+  dsq.async = true;
+  dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+}());
+(function(){
+  var dsq = document.createElement('script');
+  dsq.type = 'text/javascript';
+  dsq.async = true;
+  dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+}());
+</script>
+
+
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.article-content').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox')) return;
+      var alt = this.alt;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'article' + i);
+    });
+  });
+  if($.fancybox){
+    $('.fancybox').fancybox();
+  }
+}); 
+</script>
+
+
+
+<!-- Analytics Begin -->
+
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-42775487-3', 'auto');  
+ga('send', 'pageview');
+</script>
+
+
+
+
+
+<!-- Analytics End -->
+
+<!-- Totop Begin -->
+
+	<div id="totop">
+	<a title="Back to Top"><img src="/img/scrollup.png"/></a>
+	</div>
+	<script src="/js/totop.js"></script>
+
+<!-- Totop End -->
+
+<!-- MathJax Begin -->
+<!-- mathjax config similar to math.stackexchange -->
+
+
+<!-- MathJax End -->
+
+<!-- Tiny_search Begin -->
+
+<!-- Tiny_search End -->
+
+  </body>
+</html>
