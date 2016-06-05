@@ -47,7 +47,7 @@
 				<h1 class="site-name"><a href="/" title="郭润民的博客">郭润民的博客</a></h1>
 				<h2 class="blog-motto"></h2>
 			</div>
-			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜單">
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="Menu">
 			</a></div>
 			<nav class="animated">
 				<ul>
@@ -63,7 +63,7 @@
  					
 					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
 						<label>Search</label>
-						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="搜索" />
+						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="Search" />
 						<input type="hidden" name="q" value="site:blog.grunmin.org">
 					</form>
 					
@@ -81,6 +81,61 @@
         <header class="article-info clearfix">
   <h1 itemprop="name">
     
+      <a href="/2016/06/05/python-shell-md5生成注意事项/" title="python shell md5生成注意事项" itemprop="url">python shell md5生成注意事项</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="郭润民" target="_blank" itemprop="author">郭润民</a>
+		
+  <p class="article-time">
+    <time datetime="2016-06-05T08:14:29.000Z" itemprop="datePublished"> Published 2016-06-05</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <p>python的md5加密类似这样<br><figure class="highlight xquery"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> hashlib</span><br><span class="line">h = hashlib.md5()    </span><br><span class="line">h.<span class="keyword">update</span>(<span class="string">'sweet '</span>)   </span><br><span class="line">h.<span class="keyword">update</span>(<span class="string">'girl'</span>)  </span><br><span class="line">h.hexdigest()</span><br></pre></td></tr></table></figure></p>
+<p>shell 的md5加密类似这样<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> -n <span class="string">'sweet girl'</span>|md5sum</span><br></pre></td></tr></table></figure></p>
+<p>需要注意的是，echo命令会自动在字符串后加换行符<code>\n</code>，因此需要加<code>-n</code>参数<br>另外，shell下的双引号和单引号作用不同，如果字符串中带有特殊字符比如<strong>$</strong>等，会被shell解析为变量，因此建议echo后的字符串统一用单引号</p>
+
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+	  	<span></span>
+		<a href="/2016/06/05/python-shell-md5生成注意事项/#disqus_thread" class="comments-count-link">Comments</a>
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
       <a href="/2016/06/05/hexo静态资源文件目录-Asset-Folders-的使用/" title="hexo静态资源文件目录(Asset Folders)的使用" itemprop="url">hexo静态资源文件目录(Asset Folders)的使用</a>
   </h1>
   <p class="article-author">By
@@ -88,7 +143,7 @@
 		<a href="/about" title="郭润民" target="_blank" itemprop="author">郭润民</a>
 		
   <p class="article-time">
-    <time datetime="2016-06-05T03:47:27.000Z" itemprop="datePublished"> 發表於 2016-06-05</time>
+    <time datetime="2016-06-05T03:47:27.000Z" itemprop="datePublished"> Published 2016-06-05</time>
     
   </p>
 </header>
@@ -142,7 +197,7 @@
 		<a href="/about" title="郭润民" target="_blank" itemprop="author">郭润民</a>
 		
   <p class="article-time">
-    <time datetime="2016-06-05T03:31:59.000Z" itemprop="datePublished"> 發表於 2016-06-05</time>
+    <time datetime="2016-06-05T03:31:59.000Z" itemprop="datePublished"> Published 2016-06-05</time>
     
   </p>
 </header>
@@ -197,7 +252,7 @@
 		<a href="/about" title="郭润民" target="_blank" itemprop="author">郭润民</a>
 		
   <p class="article-time">
-    <time datetime="2016-06-02T12:10:50.000Z" itemprop="datePublished"> 發表於 2016-06-02</time>
+    <time datetime="2016-06-02T12:10:50.000Z" itemprop="datePublished"> Published 2016-06-02</time>
     
   </p>
 </header>
@@ -256,7 +311,7 @@
 		<a href="/about" title="郭润民" target="_blank" itemprop="author">郭润民</a>
 		
   <p class="article-time">
-    <time datetime="2016-06-01T14:45:39.000Z" itemprop="datePublished"> 發表於 2016-06-01</time>
+    <time datetime="2016-06-01T14:45:39.000Z" itemprop="datePublished"> Published 2016-06-01</time>
     
   </p>
 </header>
@@ -321,7 +376,7 @@
 		<a href="/about" title="郭润民" target="_blank" itemprop="author">郭润民</a>
 		
   <p class="article-time">
-    <time datetime="2016-05-31T12:54:12.000Z" itemprop="datePublished"> 發表於 2016-05-31</time>
+    <time datetime="2016-05-31T12:54:12.000Z" itemprop="datePublished"> Published 2016-05-31</time>
     
   </p>
 </header>
@@ -380,7 +435,7 @@
 		<a href="/about" title="郭润民" target="_blank" itemprop="author">郭润民</a>
 		
   <p class="article-time">
-    <time datetime="2016-05-30T12:56:26.000Z" itemprop="datePublished"> 發表於 2016-05-30</time>
+    <time datetime="2016-05-30T12:56:26.000Z" itemprop="datePublished"> Published 2016-05-30</time>
     
   </p>
 </header>
@@ -444,7 +499,7 @@
 		<a href="/about" title="郭润民" target="_blank" itemprop="author">郭润民</a>
 		
   <p class="article-time">
-    <time datetime="2016-05-30T12:23:54.000Z" itemprop="datePublished"> 發表於 2016-05-30</time>
+    <time datetime="2016-05-30T12:23:54.000Z" itemprop="datePublished"> Published 2016-05-30</time>
     
   </p>
 </header>
@@ -503,7 +558,7 @@
 		<a href="/about" title="郭润民" target="_blank" itemprop="author">郭润民</a>
 		
   <p class="article-time">
-    <time datetime="2015-12-03T12:56:37.000Z" itemprop="datePublished"> 發表於 2015-12-03</time>
+    <time datetime="2015-12-03T12:56:37.000Z" itemprop="datePublished"> Published 2015-12-03</time>
     
   </p>
 </header>
@@ -563,7 +618,7 @@
 		<a href="/about" title="郭润民" target="_blank" itemprop="author">郭润民</a>
 		
   <p class="article-time">
-    <time datetime="2015-09-16T10:35:46.000Z" itemprop="datePublished"> 發表於 2015-09-16</time>
+    <time datetime="2015-09-16T10:35:46.000Z" itemprop="datePublished"> Published 2015-09-16</time>
     
   </p>
 </header>
@@ -609,81 +664,21 @@
 
 
 
-   
-    
-    <article class="post-expand post" itemprop="articleBody"> 
-        <header class="article-info clearfix">
-  <h1 itemprop="name">
-    
-      <a href="/2015/09/11/sublime-text高级应用-自定义快捷键/" title="sublime text高级应用-自定义快捷键" itemprop="url">sublime text高级应用-自定义快捷键</a>
-  </h1>
-  <p class="article-author">By
-       
-		<a href="/about" title="郭润民" target="_blank" itemprop="author">郭润民</a>
-		
-  <p class="article-time">
-    <time datetime="2015-09-11T11:24:28.000Z" itemprop="datePublished"> 發表於 2015-09-11</time>
-    
-  </p>
-</header>
-    <div class="article-content">
-        
-        <p>sublime text有很多内置的快捷键, 比如<strong>ctrl+n</strong>是新建一个标签,<strong>ctrl-f</strong>是页内搜索等等.</p>
-<p>但是有些时候,这些快捷键的设置和我们的使用习惯格格不入.比如,sublime text有个<strong>toggle sidebar</strong>的快捷键<strong>ctrl+k,ctrl+b</strong>,用于显示/隐藏侧边栏.当开两栏编辑的时候,我想隐藏侧边栏,需要先按一次<strong>ctrl+k</strong>,再按一次<strong>ctrl+b</strong>,有没有办法让我们自定义快捷键呢?</p>
-        
-        
-        <p class="article-more-link">
-          
-            <a href="/2015/09/11/sublime-text高级应用-自定义快捷键/#more">Read More</a>
-          
-       </p>
-    </div>
-    <footer class="article-footer clearfix">
-<div class="article-catetags">
-
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/工具/">工具</a>
-</div>
-
-
-</div>
-
-
-
-
-<div class="comments-count">
-	
-	  	<span></span>
-		<a href="/2015/09/11/sublime-text高级应用-自定义快捷键/#disqus_thread" class="comments-count-link">Comments</a>
-	
-</div>
-
-</footer>
-
-
-    </article>
-
-
-
-
-
-
 
   <nav id="page-nav" class="clearfix">
     <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/2/">Next<span></span></a>
   </nav>
 
 </div>
-      <div class="openaside"><a class="navbutton" href="#" title="顯示側邊欄"></a></div>
+      <div class="openaside"><a class="navbutton" href="#" title="Show Sidebar"></a></div>
 
 <div id="asidepart">
-<div class="closeaside"><a class="closebutton" href="#" title="隱藏側邊欄"></a></div>
+<div class="closeaside"><a class="closebutton" href="#" title="Hide Sidebar"></a></div>
 <aside class="clearfix">
 
   
 <div class="categorieslist">
-	<p class="asidetitle">分類</p>
+	<p class="asidetitle">Categories</p>
 		<ul>
 		
 		  
@@ -728,7 +723,7 @@
 
   
 <div class="tagslist">
-	<p class="asidetitle">標簽</p>
+	<p class="asidetitle">Tags</p>
 		<ul class="clearfix">
 		
 			
@@ -745,13 +740,13 @@
 
   
   <div class="archiveslist">
-    <p class="asidetitle"><a href="/archives">歸檔</a></p>
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">December 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">September 2015</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">August 2015</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04/">April 2014</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/03/">March 2014</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/01/">January 2014</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/12/">December 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/11/">November 2013</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/08/">August 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/07/">July 2013</a><span class="archive-list-count">3</span></li></ul>
+    <p class="asidetitle"><a href="/archives">Archives</a></p>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">December 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">September 2015</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">August 2015</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04/">April 2014</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/03/">March 2014</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/01/">January 2014</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/12/">December 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/11/">November 2013</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/08/">August 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/07/">July 2013</a><span class="archive-list-count">3</span></li></ul>
   </div>
 
 
   <div class="linkslist">
-  <p class="asidetitle">友情鏈接</p>
+  <p class="asidetitle">Links</p>
     <ul>
         
           <li>
@@ -900,7 +895,7 @@ ga('send', 'pageview');
 <!-- Totop Begin -->
 
 	<div id="totop">
-	<a title="返回頂部"><img src="/img/scrollup.png"/></a>
+	<a title="Back to Top"><img src="/img/scrollup.png"/></a>
 	</div>
 	<script src="/js/totop.js"></script>
 

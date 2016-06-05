@@ -4,30 +4,29 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>用马克飞象写博客 | 郭润民的博客</title>
+    <title>python shell md5生成注意事项 | 郭润民的博客</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="郭润民">
     
 
     
-    <meta name="description" content="用octopress搭建博客之后，大爱markdown的简约，因此我对云笔记的要求又多了一项：支持markdown格式编辑和保存。  
-应该说每一种云笔记都有自己的特点。为知笔记在知识管理方面有独到之处，它的网页剪辑功能强大，支持无限制分级，且全平台支持，可作为PKM工具。印象笔记界面清爽，多种应用接入，逐步打造成完整的生态系统。而现在，为知笔记和印象笔记都支持markdown了，诸君可以试用看哪">
+    <meta name="description" content="python的md5加密类似这样12345import hashlibh = hashlib.md5()    h.update(&apos;sweet &apos;)   h.update(&apos;girl&apos;)  h.hexdigest()
+shell 的md5加密类似这样1echo -n &apos;sweet girl&apos;|md5sum
+需要注意的是，echo命令会自动在字符串后加换行符\n，因此需要加-n参数另外，shell下">
 <meta property="og:type" content="article">
-<meta property="og:title" content="用马克飞象写博客">
-<meta property="og:url" content="http://blog.grunmin.org/2013/11/23/yong-ma-ke-fei-xiang-xie-bo-ke/index.html">
+<meta property="og:title" content="python shell md5生成注意事项">
+<meta property="og:url" content="http://blog.grunmin.org/2016/06/05/python-shell-md5生成注意事项/index.html">
 <meta property="og:site_name" content="郭润民的博客">
-<meta property="og:description" content="用octopress搭建博客之后，大爱markdown的简约，因此我对云笔记的要求又多了一项：支持markdown格式编辑和保存。  
-应该说每一种云笔记都有自己的特点。为知笔记在知识管理方面有独到之处，它的网页剪辑功能强大，支持无限制分级，且全平台支持，可作为PKM工具。印象笔记界面清爽，多种应用接入，逐步打造成完整的生态系统。而现在，为知笔记和印象笔记都支持markdown了，诸君可以试用看哪">
-<meta property="og:image" content="https://lh5.googleusercontent.com/-hOEvL1TOB-o/UpBepDGUAhI/AAAAAAAAAGY/WHZ5qubwNeE/s0/2013-11-23-151125_118x133_scrot.png">
-<meta property="og:image" content="https://lh6.googleusercontent.com/-aipDbqSYjS0/UpBe_0jaxzI/AAAAAAAAAGw/giigXjHPP2A/s0/2013-11-23-153132_937x329_scrot.png">
-<meta property="og:image" content="https://lh6.googleusercontent.com/-N6XlKlK81F8/UpBe4QtcpWI/AAAAAAAAAGk/GtCzYl-__PY/s0/2013-11-23-153122_422x354_scrot.png">
-<meta property="og:updated_time" content="2015-08-25T13:01:40.000Z">
+<meta property="og:description" content="python的md5加密类似这样12345import hashlibh = hashlib.md5()    h.update(&apos;sweet &apos;)   h.update(&apos;girl&apos;)  h.hexdigest()
+shell 的md5加密类似这样1echo -n &apos;sweet girl&apos;|md5sum
+需要注意的是，echo命令会自动在字符串后加换行符\n，因此需要加-n参数另外，shell下">
+<meta property="og:updated_time" content="2016-06-05T08:15:26.899Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="用马克飞象写博客">
-<meta name="twitter:description" content="用octopress搭建博客之后，大爱markdown的简约，因此我对云笔记的要求又多了一项：支持markdown格式编辑和保存。  
-应该说每一种云笔记都有自己的特点。为知笔记在知识管理方面有独到之处，它的网页剪辑功能强大，支持无限制分级，且全平台支持，可作为PKM工具。印象笔记界面清爽，多种应用接入，逐步打造成完整的生态系统。而现在，为知笔记和印象笔记都支持markdown了，诸君可以试用看哪">
-<meta name="twitter:image" content="https://lh5.googleusercontent.com/-hOEvL1TOB-o/UpBepDGUAhI/AAAAAAAAAGY/WHZ5qubwNeE/s0/2013-11-23-151125_118x133_scrot.png">
+<meta name="twitter:title" content="python shell md5生成注意事项">
+<meta name="twitter:description" content="python的md5加密类似这样12345import hashlibh = hashlib.md5()    h.update(&apos;sweet &apos;)   h.update(&apos;girl&apos;)  h.hexdigest()
+shell 的md5加密类似这样1echo -n &apos;sweet girl&apos;|md5sum
+需要注意的是，echo命令会自动在字符串后加换行符\n，因此需要加-n参数另外，shell下">
 
     
     <link rel="alternative" href="/atom.xml" title="郭润民的博客" type="application/atom+xml">
@@ -87,14 +86,14 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2013/11/23/yong-ma-ke-fei-xiang-xie-bo-ke/" title="用马克飞象写博客" itemprop="url">用马克飞象写博客</a>
+      <a href="/2016/06/05/python-shell-md5生成注意事项/" title="python shell md5生成注意事项" itemprop="url">python shell md5生成注意事项</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="郭润民" target="_blank" itemprop="author">郭润民</a>
 		
   <p class="article-time">
-    <time datetime="2013-11-23T07:46:00.000Z" itemprop="datePublished"> Published 2013-11-23</time>
+    <time datetime="2016-06-05T08:14:29.000Z" itemprop="datePublished"> Published 2016-06-05</time>
     
   </p>
 </header>
@@ -107,32 +106,13 @@
 		
 		</div>
 		
-		<p>用octopress搭建博客之后，大爱markdown的简约，因此我对云笔记的要求又多了一项：支持markdown格式编辑和保存。  </p>
-<p>应该说每一种云笔记都有自己的特点。为知笔记在知识管理方面有独到之处，它的网页剪辑功能强大，支持无限制分级，且全平台支持，可作为PKM工具。印象笔记界面清爽，多种应用接入，逐步打造成完整的生态系统。而现在，为知笔记和印象笔记都支持markdown了，诸君可以试用看哪一种好。本文只谈技术，不贸然推荐。</p>
-<p>在写octopress博客的时候，我先在为知笔记上写好纯文本格式的正文，将其复制到stackedit上用markdown语法进行处理，确认无误后写进octopress的文件中。这样的问题是，更新博文后笔记和博客的内容就不一样了。再说，笔记上纯文本格式的正文也十分难看。 （这是写在为知笔记还不支持markdown时候的情况，事实上自从它支持后就不用那么麻烦了。）</p>
-<p>今天在chrome商店上看到了一个应用，据称是专为印象笔记打造的markdown编辑器，叫马克飞象。这是图标<br><img src="https://lh5.googleusercontent.com/-hOEvL1TOB-o/UpBepDGUAhI/AAAAAAAAAGY/WHZ5qubwNeE/s0/2013-11-23-151125_118x133_scrot.png" alt="enter image description here" title="2013-11-23-151125_118x133_scrot.png"></p>
-<p>绑定笔记帐号后在上面编辑md格式文件可以实时查看效果，并将处理后的笔记保存到印象笔记中。这是编辑界面:</p>
-<p><img src="https://lh6.googleusercontent.com/-aipDbqSYjS0/UpBe_0jaxzI/AAAAAAAAAGw/giigXjHPP2A/s0/2013-11-23-153132_937x329_scrot.png" alt="enter image description here" title="2013-11-23-153132_937x329_scrot.png"></p>
-<p>用马克飞象编辑的文章保存到笔记中是经markdown渲染的（笔记不会显示源代码），这样保存下来的笔记比纯文本格式或者markdown源代码格式的好看多了。 </p>
-<p>相对于stackedit与谷歌云端硬盘的优势也是十分明显的，它可以直接在印象笔记中查看。</p>
-<p>马克飞象支持将所编辑的笔记分类和加标签，使用<code>@(categories)[tags|tags]</code>即可，同一文章中只能出现一次，且必须与其他内容隔一些距离。</p>
-<p>如果要修改笔记内容怎么办？不用担心，用马克飞象编辑的笔记在右上角会显示一个链接（如下图），点击链接后会用启用马克飞象编辑文章，因此不用担心后续更新的问题。</p>
-<p><img src="https://lh6.googleusercontent.com/-N6XlKlK81F8/UpBe4QtcpWI/AAAAAAAAAGk/GtCzYl-__PY/s0/2013-11-23-153122_422x354_scrot.png" alt="enter image description here" title="2013-11-23-153122_422x354_scrot.png"></p>
-<p>我用马克飞象写的这篇博文，感觉非常不错，不过有两点需要注意：</p>
-<ul>
-<li>图片显示<br>直接写<code>![][]</code>这样插入图片的语法能够生效，但是在编辑器上无法看到预览。要看到预览，请点击右上角<code>功能</code>里插入图片的选项。</li>
-<li>兼容问题<br>由于md语言有多种扩展，将马克飞象已显示无问题的源码直接拷贝到octopress里可能并不能达到预想的效果。</li>
-</ul>
-<p>总体来说马克飞象还是十分实用的，特别是对程序员，用马克飞象记录代码如虎添翼。</p>
+		<p>python的md5加密类似这样<br><figure class="highlight xquery"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> hashlib</span><br><span class="line">h = hashlib.md5()    </span><br><span class="line">h.<span class="keyword">update</span>(<span class="string">'sweet '</span>)   </span><br><span class="line">h.<span class="keyword">update</span>(<span class="string">'girl'</span>)  </span><br><span class="line">h.hexdigest()</span><br></pre></td></tr></table></figure></p>
+<p>shell 的md5加密类似这样<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> -n <span class="string">'sweet girl'</span>|md5sum</span><br></pre></td></tr></table></figure></p>
+<p>需要注意的是，echo命令会自动在字符串后加换行符<code>\n</code>，因此需要加<code>-n</code>参数<br>另外，shell下的双引号和单引号作用不同，如果字符串中带有特殊字符比如<strong>$</strong>等，会被shell解析为变量，因此建议echo后的字符串统一用单引号</p>
   
 	</div>
 		<footer class="article-footer clearfix">
 <div class="article-catetags">
-
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/工具/">工具</a>
-</div>
 
 
 </div>
@@ -141,7 +121,7 @@
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://blog.grunmin.org/2013/11/23/yong-ma-ke-fei-xiang-xie-bo-ke/" data-title="用马克飞象写博客 | 郭润民的博客" data-tsina="null" class="share clearfix">
+	  <div data-url="http://blog.grunmin.org/2016/06/05/python-shell-md5生成注意事项/" data-title="python shell md5生成注意事项 | 郭润民的博客" data-tsina="null" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -154,19 +134,11 @@
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2013/11/23/yong-stackeditbao-cun-bi-ji/" title="用stackedit保存笔记">
-  <strong>上一篇：</strong><br/>
-  <span>
-  用stackedit保存笔记</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/2013/11/17/wo-de-gviman-zhuang-he-pei-zhi/"  title="我的gvim安装和配置">
+<a href="/2016/06/05/hexo静态资源文件目录-Asset-Folders-的使用/"  title="hexo静态资源文件目录(Asset Folders)的使用">
  <strong>下一篇：</strong><br/> 
- <span>我的gvim安装和配置
+ <span>hexo静态资源文件目录(Asset Folders)的使用
 </span>
 </a>
 </div>
