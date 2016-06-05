@@ -4,30 +4,23 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>用马克飞象写博客 | 郭润民的博客</title>
+    <title>hexo静态资源文件目录(Asset Folders)的使用 | 郭润民的博客</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="郭润民">
     
 
     
-    <meta name="description" content="用octopress搭建博客之后，大爱markdown的简约，因此我对云笔记的要求又多了一项：支持markdown格式编辑和保存。  
-应该说每一种云笔记都有自己的特点。为知笔记在知识管理方面有独到之处，它的网页剪辑功能强大，支持无限制分级，且全平台支持，可作为PKM工具。印象笔记界面清爽，多种应用接入，逐步打造成完整的生态系统。而现在，为知笔记和印象笔记都支持markdown了，诸君可以试用看哪">
+    <meta name="description" content="Markdown写文档最不方便的地方在于无法将图片嵌入到文档中。解决这个痛点通常的做法是将图片先上传到图床，然后引用url。我早期的博文就是这么做的。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="用马克飞象写博客">
-<meta property="og:url" content="http://blog.grunmin.org/2013/11/23/yong-ma-ke-fei-xiang-xie-bo-ke/index.html">
+<meta property="og:title" content="hexo静态资源文件目录(Asset Folders)的使用">
+<meta property="og:url" content="http://blog.grunmin.org/2016/06/05/hexo静态资源文件目录-Asset-Folders-的使用/index.html">
 <meta property="og:site_name" content="郭润民的博客">
-<meta property="og:description" content="用octopress搭建博客之后，大爱markdown的简约，因此我对云笔记的要求又多了一项：支持markdown格式编辑和保存。  
-应该说每一种云笔记都有自己的特点。为知笔记在知识管理方面有独到之处，它的网页剪辑功能强大，支持无限制分级，且全平台支持，可作为PKM工具。印象笔记界面清爽，多种应用接入，逐步打造成完整的生态系统。而现在，为知笔记和印象笔记都支持markdown了，诸君可以试用看哪">
-<meta property="og:image" content="https://lh5.googleusercontent.com/-hOEvL1TOB-o/UpBepDGUAhI/AAAAAAAAAGY/WHZ5qubwNeE/s0/2013-11-23-151125_118x133_scrot.png">
-<meta property="og:image" content="https://lh6.googleusercontent.com/-aipDbqSYjS0/UpBe_0jaxzI/AAAAAAAAAGw/giigXjHPP2A/s0/2013-11-23-153132_937x329_scrot.png">
-<meta property="og:image" content="https://lh6.googleusercontent.com/-N6XlKlK81F8/UpBe4QtcpWI/AAAAAAAAAGk/GtCzYl-__PY/s0/2013-11-23-153122_422x354_scrot.png">
-<meta property="og:updated_time" content="2015-08-25T13:01:40.000Z">
+<meta property="og:description" content="Markdown写文档最不方便的地方在于无法将图片嵌入到文档中。解决这个痛点通常的做法是将图片先上传到图床，然后引用url。我早期的博文就是这么做的。">
+<meta property="og:updated_time" content="2016-06-05T08:04:33.373Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="用马克飞象写博客">
-<meta name="twitter:description" content="用octopress搭建博客之后，大爱markdown的简约，因此我对云笔记的要求又多了一项：支持markdown格式编辑和保存。  
-应该说每一种云笔记都有自己的特点。为知笔记在知识管理方面有独到之处，它的网页剪辑功能强大，支持无限制分级，且全平台支持，可作为PKM工具。印象笔记界面清爽，多种应用接入，逐步打造成完整的生态系统。而现在，为知笔记和印象笔记都支持markdown了，诸君可以试用看哪">
-<meta name="twitter:image" content="https://lh5.googleusercontent.com/-hOEvL1TOB-o/UpBepDGUAhI/AAAAAAAAAGY/WHZ5qubwNeE/s0/2013-11-23-151125_118x133_scrot.png">
+<meta name="twitter:title" content="hexo静态资源文件目录(Asset Folders)的使用">
+<meta name="twitter:description" content="Markdown写文档最不方便的地方在于无法将图片嵌入到文档中。解决这个痛点通常的做法是将图片先上传到图床，然后引用url。我早期的博文就是这么做的。">
 
     
     <link rel="alternative" href="/atom.xml" title="郭润民的博客" type="application/atom+xml">
@@ -87,14 +80,14 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2013/11/23/yong-ma-ke-fei-xiang-xie-bo-ke/" title="用马克飞象写博客" itemprop="url">用马克飞象写博客</a>
+      <a href="/2016/06/05/hexo静态资源文件目录-Asset-Folders-的使用/" title="hexo静态资源文件目录(Asset Folders)的使用" itemprop="url">hexo静态资源文件目录(Asset Folders)的使用</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="郭润民" target="_blank" itemprop="author">郭润民</a>
 		
   <p class="article-time">
-    <time datetime="2013-11-23T07:46:00.000Z" itemprop="datePublished"> 發表於 2013-11-23</time>
+    <time datetime="2016-06-05T03:47:27.000Z" itemprop="datePublished"> 發表於 2016-06-05</time>
     
   </p>
 </header>
@@ -107,32 +100,25 @@
 		
 		</div>
 		
-		<p>用octopress搭建博客之后，大爱markdown的简约，因此我对云笔记的要求又多了一项：支持markdown格式编辑和保存。  </p>
-<p>应该说每一种云笔记都有自己的特点。为知笔记在知识管理方面有独到之处，它的网页剪辑功能强大，支持无限制分级，且全平台支持，可作为PKM工具。印象笔记界面清爽，多种应用接入，逐步打造成完整的生态系统。而现在，为知笔记和印象笔记都支持markdown了，诸君可以试用看哪一种好。本文只谈技术，不贸然推荐。</p>
-<p>在写octopress博客的时候，我先在为知笔记上写好纯文本格式的正文，将其复制到stackedit上用markdown语法进行处理，确认无误后写进octopress的文件中。这样的问题是，更新博文后笔记和博客的内容就不一样了。再说，笔记上纯文本格式的正文也十分难看。 （这是写在为知笔记还不支持markdown时候的情况，事实上自从它支持后就不用那么麻烦了。）</p>
-<p>今天在chrome商店上看到了一个应用，据称是专为印象笔记打造的markdown编辑器，叫马克飞象。这是图标<br><img src="https://lh5.googleusercontent.com/-hOEvL1TOB-o/UpBepDGUAhI/AAAAAAAAAGY/WHZ5qubwNeE/s0/2013-11-23-151125_118x133_scrot.png" alt="enter image description here" title="2013-11-23-151125_118x133_scrot.png"></p>
-<p>绑定笔记帐号后在上面编辑md格式文件可以实时查看效果，并将处理后的笔记保存到印象笔记中。这是编辑界面:</p>
-<p><img src="https://lh6.googleusercontent.com/-aipDbqSYjS0/UpBe_0jaxzI/AAAAAAAAAGw/giigXjHPP2A/s0/2013-11-23-153132_937x329_scrot.png" alt="enter image description here" title="2013-11-23-153132_937x329_scrot.png"></p>
-<p>用马克飞象编辑的文章保存到笔记中是经markdown渲染的（笔记不会显示源代码），这样保存下来的笔记比纯文本格式或者markdown源代码格式的好看多了。 </p>
-<p>相对于stackedit与谷歌云端硬盘的优势也是十分明显的，它可以直接在印象笔记中查看。</p>
-<p>马克飞象支持将所编辑的笔记分类和加标签，使用<code>@(categories)[tags|tags]</code>即可，同一文章中只能出现一次，且必须与其他内容隔一些距离。</p>
-<p>如果要修改笔记内容怎么办？不用担心，用马克飞象编辑的笔记在右上角会显示一个链接（如下图），点击链接后会用启用马克飞象编辑文章，因此不用担心后续更新的问题。</p>
-<p><img src="https://lh6.googleusercontent.com/-N6XlKlK81F8/UpBe4QtcpWI/AAAAAAAAAGk/GtCzYl-__PY/s0/2013-11-23-153122_422x354_scrot.png" alt="enter image description here" title="2013-11-23-153122_422x354_scrot.png"></p>
-<p>我用马克飞象写的这篇博文，感觉非常不错，不过有两点需要注意：</p>
+		<p>Markdown写文档最不方便的地方在于无法将图片嵌入到文档中。解决这个痛点通常的做法是将图片先上传到图床，然后引用url。我早期的博文就是这么做的。</p>
+<a id="more"></a>
+<p>这方法自然蛋疼的紧，一方面需要耗费更多是时间来设置图床，上床图片；另一方面，图片与文档分开保存既不利于组织和归档，也容易出现资源丢失的问题。</p>
+<p>在使用git保存文档的时候意识到，将图片保存到相对路径是个较好的解决方式。通常是一篇文档创建一个目录，在目录下为图片再创建一个目录<code>images</code>，md文件存在与images同级的根目录下，引用图片用<code>./images/1.png</code>这种格式。</p>
+<p>hexo也提供了类似的方法保存图片，他们叫做<code>asset folders</code></p>
+<p><code>asset folders</code>有两种，一种是全局的，默认开启。使用的方法是：</p>
 <ul>
-<li>图片显示<br>直接写<code>![][]</code>这样插入图片的语法能够生效，但是在编辑器上无法看到预览。要看到预览，请点击右上角<code>功能</code>里插入图片的选项。</li>
-<li>兼容问题<br>由于md语言有多种扩展，将马克飞象已显示无问题的源码直接拷贝到octopress里可能并不能达到预想的效果。</li>
+<li>在source目录下创建目录<code>images</code>，将图片放入其中  </li>
+<li>在博文内容中，通过<code>![][/images/1.png]</code>引用</li>
 </ul>
-<p>总体来说马克飞象还是十分实用的，特别是对程序员，用马克飞象记录代码如虎添翼。</p>
+<p><em>这里的source目录是指在根目录下，存放_post目录的目录，不是主题下的source目录</em></p>
+<p>另一种是在<code>source/_post</code>下单独篇博文创建资源目录，这个目录与博文标题同名。这个配置默认不开启，需要额外配置。具体方法是：在配置文档<code>_config.yml</code>里找到（找不到就添加）<code>post_asset_folder</code>字段，改为<code>true</code>。</p>
+<p>然后新建博文(通过<code>hexo new</code>指令)时，会自动在博文同级目录下创建资源目录，将图片移入即可。</p>
+<p>引用的方式与全局的方式略有不同，需要用到模版语言。在hexo3之后的版本，模板语言解析已经打包进hexo中了，无需另外配置。如果版本低，请自行搜索引用方法。引用方式即为在引用处写<br><figure class="highlight django"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="xml"></span><span class="template-tag">&#123;% <span class="name">asset_img</span> IMAGE_NAME IMAGE_DESC %&#125;</span><span class="xml"></span></span><br></pre></td></tr></table></figure></p>
+<p>IMAGE_NAME 即为图片名称，名称后接描述。hexo在generate的时候会自动替换成对应的url<br>如果名称和描述中有空格，将其用双引号括起来即可。</p>
   
 	</div>
 		<footer class="article-footer clearfix">
 <div class="article-catetags">
-
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/工具/">工具</a>
-</div>
 
 
 </div>
@@ -141,7 +127,7 @@
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://blog.grunmin.org/2013/11/23/yong-ma-ke-fei-xiang-xie-bo-ke/" data-title="用马克飞象写博客 | 郭润民的博客" data-tsina="null" class="share clearfix">
+	  <div data-url="http://blog.grunmin.org/2016/06/05/hexo静态资源文件目录-Asset-Folders-的使用/" data-title="hexo静态资源文件目录(Asset Folders)的使用 | 郭润民的博客" data-tsina="null" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -154,19 +140,11 @@
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2013/11/23/yong-stackeditbao-cun-bi-ji/" title="用stackedit保存笔记">
-  <strong>上一篇：</strong><br/>
-  <span>
-  用stackedit保存笔记</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/2013/11/17/wo-de-gviman-zhuang-he-pei-zhi/"  title="我的gvim安装和配置">
+<a href="/2016/06/05/运维业务报警微信接口开发-基于微信企业号/"  title="运维业务报警微信接口开发(基于微信企业号)">
  <strong>下一篇：</strong><br/> 
- <span>我的gvim安装和配置
+ <span>运维业务报警微信接口开发(基于微信企业号)
 </span>
 </a>
 </div>
