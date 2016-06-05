@@ -1,0 +1,521 @@
+
+ <!DOCTYPE HTML>
+<html >
+<head>
+  <meta charset="UTF-8">
+  
+    <title>运维业务报警微信接口开发(基于微信企业号) | 郭润民的博客</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+    
+    <meta name="author" content="郭润民">
+    
+
+    
+    <meta name="description" content="概述当前业务场景中，如有需要及时处理的事务，通常结合邮件和qq弹窗提醒负责人。现在我们考虑多一种通知方式，以应对无法使用pc端qq时的紧急事务处理。经过查找，现在暂时锁定微信企业号。
+微信企业号是微信公众号一种，另外两种分别是服务号和订阅号。类型不同，定位也不同。目前看来，微信企业号是比较适合当前需求的。比如发消息的自由度高，有组织结构和权限管理等。官方网站看这里">
+<meta property="og:type" content="article">
+<meta property="og:title" content="运维业务报警微信接口开发(基于微信企业号)">
+<meta property="og:url" content="http://blog.grunmin.org/2016/06/05/运维业务报警微信接口开发-基于微信企业号/index.html">
+<meta property="og:site_name" content="郭润民的博客">
+<meta property="og:description" content="概述当前业务场景中，如有需要及时处理的事务，通常结合邮件和qq弹窗提醒负责人。现在我们考虑多一种通知方式，以应对无法使用pc端qq时的紧急事务处理。经过查找，现在暂时锁定微信企业号。
+微信企业号是微信公众号一种，另外两种分别是服务号和订阅号。类型不同，定位也不同。目前看来，微信企业号是比较适合当前需求的。比如发消息的自由度高，有组织结构和权限管理等。官方网站看这里">
+<meta property="og:image" content="http://blog.grunmin.org/2016/06/05/运维业务报警微信接口开发-基于微信企业号/1.png">
+<meta property="og:updated_time" content="2016-06-05T03:43:19.871Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="运维业务报警微信接口开发(基于微信企业号)">
+<meta name="twitter:description" content="概述当前业务场景中，如有需要及时处理的事务，通常结合邮件和qq弹窗提醒负责人。现在我们考虑多一种通知方式，以应对无法使用pc端qq时的紧急事务处理。经过查找，现在暂时锁定微信企业号。
+微信企业号是微信公众号一种，另外两种分别是服务号和订阅号。类型不同，定位也不同。目前看来，微信企业号是比较适合当前需求的。比如发消息的自由度高，有组织结构和权限管理等。官方网站看这里">
+<meta name="twitter:image" content="http://blog.grunmin.org/2016/06/05/运维业务报警微信接口开发-基于微信企业号/1.png">
+
+    
+    <link rel="alternative" href="/atom.xml" title="郭润民的博客" type="application/atom+xml">
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/icon.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/img/icon.jpg">
+    
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+  <body>
+    <header>
+      
+<div>
+		
+			<div id="imglogo">
+				<a href="/"><img src="/img/icon.png" alt="郭润民的博客" title="郭润民的博客"/></a>
+			</div>
+			
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="郭润民的博客">郭润民的博客</a></h1>
+				<h2 class="blog-motto"></h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="Menu">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					<ul>
+					 
+						<li><a href="/">主页</a></li>
+					
+						<li><a href="/archives">归档</a></li>
+					
+						<li><a href="/about">作者</a></li>
+					
+					<li>
+ 					
+					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="Search" />
+						<input type="hidden" name="q" value="site:blog.grunmin.org">
+					</form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+  
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2016/06/05/运维业务报警微信接口开发-基于微信企业号/" title="运维业务报警微信接口开发(基于微信企业号)" itemprop="url">运维业务报警微信接口开发(基于微信企业号)</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="郭润民" target="_blank" itemprop="author">郭润民</a>
+		
+  <p class="article-time">
+    <time datetime="2016-06-05T03:31:59.000Z" itemprop="datePublished"> Published 2016-06-05</time>
+    
+  </p>
+</header>
+	<div class="article-content">
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">Contents</strong>
+		
+			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#概述"><span class="toc-number">1.</span> <span class="toc-text">概述</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#公众号管理"><span class="toc-number">2.</span> <span class="toc-text">公众号管理</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#申请"><span class="toc-number">2.1.</span> <span class="toc-text">申请</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#组织结构"><span class="toc-number">2.2.</span> <span class="toc-text">组织结构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#应用管理"><span class="toc-number">2.3.</span> <span class="toc-text">应用管理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#发送消息"><span class="toc-number">2.4.</span> <span class="toc-text">发送消息</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#接口开发"><span class="toc-number">3.</span> <span class="toc-text">接口开发</span></a></li></ol>
+		
+		</div>
+		
+		<h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><p>当前业务场景中，如有需要及时处理的事务，通常结合邮件和qq弹窗提醒负责人。现在我们考虑多一种通知方式，以应对无法使用pc端qq时的紧急事务处理。经过查找，现在暂时锁定微信企业号。</p>
+<p>微信企业号是微信公众号一种，另外两种分别是服务号和订阅号。类型不同，定位也不同。目前看来，微信企业号是比较适合当前需求的。比如发消息的自由度高，有组织结构和权限管理等。官方网站看<a href="https://qy.weixin.qq.com" target="_blank" rel="external">这里</a></p>
+<a id="more"></a>
+<h1 id="公众号管理"><a href="#公众号管理" class="headerlink" title="公众号管理"></a>公众号管理</h1><h2 id="申请"><a href="#申请" class="headerlink" title="申请"></a>申请</h2><p>在选择公众号类型的时候点击<strong>企业号</strong>，团体为<strong>团队即可</strong>。其余略</p>
+<h2 id="组织结构"><a href="#组织结构" class="headerlink" title="组织结构"></a>组织结构</h2><ol>
+<li>在管理后台<strong>通讯录-&gt;组织结构</strong>处编辑部门信息和成员信息。类似这样  <img src="/2016/06/05/运维业务报警微信接口开发-基于微信企业号/1.png" alt="1.png" title="">
+</li>
+</ol>
+<p><strong>只有添加了成员信息，对应的微信用户才能够关注本企业号</strong><br><em>成员信息中，帐号一栏建议填写员工企业邮箱地址或者员工工号（唯一且不能更改）</em>  </p>
+<ol>
+<li>在管理后台<strong>设置-&gt;基本信息</strong>处获取企业号二维码，发送给用户进行关注。  </li>
+</ol>
+<h2 id="应用管理"><a href="#应用管理" class="headerlink" title="应用管理"></a>应用管理</h2><p>在<strong>管理后台-&gt;应用中心-&gt;我的应用</strong>添加一个消息型应用，选择可见范围必须包括目标账户所在部门</p>
+<h2 id="发送消息"><a href="#发送消息" class="headerlink" title="发送消息"></a>发送消息</h2><p>在<strong>管理后台-&gt;发消息</strong>选择刚才创建的应用，发送给指定账户即可。</p>
+<h1 id="接口开发"><a href="#接口开发" class="headerlink" title="接口开发"></a>接口开发</h1><ol>
+<li><p>在<strong>管理后台-&gt;设置-&gt;功能设置-&gt;权限管理</strong>里新建一个管理组，使其拥有获取目标组的查看权限，已经刚刚创建的应用发消息和管理权限。记住该管理组的<code>CorpID</code>和<code>Secret</code>。</p>
+</li>
+<li><p>复制下面代码到一个python文件，替换掉<code>CorpID</code>和<code>Secret</code>和消息内容。</p>
+</li>
+</ol>
+<p><strong>注意：<code>data</code>变量里， <code>agent_id</code>为刚刚创建的应用id（可在web页面看到），<code>toparty</code>即为目标部门，或者可以用<code>touser</code>,<code>totag</code>指定目标账户</strong><br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#coding:utf-8</span></span><br><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">import</span> json</span><br><span class="line"></span><br><span class="line">reload(sys)</span><br><span class="line">sys.setdefaultencoding(<span class="string">'utf-8'</span>)</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Weixin</span><span class="params">(object)</span>:</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, corp_id, corp_secret)</span>:</span></span><br><span class="line">        self.token_url = <span class="string">'https://qyapi.weixin.qq.com/cgi-bin/gettoken?corpid=%s&amp;corpsecret=%s'</span> %(corp_id, corp_secret)</span><br><span class="line">        self.send_url = <span class="string">'https://qyapi.weixin.qq.com/cgi-bin/message/send?access_token='</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get_token</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">try</span>:</span><br><span class="line">            r = requests.get(self.token_url, timeout=<span class="number">10</span>)</span><br><span class="line">        <span class="keyword">except</span> Exception <span class="keyword">as</span> e:</span><br><span class="line">            <span class="keyword">print</span> e</span><br><span class="line">            sys.exit(<span class="number">1</span>)</span><br><span class="line">        <span class="keyword">if</span> r.status_code == requests.codes.ok:</span><br><span class="line">            data = r.json()</span><br><span class="line">            <span class="keyword">if</span> data.get(<span class="string">'errcode'</span>):</span><br><span class="line">                <span class="keyword">print</span> data[<span class="string">'errmsg'</span>]</span><br><span class="line">                sys.exit(<span class="number">1</span>)</span><br><span class="line">            <span class="keyword">return</span> data[<span class="string">'access_token'</span>]</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">print</span> r.status_code</span><br><span class="line">            sys.exit(<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">send</span><span class="params">(self,message)</span>:</span></span><br><span class="line">        url = self.send_url + self.get_token()</span><br><span class="line">        data = &#123;</span><br><span class="line">           <span class="string">"touser"</span>: <span class="string">"USERNAME"</span>,</span><br><span class="line">           <span class="string">"msgtype"</span>: <span class="string">"text"</span>,</span><br><span class="line">           <span class="string">"agentid"</span>: <span class="string">"AGENTID"</span>,</span><br><span class="line">           <span class="string">"text"</span>: &#123;</span><br><span class="line">               <span class="string">"content"</span>: message</span><br><span class="line">           &#125;,</span><br><span class="line">           <span class="string">"safe"</span>:<span class="string">"0"</span></span><br><span class="line">        &#125;</span><br><span class="line">        send_data = json.dumps(data,ensure_ascii=<span class="keyword">False</span>)</span><br><span class="line">        <span class="keyword">try</span>:</span><br><span class="line">            r = requests.post(url, send_data)</span><br><span class="line">        <span class="keyword">except</span> Exception, e:</span><br><span class="line">            <span class="keyword">print</span> e</span><br><span class="line">            sys.exit(<span class="number">1</span>)</span><br><span class="line">        <span class="keyword">if</span> r.status_code == requests.codes.ok:</span><br><span class="line">            <span class="keyword">print</span> r.json()</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">print</span> r.code</span><br><span class="line">            sys.exit(<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">corpid = <span class="string">'CORPID'</span></span><br><span class="line">corpsecret = <span class="string">'CORPSECRET'</span></span><br><span class="line">msg =<span class="string">"提醒测试"</span></span><br><span class="line"></span><br><span class="line">w = Weixin(corpid,corpsecret)</span><br><span class="line">w.send(msg)</span><br></pre></td></tr></table></figure></p>
+<p><strong>更多文档请看<a href="http://qydev.weixin.qq.com/wiki/index.php?title=%E6%B6%88%E6%81%AF%E7%B1%BB%E5%9E%8B%E5%8F%8A%E6%95%B0%E6%8D%AE%E6%A0%BC%E5%BC%8F#text.E6.B6.88.E6.81.AF" target="_blank" rel="external">这里</a></strong></p>
+  
+	</div>
+		<footer class="article-footer clearfix">
+<div class="article-catetags">
+
+
+</div>
+
+
+
+	<div class="article-share" id="share">
+	
+	  <div data-url="http://blog.grunmin.org/2016/06/05/运维业务报警微信接口开发-基于微信企业号/" data-title="运维业务报警微信接口开发(基于微信企业号) | 郭润民的博客" data-tsina="null" class="share clearfix">
+	  </div>
+	
+	</div>
+
+
+</footer>
+
+   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+
+<div class="next">
+<a href="/2016/06/02/Atom-sftp类远程文件同步插件/"  title="Atom sftp类远程文件同步插件">
+ <strong>下一篇：</strong><br/> 
+ <span>Atom sftp类远程文件同步插件
+</span>
+</a>
+</div>
+
+</nav>
+
+	
+
+<section id="comments" class="comment">
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
+
+</div>  
+      <div class="openaside"><a class="navbutton" href="#" title="Show Sidebar"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">Contents</strong>
+ 
+ <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#概述"><span class="toc-number">1.</span> <span class="toc-text">概述</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#公众号管理"><span class="toc-number">2.</span> <span class="toc-text">公众号管理</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#申请"><span class="toc-number">2.1.</span> <span class="toc-text">申请</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#组织结构"><span class="toc-number">2.2.</span> <span class="toc-text">组织结构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#应用管理"><span class="toc-number">2.3.</span> <span class="toc-text">应用管理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#发送消息"><span class="toc-number">2.4.</span> <span class="toc-text">发送消息</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#接口开发"><span class="toc-number">3.</span> <span class="toc-text">接口开发</span></a></li></ol>
+ 
+  </div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="Hide Sidebar"></a></div>
+<aside class="clearfix">
+
+  
+<div class="categorieslist">
+	<p class="asidetitle">Categories</p>
+		<ul>
+		
+		  
+			<li><a href="/categories/linux/" title="linux">linux<sup>12</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/php/" title="php">php<sup>4</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/python/" title="python">python<sup>2</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/windows/" title="windows">windows<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/云/" title="云">云<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/其他/" title="其他">其他<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/前端/" title="前端">前端<sup>6</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/工具/" title="工具">工具<sup>9</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/随笔/" title="随笔">随笔<sup>10</sup></a></li>
+		  
+		
+		</ul>
+</div>
+
+
+  
+<div class="tagslist">
+	<p class="asidetitle">Tags</p>
+		<ul class="clearfix">
+		
+			
+				<li><a href="/tags/nginx/" title="nginx">nginx<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/git/" title="git">git<sup>1</sup></a></li>
+			
+		
+		</ul>
+</div>
+
+
+  
+  <div class="archiveslist">
+    <p class="asidetitle"><a href="/archives">Archives</a></p>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">December 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">September 2015</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">August 2015</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04/">April 2014</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/03/">March 2014</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/01/">January 2014</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/12/">December 2013</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/11/">November 2013</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/08/">August 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/07/">July 2013</a><span class="archive-list-count">3</span></li></ul>
+  </div>
+
+
+  <div class="linkslist">
+  <p class="asidetitle">Links</p>
+    <ul>
+        
+          <li>
+            
+            	<a href="http://blog.91ant.top" target="_blank" title="孝明的博客">孝明的博客</a>
+            
+          </li>
+        
+    </ul>
+</div>
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<div class="social-font" class="clearfix">
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	</div>
+			
+		
+
+		<p class="copyright">
+		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2016 
+		
+		<a href="/about" target="_blank" title="郭润民">郭润民</a>
+		
+		
+		</p>
+</div>
+</footer>
+    <script src="/js/jquery-2.0.3.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/jquery.qrcode-0.12.0.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+  
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else{
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  c.click(function(){
+    ta.css('display', 'block').addClass('fadeIn');
+  });
+  o.click(function(){
+    ta.css('display', 'none');
+  });
+  $(window).scroll(function(){
+    ta.css("top",Math.max(140,320-$(this).scrollTop()));
+  });
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina'),
+      description = $this.attr('description');
+  var html = [
+  '<div class="hoverqrcode clearfix"></div>',
+  '<a class="overlay" id="qrcode"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="微信"></a>',
+  '<a href="http://widget.renren.com/dialog/share?resourceUrl=' + encodedUrl + '&srcUrl=' + encodedUrl + '&title=' + title +'" class="article-share-renren" target="_blank" title="人人"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="微博"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+
+  $('.hoverqrcode').hide();
+
+  var myWidth = 0;
+  function updatehoverqrcode(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+    var qrsize = myWidth > 1024 ? 200:100;
+    var options = {render: 'image', size: qrsize, fill: '#2ca6cb', text: url, radius: 0.5, quiet: 1};
+    var p = $('.article-share-qrcode').position();
+    $('.hoverqrcode').empty().css('width', qrsize).css('height', qrsize)
+                          .css('left', p.left-qrsize/2+20).css('top', p.top-qrsize-10)
+                          .qrcode(options);
+  };
+  $(window).resize(function(){
+    $('.hoverqrcode').hide();
+  });
+  $('.article-share-qrcode').click(function(){
+    updatehoverqrcode();
+    $('.hoverqrcode').toggle();
+  });
+  $('.article-share-qrcode').hover(function(){}, function(){
+      $('.hoverqrcode').hide();
+  });
+});   
+</script>
+
+
+
+
+<script type="text/javascript">
+
+var disqus_shortname = 'grunmin';
+
+(function(){
+  var dsq = document.createElement('script');
+  dsq.type = 'text/javascript';
+  dsq.async = true;
+  dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+}());
+(function(){
+  var dsq = document.createElement('script');
+  dsq.type = 'text/javascript';
+  dsq.async = true;
+  dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+}());
+</script>
+
+
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.article-content').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox')) return;
+      var alt = this.alt;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'article' + i);
+    });
+  });
+  if($.fancybox){
+    $('.fancybox').fancybox();
+  }
+}); 
+</script>
+
+
+
+<!-- Analytics Begin -->
+
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-42775487-3', 'auto');  
+ga('send', 'pageview');
+</script>
+
+
+
+
+
+<!-- Analytics End -->
+
+<!-- Totop Begin -->
+
+	<div id="totop">
+	<a title="Back to Top"><img src="/img/scrollup.png"/></a>
+	</div>
+	<script src="/js/totop.js"></script>
+
+<!-- Totop End -->
+
+<!-- MathJax Begin -->
+<!-- mathjax config similar to math.stackexchange -->
+
+
+<!-- MathJax End -->
+
+<!-- Tiny_search Begin -->
+
+<!-- Tiny_search End -->
+
+  </body>
+</html>
